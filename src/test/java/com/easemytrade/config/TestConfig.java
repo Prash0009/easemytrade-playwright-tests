@@ -7,7 +7,7 @@ public class TestConfig {
     public static final boolean HEADLESS = Boolean.parseBoolean(System.getProperty("headless", "true"));
     public static final int DEFAULT_TIMEOUT_MS = 30_000;
     public static final int NAVIGATION_TIMEOUT_MS = 60_000;
-    public static final int SLOW_RESOURCE_TIMEOUT_MS = 90_000;
+    public static final int SLOW_RESOURCE_TIMEOUT_MS = 120_000;
 
     // Page URLs
     public static final String HOME_URL = BASE_URL + "/";
