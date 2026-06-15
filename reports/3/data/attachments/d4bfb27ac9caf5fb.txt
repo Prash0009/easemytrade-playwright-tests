@@ -1,0 +1,2 @@
+org.opentest4j.AssertionFailedError: [Nav visible on Silver page] 
+Expecting value to be true but was false

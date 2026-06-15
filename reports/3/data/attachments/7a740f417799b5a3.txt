@@ -1,0 +1,17 @@
+java.lang.AssertionError: [Page at https://easemytrade.in/indices/banknifty/ should reference BANKNIFTY] 
+Expecting actual:
+  "EaseMyTrade | Sign InEaseMyTrade
+Secure access for protected market sections
+
+Sign in with your user ID and password to open the protected market pages. Sessions are private, role-based, and kept intentionally simple.
+
+SIGN IN
+User ID
+Password
+Show
+Use the toggle to reveal or hide the password while typing.
+Sign in
+Sign out"
+to contain:
+  "BANKNIFTY"
+ (ignoring case)

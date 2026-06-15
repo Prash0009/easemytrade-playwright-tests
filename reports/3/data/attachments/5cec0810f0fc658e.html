@@ -1,0 +1,95 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="AI-powered financial intelligence dashboard for live market news and sentiment.">
+    <title>AI Market Intelligence | EaseMyTrade</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Cormorant+Garamond:wght@500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css?v=20260614-elegant-2">
+    <link rel="icon" href="/assets/easemytrade-logo.svg" type="image/svg+xml">
+  <script defer="" src="/_vercel/insights/script.js" data-easemytrade-analytics="true"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-KFQSGRLGGN" data-easemytrade-ga4="true"></script></head>
+  <body data-page="news">
+    <header class="site-header">
+      <a class="brand" href="/">
+        <img class="brand-logo" src="/assets/easemytrade-logo.svg" alt="" width="42" height="42">
+        <span>EaseMyTrade</span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="/#market-overview">Market Overview</a>
+        <details class="nav-dropdown">
+          <summary class="nav-dropdown-toggle">Indian Indices</summary>
+          <div class="nav-dropdown-menu">
+            <a href="/nifty/today/">NIFTY</a>
+            <a href="/indices/banknifty/">BANKNIFTY</a>
+            <a href="/indices/finnifty/">FINNIFTY</a>
+            <a href="/indices/sensex/">SENSEX</a>
+          </div>
+        </details>
+        <details class="nav-dropdown">
+          <summary class="nav-dropdown-toggle">Commodities</summary>
+          <div class="nav-dropdown-menu">
+            <a href="/commodities/gold/"><span class="menu-copy"><strong>Gold</strong><span class="menu-change" id="commodityGoldChange">Pending</span></span><span class="menu-rate" id="commodityGoldRate">--</span></a>
+            <a href="/commodities/silver/"><span class="menu-copy"><strong>Silver</strong><span class="menu-change" id="commoditySilverChange">Pending</span></span><span class="menu-rate" id="commoditySilverRate">--</span></a>
+            <a href="/commodities/crude-oil/"><span class="menu-copy"><strong>Crude Oil</strong><span class="menu-change" id="commodityCrudeChange">Pending</span></span><span class="menu-rate" id="commodityCrudeRate">--</span></a>
+            <a href="/commodities/natural-gas/"><span class="menu-copy"><strong>Natural Gas</strong><span class="menu-change" id="commodityGasChange">Pending</span></span><span class="menu-rate" id="commodityGasRate">--</span></a>
+          </div>
+        </details>
+        <a href="/news/" aria-current="page">News</a>
+        <a href="/methodology/">Methodology</a>
+        <a href="/expert-view/">Expert View</a>
+        <a href="/telegram/">Telegram</a>
+        <a href="/contact/">Contact Us</a>
+        <div class="live-clock live-clock--nav" id="liveClock" aria-label="Current time in Indian Standard Time">
+          <span class="live-clock__label">IST</span>
+          <strong class="live-clock__time">02:21:42</strong>
+        </div>
+      </nav>
+      <div class="header-auth" id="headerAuth" aria-label="Signed-in user"></div>
+      <div class="header-tools">
+        <button class="refresh-button" id="refreshDataButton" type="button">Refresh Data</button>
+        <span class="refresh-status" id="refreshStatus" aria-live="polite">Market live data is being refreshed. Please wait.</span>
+      </div>
+    </header>
+    <div class="market-ticker" aria-label="Live market ticker">
+      <div class="market-ticker__track"></div>
+    </div>
+
+    <main class="news-terminal-page">
+      <section class="news-terminal-hero">
+        <div class="news-terminal-hero__copy">
+          <h1>AI-Powered Market Intelligence</h1>
+        </div>
+      </section>
+
+      <section class="content-band news-dashboard-grid">
+        <div class="news-main-column">
+          <section class="news-feed-shell">
+            <div class="section-heading">
+              <p class="eyebrow">AI News Feed</p>
+              <h2>Domestic and global market movers</h2>
+            </div>
+            <div class="news-feed-columns">
+              <article class="news-column">
+                <p class="news-column__label">Domestic</p>
+                <div class="news-list" id="domesticNewsList"></div>
+              </article>
+              <article class="news-column">
+                <p class="news-column__label">Global</p>
+                <div class="news-list" id="globalNewsList"></div>
+              </article>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>EaseMyTrade</span>
+      <a href="/disclaimer/">Disclaimer</a>
+    </footer>
+
+    <script src="/app.js?v=20260611-sync-1"></script>
+  
+
+</body></html>
