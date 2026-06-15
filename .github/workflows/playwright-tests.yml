@@ -1,0 +1,185 @@
+name: EaseMyTrade Playwright Tests
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+  schedule:
+    # Run daily at 6:00 AM IST (00:30 UTC) on weekdays
+    - cron: '30 0 * * 1-5'
+  workflow_dispatch:
+    inputs:
+      browser:
+        description: 'Browser to run tests on'
+        required: false
+        default: 'chromium'
+        type: choice
+        options:
+          - chromium
+          - firefox
+          - webkit
+      test_suite:
+        description: 'Test suite to run (leave empty to run all)'
+        required: false
+        default: ''
+        type: string
+      base_url:
+        description: 'Base URL to test against'
+        required: false
+        default: 'https://easemytrade.in'
+        type: string
+
+env:
+  APP_BASE_URL: ${{ github.event.inputs.base_url || 'https://easemytrade.in' }}
+  BROWSER: ${{ github.event.inputs.browser || 'chromium' }}
+  JAVA_VERSION: '17'
+
+jobs:
+  test:
+    name: Run Playwright Tests (${{ github.event.inputs.browser || 'chromium' }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK ${{ env.JAVA_VERSION }}
+        uses: actions/setup-java@v4
+        with:
+          java-version: ${{ env.JAVA_VERSION }}
+          distribution: 'temurin'
+          cache: 'maven'
+
+      - name: Cache Maven packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+
+      - name: Install Playwright browsers
+        run: mvn exec:java -e -D exec.mainClass=com.microsoft.playwright.CLI -D exec.args="install --with-deps ${{ env.BROWSER }}"
+
+      - name: Run all tests (headless)
+        run: |
+          mvn test \
+            -Dapp.base.url="${{ env.APP_BASE_URL }}" \
+            -Dbrowser="${{ env.BROWSER }}" \
+            -Dheadless=true \
+            -Dmaven.test.failure.ignore=true
+        env:
+          APP_BASE_URL: ${{ env.APP_BASE_URL }}
+
+      - name: Generate Allure report
+        if: always()
+        run: mvn allure:report -q
+
+      - name: Upload Allure results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results-${{ github.run_number }}-${{ env.BROWSER }}
+          path: target/allure-results/
+          retention-days: 30
+
+      - name: Upload Allure HTML report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report-${{ github.run_number }}-${{ env.BROWSER }}
+          path: target/allure-report/
+          retention-days: 30
+
+      - name: Upload test logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-logs-${{ github.run_number }}
+          path: target/test-logs/
+          retention-days: 14
+          if-no-files-found: ignore
+
+      - name: Publish Allure Report to GitHub Pages
+        if: always() && github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: target/allure-report
+          publish_branch: gh-pages
+          destination_dir: reports/${{ github.run_number }}
+          keep_files: true
+
+      - name: Post test summary to job summary
+        if: always()
+        run: |
+          echo "## EaseMyTrade Test Run Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Property | Value |" >> $GITHUB_STEP_SUMMARY
+          echo "| --- | --- |" >> $GITHUB_STEP_SUMMARY
+          echo "| Browser | ${{ env.BROWSER }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Base URL | ${{ env.APP_BASE_URL }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Run # | ${{ github.run_number }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Triggered by | ${{ github.actor }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Branch | ${{ github.ref_name }} |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "📊 Download the **allure-report** artifact above to view the full HTML report." >> $GITHUB_STEP_SUMMARY
+          if [ -f target/surefire-reports/testng-results.xml ]; then
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### TestNG Results" >> $GITHUB_STEP_SUMMARY
+            TOTAL=$(grep -oP 'total="\K[0-9]+' target/surefire-reports/testng-results.xml | head -1 || echo "?")
+            PASSED=$(grep -oP 'passed="\K[0-9]+' target/surefire-reports/testng-results.xml | head -1 || echo "?")
+            FAILED=$(grep -oP 'failed="\K[0-9]+' target/surefire-reports/testng-results.xml | head -1 || echo "?")
+            SKIPPED=$(grep -oP 'skipped="\K[0-9]+' target/surefire-reports/testng-results.xml | head -1 || echo "?")
+            echo "✅ Passed: $PASSED | ❌ Failed: $FAILED | ⏭️ Skipped: $SKIPPED | Total: $TOTAL" >> $GITHUB_STEP_SUMMARY
+          fi
+
+  cross-browser:
+    name: Cross-browser (${{ matrix.browser }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    # Only run cross-browser on main branch push or manual trigger
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [chromium, firefox, webkit]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK ${{ env.JAVA_VERSION }}
+        uses: actions/setup-java@v4
+        with:
+          java-version: ${{ env.JAVA_VERSION }}
+          distribution: 'temurin'
+          cache: 'maven'
+
+      - name: Cache Maven packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+
+      - name: Install Playwright browsers
+        run: mvn exec:java -e -D exec.mainClass=com.microsoft.playwright.CLI -D exec.args="install --with-deps ${{ matrix.browser }}"
+
+      - name: Run tests on ${{ matrix.browser }}
+        run: |
+          mvn test \
+            -Dapp.base.url="${{ env.APP_BASE_URL }}" \
+            -Dbrowser="${{ matrix.browser }}" \
+            -Dheadless=true \
+            -Dmaven.test.failure.ignore=true
+
+      - name: Upload Allure results (${{ matrix.browser }})
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results-crossbrowser-${{ matrix.browser }}-${{ github.run_number }}
+          path: target/allure-results/
+          retention-days: 14

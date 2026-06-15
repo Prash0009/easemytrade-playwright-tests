@@ -1,0 +1,14 @@
+target/
+*.class
+.DS_Store
+.idea/
+*.iml
+*.ipr
+*.iws
+.classpath
+.project
+.settings/
+allure-results/
+allure-report/
+test-output/
+playwright-report/

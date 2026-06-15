@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="EaseMyTrade Playwright Suite" verbose="2" parallel="false">
+
+    <listeners>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+    </listeners>
+
+    <test name="Navigation Tests" preserve-order="true">
+        <classes>
+            <class name="com.easemytrade.tests.NavigationTest"/>
+        </classes>
+    </test>
+
+    <test name="Home Page Tests" preserve-order="true">
+        <classes>
+            <class name="com.easemytrade.tests.HomePageTest"/>
+        </classes>
+    </test>
+
+    <test name="Login Page Tests" preserve-order="true">
+        <classes>
+            <class name="com.easemytrade.tests.LoginPageTest"/>
+        </classes>
+    </test>
+
+    <test name="Signal Logic Tests" preserve-order="true">
+        <classes>
+            <class name="com.easemytrade.tests.SignalLogicTest"/>
+        </classes>
+    </test>
+
+    <test name="Expert View Tests" preserve-order="true">
+        <classes>
+            <class name="com.easemytrade.tests.ExpertViewTest"/>
+        </classes>
+    </test>
+
+    <test name="Index Page Tests" preserve-order="true">
+        <classes>
+            <class name="com.easemytrade.tests.IndexPageTest"/>
+        </classes>
+    </test>
+
+    <test name="Content Pages Tests" preserve-order="true">
+        <classes>
+            <class name="com.easemytrade.tests.ContentPagesTest"/>
+        </classes>
+    </test>
+
+</suite>
