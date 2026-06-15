@@ -20,7 +20,7 @@ env:
 jobs:
   test:
     name: "Playwright Tests · chromium"
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     timeout-minutes: 60
     permissions:
       contents: write   # needed for gh-pages push
@@ -84,7 +84,7 @@ jobs:
           CI.Run.Actor=${{ github.actor }}
           CI.Branch=${{ github.ref_name }}
           CI.Commit=${{ github.sha }}
-          Playwright.Version=1.44.0
+          Playwright.Version=1.47.0
           TestNG.Version=7.9.0
           Allure.Version=2.27.0
           EOF
@@ -228,7 +228,7 @@ jobs:
 # ──────────────────────────────────────────────────────────────────────────────
   cross-browser:
     name: "Cross-browser · ${{ matrix.browser }}"
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     timeout-minutes: 60
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     strategy:

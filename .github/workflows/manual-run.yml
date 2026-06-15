@@ -61,7 +61,7 @@ env:
 jobs:
   run-tests:
     name: "${{ github.event.inputs.suite }} · ${{ github.event.inputs.browser }}"
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     timeout-minutes: 60
     permissions:
       contents: write
@@ -152,7 +152,7 @@ jobs:
           OS=Ubuntu (GitHub Actions)
           Run.Number=${{ github.run_number }}
           Triggered.By=${{ github.actor }}
-          Playwright.Version=1.44.0
+          Playwright.Version=1.47.0
           TestNG.Version=7.9.0
           EOF
 
