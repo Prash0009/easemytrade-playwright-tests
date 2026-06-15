@@ -1,0 +1,359 @@
+name: "🚀 Run Tests — Manual"
+
+# ─── Only trigger from the GitHub UI "Run workflow" button ───────────────────
+on:
+  workflow_dispatch:
+    inputs:
+
+      suite:
+        description: "Which test suite to run?"
+        required: true
+        default: "All suites"
+        type: choice
+        options:
+          - "All suites"
+          - "Navigation"
+          - "Home Page"
+          - "Login Page"
+          - "Signal Logic"
+          - "Expert View"
+          - "Index Pages"
+          - "Content Pages"
+
+      browser:
+        description: "Browser"
+        required: true
+        default: "chromium"
+        type: choice
+        options:
+          - chromium
+          - firefox
+          - webkit
+
+      environment:
+        description: "Target environment"
+        required: true
+        default: "Production (easemytrade.in)"
+        type: choice
+        options:
+          - "Production (easemytrade.in)"
+          - "Custom URL (fill field below)"
+
+      custom_url:
+        description: "Custom URL — only used when environment = Custom URL"
+        required: false
+        default: "https://easemytrade.in"
+        type: string
+
+      headless:
+        description: "Run browser headless?"
+        required: false
+        default: true
+        type: boolean
+
+# ─── Computed env so steps don't repeat the ternary logic ────────────────────
+env:
+  JAVA_VERSION: "17"
+  SUITE:    ${{ github.event.inputs.suite }}
+  BROWSER:  ${{ github.event.inputs.browser }}
+  HEADLESS: ${{ github.event.inputs.headless }}
+
+jobs:
+  run-tests:
+    name: "${{ github.event.inputs.suite }} · ${{ github.event.inputs.browser }}"
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: write
+      pages: write
+
+    steps:
+
+      # ── 1  Resolve the target URL ──────────────────────────────────────────
+      - name: Resolve target URL
+        id: url
+        run: |
+          if [ "${{ github.event.inputs.environment }}" = "Production (easemytrade.in)" ]; then
+            echo "value=https://easemytrade.in" >> "$GITHUB_OUTPUT"
+          else
+            RAW="${{ github.event.inputs.custom_url }}"
+            CLEAN="${RAW%/}"          # strip trailing slash
+            echo "value=${CLEAN:-https://easemytrade.in}" >> "$GITHUB_OUTPUT"
+          fi
+
+      # ── 2  Resolve the TestNG suite XML path ──────────────────────────────
+      - name: Resolve TestNG suite file
+        id: suite
+        run: |
+          case "${{ github.event.inputs.suite }}" in
+            "Navigation")    F="navigation"     ;;
+            "Home Page")     F="home"           ;;
+            "Login Page")    F="login"          ;;
+            "Signal Logic")  F="signal-logic"   ;;
+            "Expert View")   F="expert-view"    ;;
+            "Index Pages")   F="index"          ;;
+            "Content Pages") F="content"        ;;
+            *)               F="all"            ;;
+          esac
+          echo "key=${F}" >> "$GITHUB_OUTPUT"
+
+      # ── 3  Checkout ────────────────────────────────────────────────────────
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # ── 4  Java ───────────────────────────────────────────────────────────
+      - name: Set up JDK ${{ env.JAVA_VERSION }}
+        uses: actions/setup-java@v4
+        with:
+          java-version: ${{ env.JAVA_VERSION }}
+          distribution: temurin
+          cache: maven
+
+      # ── 5  Maven cache ────────────────────────────────────────────────────
+      - name: Restore Maven cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-maven-
+
+      # ── 6  Restore Allure history (trend graph) ───────────────────────────
+      - name: Restore Allure history
+        continue-on-error: true
+        run: |
+          git fetch origin gh-pages --depth=1 2>/dev/null || true
+          if git show-ref --quiet refs/remotes/origin/gh-pages; then
+            git checkout origin/gh-pages -- allure-history/ 2>/dev/null || true
+            if [ -d allure-history ]; then
+              mkdir -p target/allure-results/history
+              cp -r allure-history/. target/allure-results/history/
+              echo "✅ Allure history restored"
+            fi
+          fi
+
+      # ── 7  Install Playwright browser ─────────────────────────────────────
+      - name: Install Playwright — ${{ env.BROWSER }}
+        run: |
+          mvn -q exec:java \
+            -Dexec.mainClass=com.microsoft.playwright.CLI \
+            -Dexec.args="install --with-deps ${{ env.BROWSER }}"
+
+      # ── 8  Write Allure environment panel ────────────────────────────────
+      - name: Write allure environment.properties
+        run: |
+          mkdir -p target/allure-results
+          cat > target/allure-results/environment.properties <<EOF
+          Application=EaseMyTrade
+          Suite=${{ github.event.inputs.suite }}
+          Target.URL=${{ steps.url.outputs.value }}
+          Browser=${{ env.BROWSER }}
+          Headless=${{ env.HEADLESS }}
+          Java.Version=${{ env.JAVA_VERSION }}
+          OS=Ubuntu (GitHub Actions)
+          Run.Number=${{ github.run_number }}
+          Triggered.By=${{ github.actor }}
+          Playwright.Version=1.44.0
+          TestNG.Version=7.9.0
+          EOF
+
+      # ── 9  Copy failure categories config ────────────────────────────────
+      - name: Copy categories.json
+        run: cp src/test/resources/categories.json target/allure-results/categories.json
+
+      # ── 10  Build the suite XML on the fly (if not "All suites") ─────────
+      - name: Build suite XML
+        id: sxml
+        run: |
+          SUITE_KEY="${{ steps.suite.outputs.key }}"
+          if [ "$SUITE_KEY" = "all" ]; then
+            echo "file=src/test/resources/testng.xml" >> "$GITHUB_OUTPUT"
+            echo "ℹ️  Running full testng.xml"
+          else
+            # Map suite key → test name as declared in testng.xml
+            case "$SUITE_KEY" in
+              navigation)   TNAME="Navigation Tests"   ;;
+              home)         TNAME="Home Page Tests"    ;;
+              login)        TNAME="Login Page Tests"   ;;
+              signal-logic) TNAME="Signal Logic Tests" ;;
+              expert-view)  TNAME="Expert View Tests"  ;;
+              index)        TNAME="Index Page Tests"   ;;
+              content)      TNAME="Content Pages Tests";;
+            esac
+
+            # Write a single-suite XML
+            TMPXML="target/suite-manual.xml"
+            mkdir -p target
+            cat > "$TMPXML" <<XMLEOF
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+          <suite name="EaseMyTrade Manual Run — ${TNAME}" verbose="2">
+            <listeners>
+              <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+            </listeners>
+            <test name="${TNAME}" preserve-order="true">
+              <classes>
+          XMLEOF
+
+            case "$SUITE_KEY" in
+              navigation)   echo "      <class name=\"com.easemytrade.tests.NavigationTest\"/>"   >> "$TMPXML" ;;
+              home)         echo "      <class name=\"com.easemytrade.tests.HomePageTest\"/>"      >> "$TMPXML" ;;
+              login)        echo "      <class name=\"com.easemytrade.tests.LoginPageTest\"/>"     >> "$TMPXML" ;;
+              signal-logic) echo "      <class name=\"com.easemytrade.tests.SignalLogicTest\"/>"   >> "$TMPXML" ;;
+              expert-view)  echo "      <class name=\"com.easemytrade.tests.ExpertViewTest\"/>"    >> "$TMPXML" ;;
+              index)        echo "      <class name=\"com.easemytrade.tests.IndexPageTest\"/>"     >> "$TMPXML" ;;
+              content)      echo "      <class name=\"com.easemytrade.tests.ContentPagesTest\"/>"  >> "$TMPXML" ;;
+            esac
+
+            cat >> "$TMPXML" <<XMLEOF
+              </classes>
+            </test>
+          </suite>
+          XMLEOF
+            echo "file=${TMPXML}" >> "$GITHUB_OUTPUT"
+            echo "✅ Generated single-suite XML for: ${TNAME}"
+            cat "$TMPXML"
+          fi
+
+      # ── 11  Run tests ──────────────────────────────────────────────────────
+      - name: "Run tests — ${{ github.event.inputs.suite }} on ${{ env.BROWSER }}"
+        run: |
+          mvn test \
+            -Dsurefire.suiteXmlFiles="${{ steps.sxml.outputs.file }}" \
+            -Dapp.base.url="${{ steps.url.outputs.value }}" \
+            -Dbrowser="${{ env.BROWSER }}" \
+            -Dheadless="${{ env.HEADLESS }}" \
+            -Dmaven.test.failure.ignore=true \
+            2>&1 | tee target/maven-output.log
+        env:
+          APP_BASE_URL: ${{ steps.url.outputs.value }}
+
+      # ── 12  Generate Allure HTML report ───────────────────────────────────
+      - name: Generate Allure HTML report
+        if: always()
+        run: mvn -q allure:report
+
+      # ── 13  Persist Allure history ────────────────────────────────────────
+      - name: Persist Allure history for trend graph
+        if: always()
+        continue-on-error: true
+        run: |
+          if [ -d target/allure-report/history ]; then
+            mkdir -p allure-history
+            cp -r target/allure-report/history/. allure-history/
+          fi
+
+      # ── 14  Publish report to GitHub Pages ───────────────────────────────
+      - name: Publish Allure report → GitHub Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: target/allure-report
+          publish_branch: gh-pages
+          destination_dir: reports/${{ github.run_number }}
+          keep_files: true
+
+      # ── 15  Persist history on gh-pages ──────────────────────────────────
+      - name: Save history to gh-pages
+        if: always() && hashFiles('allure-history/*') != ''
+        continue-on-error: true
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: allure-history
+          destination_dir: allure-history
+          keep_files: true
+
+      # ── 16  Upload artifacts ──────────────────────────────────────────────
+      - name: Upload Allure HTML report (artifact)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: "report-${{ github.event.inputs.suite }}-${{ env.BROWSER }}-run${{ github.run_number }}"
+          path: target/allure-report/
+          retention-days: 30
+
+      - name: Upload raw Allure results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: "results-${{ github.event.inputs.suite }}-${{ env.BROWSER }}-run${{ github.run_number }}"
+          path: target/allure-results/
+          retention-days: 30
+
+      - name: Upload test logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: "logs-run${{ github.run_number }}"
+          path: target/test-logs/
+          retention-days: 14
+          if-no-files-found: ignore
+
+      # ── 17  Write job summary ─────────────────────────────────────────────
+      - name: Write job summary
+        if: always()
+        run: |
+          REPORT_URL="https://Prash0009.github.io/easemytrade-playwright-tests/reports/${{ github.run_number }}/index.html"
+
+          # ── Header ──
+          echo "# 🎯 EaseMyTrade Manual Test Run — #${{ github.run_number }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+
+          # ── Run info table ──
+          echo "| | |" >> "$GITHUB_STEP_SUMMARY"
+          echo "|---|---|" >> "$GITHUB_STEP_SUMMARY"
+          echo "| 📋 Suite | **${{ github.event.inputs.suite }}** |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| 🖥️ Browser | **${{ env.BROWSER }}** |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| 🌐 Target URL | ${{ steps.url.outputs.value }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| 👤 Triggered by | @${{ github.actor }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| 📅 Run number | #${{ github.run_number }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+
+          # ── TestNG results ──
+          if [ -f target/surefire-reports/testng-results.xml ]; then
+            TOTAL=$(grep -oP 'total="\K[0-9]+' target/surefire-reports/testng-results.xml | head -1)
+            PASSED=$(grep -oP 'passed="\K[0-9]+' target/surefire-reports/testng-results.xml | head -1)
+            FAILED=$(grep -oP 'failed="\K[0-9]+' target/surefire-reports/testng-results.xml | head -1)
+            SKIPPED=$(grep -oP 'skipped="\K[0-9]+' target/surefire-reports/testng-results.xml | head -1)
+
+            TOTAL=${TOTAL:-0}; PASSED=${PASSED:-0}
+            FAILED=${FAILED:-0}; SKIPPED=${SKIPPED:-0}
+
+            echo "## 📊 Results" >> "$GITHUB_STEP_SUMMARY"
+            echo "" >> "$GITHUB_STEP_SUMMARY"
+            echo "| ✅ Passed | ❌ Failed | ⏭️ Skipped | 📋 Total |" >> "$GITHUB_STEP_SUMMARY"
+            echo "|:---:|:---:|:---:|:---:|" >> "$GITHUB_STEP_SUMMARY"
+            echo "| **${PASSED}** | **${FAILED}** | **${SKIPPED}** | **${TOTAL}** |" >> "$GITHUB_STEP_SUMMARY"
+            echo "" >> "$GITHUB_STEP_SUMMARY"
+
+            if [ "$TOTAL" -gt 0 ]; then
+              RATE=$(echo "scale=1; ${PASSED} * 100 / ${TOTAL}" | bc)
+              if [ "${FAILED}" -eq 0 ]; then
+                BADGE="🟢"
+              elif [ "${FAILED}" -gt 5 ]; then
+                BADGE="🔴"
+              else
+                BADGE="🟡"
+              fi
+              echo "${BADGE} **Pass rate: ${RATE}%**" >> "$GITHUB_STEP_SUMMARY"
+              echo "" >> "$GITHUB_STEP_SUMMARY"
+            fi
+          else
+            echo "> ⚠️ TestNG result XML not found — tests may not have compiled or ran." >> "$GITHUB_STEP_SUMMARY"
+            echo "" >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+          # ── Report links ──
+          echo "## 📈 Your Report" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "### Option A — GitHub Pages (online, shareable)" >> "$GITHUB_STEP_SUMMARY"
+          echo "🔗 **[Open Allure Report](${REPORT_URL})**" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "> Link goes live ~60 seconds after the job finishes." >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "### Option B — Artifact download (offline)" >> "$GITHUB_STEP_SUMMARY"
+          echo "1. Scroll to **Artifacts** at the bottom of this page." >> "$GITHUB_STEP_SUMMARY"
+          echo "2. Download \`report-${{ github.event.inputs.suite }}-${{ env.BROWSER }}-run${{ github.run_number }}\`." >> "$GITHUB_STEP_SUMMARY"
+          echo "3. Unzip it and open \`index.html\` in any browser." >> "$GITHUB_STEP_SUMMARY"
