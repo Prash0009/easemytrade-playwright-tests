@@ -1,0 +1,11 @@
+com.microsoft.playwright.PlaywrightException: Error {
+  message='net::ERR_ABORTED at https://easemytrade.in/nifty/today/
+  name='Error
+  stack='Error: net::ERR_ABORTED at https://easemytrade.in/nifty/today/
+    at FrameSession._navigate (/tmp/playwright-java-5301436314946152348/package/lib/server/chromium/crPage.js:506:35)
+    at runNextTicks (node:internal/process/task_queues:60:5)
+    at process.processImmediate (node:internal/timers:454:9)
+    at async Frame._gotoAction (/tmp/playwright-java-5301436314946152348/package/lib/server/frames.js:535:28)
+}
+Call log:
+- navigating to "https://easemytrade.in/nifty/today/", waiting until "load"

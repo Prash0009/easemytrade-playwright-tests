@@ -1,0 +1,9 @@
+com.microsoft.playwright.PlaywrightException: Error {
+  message='net::ERR_ABORTED at https://easemytrade.in/news/
+  name='Error
+  stack='Error: net::ERR_ABORTED at https://easemytrade.in/news/
+    at FrameSession._navigate (/tmp/playwright-java-5301436314946152348/package/lib/server/chromium/crPage.js:506:35)
+    at async Frame._gotoAction (/tmp/playwright-java-5301436314946152348/package/lib/server/frames.js:535:28)
+}
+Call log:
+- navigating to "https://easemytrade.in/news/", waiting until "load"
