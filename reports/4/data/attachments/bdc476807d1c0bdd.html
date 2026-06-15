@@ -1,0 +1,252 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="EaseMyTrade is Prashant Kumar's educational market dashboard with Smart AI checks for NIFTY-led index analysis, derivatives context, macro cues, and risk review.">
+    <title>EaseMyTrade | NIFTY Market Overview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css?v=20260614-elegant-1">
+    <link rel="icon" href="/assets/easemytrade-logo.svg" type="image/svg+xml">
+  <script defer="" src="/_vercel/insights/script.js" data-easemytrade-analytics="true"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-KFQSGRLGGN" data-easemytrade-ga4="true"></script></head>
+  <body data-page="home">
+    <header class="site-header">
+      <a class="brand" href="/">
+        <img class="brand-logo" src="/assets/easemytrade-logo.svg" alt="" width="42" height="42">
+        <span>EaseMyTrade</span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="/#market-overview">Market Overview</a>
+        <details class="nav-dropdown">
+          <summary class="nav-dropdown-toggle">Indian Indices</summary>
+          <div class="nav-dropdown-menu">
+            <a href="/nifty/today/">NIFTY</a>
+            <a href="/indices/banknifty/">BANKNIFTY</a>
+            <a href="/indices/finnifty/">FINNIFTY</a>
+            <a href="/indices/sensex/">SENSEX</a>
+          </div>
+        </details>
+        <details class="nav-dropdown">
+          <summary class="nav-dropdown-toggle">Commodities</summary>
+          <div class="nav-dropdown-menu">
+            <a href="/commodities/gold/"><span class="menu-copy"><strong>Gold</strong><span class="menu-change" id="commodityGoldChange">Pending</span></span><span class="menu-rate" id="commodityGoldRate">--</span></a>
+            <a href="/commodities/silver/"><span class="menu-copy"><strong>Silver</strong><span class="menu-change" id="commoditySilverChange">Pending</span></span><span class="menu-rate" id="commoditySilverRate">--</span></a>
+            <a href="/commodities/crude-oil/"><span class="menu-copy"><strong>Crude Oil</strong><span class="menu-change" id="commodityCrudeChange">Pending</span></span><span class="menu-rate" id="commodityCrudeRate">--</span></a>
+            <a href="/commodities/natural-gas/"><span class="menu-copy"><strong>Natural Gas</strong><span class="menu-change" id="commodityGasChange">Pending</span></span><span class="menu-rate" id="commodityGasRate">--</span></a>
+          </div>
+        </details>
+        <a href="/news/">News</a>
+        <a href="/methodology/">Methodology</a>
+        <a href="/expert-view/">Expert View</a>
+        <a href="/telegram/">Telegram</a>
+        <a href="/contact/">Contact Us</a>
+        <div class="live-clock live-clock--nav" id="liveClock" aria-label="Current time in Indian Standard Time">
+          <span class="live-clock__label">IST</span>
+          <strong class="live-clock__time">01:53:16</strong>
+        </div>
+      </nav>
+      <div class="header-auth" id="headerAuth" aria-label="Signed-in user"></div>
+      <div class="header-tools">
+        <button class="refresh-button" id="refreshDataButton" type="button">Refresh Data</button>
+        <span class="refresh-status" id="refreshStatus" aria-live="polite">Market live data is being refreshed. Please wait.</span>
+      </div>
+    </header>
+    <div class="market-ticker" aria-label="Live market ticker">
+      <div class="market-ticker__track"></div>
+    </div>
+
+    <main>
+      <section class="hero-band">
+        <div class="hero-copy">
+          <p class="eyebrow" id="sessionLabel">Market Intelligence</p>
+          <h1>EaseMyTrade</h1>
+          <p class="lead">An educational market dashboard by Prashant Kumar, built for NIFTY-led index analysis, derivatives context, sector participation, volatility, and Smart AI-assisted pre-trade checks.</p>
+          <div class="hero-actions">
+            <a class="primary-action" href="/#market-overview">Open Market Overview</a>
+            <a class="secondary-action" href="/nifty/today/">Indian Indices</a>
+          </div>
+          <div class="hero-badges" aria-label="Feature highlights">
+            <span>Institutional-style market view</span>
+            <span>Smart AI-assisted checks</span>
+            <span>Educational platform</span>
+          </div>
+        </div>
+        <div class="hero-visual-stack">
+          <a class="feedback-banner" href="/contact/" aria-label="Contact us with feedback">
+            <span class="feedback-banner__track" aria-hidden="true">
+              <span class="feedback-banner__item">
+                We continue to improve EaseMyTrade every day. Your suggestions are always welcome. Please reach out by email or Telegram.
+              </span>
+              <span class="feedback-banner__item">
+                We continue to improve EaseMyTrade every day. Your suggestions are always welcome. Please reach out by email or Telegram.
+              </span>
+            </span>
+          </a>
+          <section class="signed-in-card" id="heroSignedInCard" hidden="">
+            <span class="signed-in-card__eyebrow">Signed in as</span>
+            <strong class="signed-in-card__name" id="heroSignedInName">User</strong>
+            <p class="signed-in-card__meta" id="heroSignedInMeta">Access role: VIEWER</p>
+            <button class="signed-in-card__action" id="heroSignedInSignOut" type="button">Sign out</button>
+          </section>
+          <div class="market-visual" aria-label="Market pulse chart">
+            <div class="terminal-shell">
+              <aside class="terminal-watchlist" aria-label="Watchlist">
+                <div class="watchlist-head">
+                  <span>Tracked instruments</span>
+                  <strong>Market Watch</strong>
+                </div>
+                <div class="watchlist-list">
+                  <a class="watch-row watch-row--active" href="/nifty/today/">
+                    <div class="watch-symbol">
+                      <strong>NIFTY 50</strong>
+                      <span>INDEX</span>
+                    </div>
+                    <div class="watch-change" id="heroWatchNiftyChange">--</div>
+                    <div class="watch-level" id="heroWatchNiftyLevel">--</div>
+                  </a>
+                  <a class="watch-row" href="/indices/banknifty/">
+                    <div class="watch-symbol">
+                      <strong>BANKNIFTY</strong>
+                      <span>INDEX</span>
+                    </div>
+                    <div class="watch-change" id="heroWatchBankChange">--</div>
+                    <div class="watch-level" id="heroWatchBankLevel">--</div>
+                  </a>
+                  <a class="watch-row" href="/indices/finnifty/">
+                    <div class="watch-symbol">
+                      <strong>FINNIFTY</strong>
+                      <span>INDEX</span>
+                    </div>
+                    <div class="watch-change" id="heroWatchFinChange">--</div>
+                    <div class="watch-level" id="heroWatchFinLevel">--</div>
+                  </a>
+                  <a class="watch-row" href="/indices/sensex/">
+                    <div class="watch-symbol">
+                      <strong>SENSEX</strong>
+                      <span>INDEX</span>
+                    </div>
+                    <div class="watch-change" id="heroWatchSensexChange">--</div>
+                    <div class="watch-level" id="heroWatchSensexLevel">--</div>
+                  </a>
+                  <a class="watch-row" href="/commodities/gold/">
+                    <div class="watch-symbol">
+                      <strong>GOLD</strong>
+                      <span>COMMODITY</span>
+                    </div>
+                    <div class="watch-change" id="heroWatchGoldChange">--</div>
+                    <div class="watch-level" id="heroWatchGoldLevel">--</div>
+                  </a>
+                </div>
+              </aside>
+              <section class="terminal-chart" aria-label="Live chart area">
+                <div class="chart-toolbar" aria-hidden="true">
+                  <span class="chip chip--symbol">NIFTY 50</span>
+                  <span class="chip">1 Min</span>
+                  <span class="chip">Chart</span>
+                  <span class="chip">Studies</span>
+                </div>
+                <div class="chart-header">
+                  <div>
+                    <strong id="heroChartTitle">NIFTY 50</strong>
+                    <p id="heroChartSubtitle">Live snapshot</p>
+                  </div>
+                  <div class="chart-price-block">
+                    <span>Spot</span>
+                    <strong id="heroNiftyLevel">--</strong>
+                    <em id="heroNiftyChange">--</em>
+                  </div>
+                </div>
+                <canvas id="pulseChart" width="760" height="420"></canvas>
+              </section>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-band soft-amber-band trade-spotlight-band" aria-labelledby="tradeSpotlightTitle">
+        <div class="section-heading">
+          <p class="eyebrow">Highlights</p>
+          <h2 id="tradeSpotlightTitle">Previous Completed Trades</h2>
+          <p class="lead section-lead">Expand any index with the plus sign to review every completed trade from that window. NIFTY opens first by default.</p>
+        </div>
+        <div id="tradeSpotlightGrid" class="trade-spotlight-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="content-band trading-zones-band">
+        <div class="section-heading">
+          <h2>Key Trading Zones</h2>
+          <p class="lead section-lead">Live support and resistance for major Indian indices.</p>
+        </div>
+        <div class="index-zone-grid">
+          <div class="zone-card">
+            <span>NIFTY</span>
+            <strong id="homeNiftyZoneLevel">--</strong>
+            <p id="homeNiftyZoneNote">NIFTY levels pending.</p>
+            <p class="zone-signal" id="homeNiftyZoneSignal">--</p>
+            <div class="zone-levels">
+              <div><em>Support</em><strong id="homeNiftyZoneSupport">--</strong></div>
+              <div><em>Resistance</em><strong id="homeNiftyZoneResistance">--</strong></div>
+            </div>
+          </div>
+          <div class="zone-card">
+            <span>BANK NIFTY</span>
+            <strong id="homeBankNiftyZoneLevel">--</strong>
+            <p id="homeBankNiftyZoneNote">BANKNIFTY levels pending.</p>
+            <p class="zone-signal" id="homeBankNiftyZoneSignal">--</p>
+            <div class="zone-levels">
+              <div><em>Support</em><strong id="homeBankNiftyZoneSupport">--</strong></div>
+              <div><em>Resistance</em><strong id="homeBankNiftyZoneResistance">--</strong></div>
+            </div>
+          </div>
+          <div class="zone-card">
+            <span>FINNIFTY</span>
+            <strong id="homeFinNiftyZoneLevel">--</strong>
+            <p id="homeFinNiftyZoneNote">FINNIFTY levels pending.</p>
+            <p class="zone-signal" id="homeFinNiftyZoneSignal">--</p>
+            <div class="zone-levels">
+              <div><em>Support</em><strong id="homeFinNiftyZoneSupport">--</strong></div>
+              <div><em>Resistance</em><strong id="homeFinNiftyZoneResistance">--</strong></div>
+            </div>
+          </div>
+          <div class="zone-card">
+            <span>SENSEX</span>
+            <strong id="homeSensexZoneLevel">--</strong>
+            <p id="homeSensexZoneNote">SENSEX levels pending.</p>
+            <p class="zone-signal" id="homeSensexZoneSignal">--</p>
+            <div class="zone-levels">
+              <div><em>Support</em><strong id="homeSensexZoneSupport">--</strong></div>
+              <div><em>Resistance</em><strong id="homeSensexZoneResistance">--</strong></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-band live-context-band soft-green-band" aria-labelledby="marketDriversTitle">
+        <div class="market-driver-panel" id="marketDriversPanel">
+          <div class="market-driver-copy">
+            <span id="marketDriversEyebrow">Live Context</span>
+            <strong id="marketDriversTitle">Market Drivers</strong>
+            <p id="marketDriversSummary">Market driver review will appear after the next refresh.</p>
+          </div>
+          <ul class="market-driver-list" id="marketDriversList"></ul>
+        </div>
+      </section>
+
+      <section class="content-band soft-blue-band">
+        <div class="section-heading">
+          <p class="eyebrow">Important</p>
+          <h2>Educational Purpose Only</h2>
+          <p class="lead section-lead">EaseMyTrade is an educational initiative owned and maintained by Prashant Kumar. It uses Smart AI checks to support disciplined pre-trade review, but the content is for information and training only and must not be treated as investment advice, solicitation, or a recommendation to trade any security or derivative.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>EaseMyTrade</span>
+      <a href="/disclaimer/">Disclaimer</a>
+    </footer>
+
+    <script src="/app.js?v=20260611-sync-1"></script>
+  
+
+</body></html>

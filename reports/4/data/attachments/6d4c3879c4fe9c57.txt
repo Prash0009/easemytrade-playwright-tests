@@ -1,0 +1,5 @@
+java.lang.AssertionError: [API status should be 200 or 304] 
+Expecting actual:
+  401
+to be in:
+  [200, 304]

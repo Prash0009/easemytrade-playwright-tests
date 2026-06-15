@@ -1,0 +1,6 @@
+java.lang.AssertionError: [Page title at https://easemytrade.in/methodology/ should contain 'Methodology'] 
+Expecting actual:
+  "EaseMyTrade | Sign In"
+to contain:
+  "Methodology"
+ (ignoring case)

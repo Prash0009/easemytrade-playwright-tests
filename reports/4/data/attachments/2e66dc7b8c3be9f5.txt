@@ -1,0 +1,2 @@
+org.opentest4j.AssertionFailedError: [Page at https://easemytrade.in/expert-view/ should have a footer] 
+Expecting value to be true but was false

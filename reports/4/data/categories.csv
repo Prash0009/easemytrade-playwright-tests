@@ -1,0 +1,8 @@
+"Category","FAILED","BROKEN","PASSED","SKIPPED","UNKNOWN"
+"Product defects","15","0","0","0","0"
+"🔴 Product Defects","9","0","0","0","0"
+"🔶 Navigation Failures","3","0","0","0","0"
+"🟡 Network / API Failures","1","0","0","0","0"
+"Test defects","0","14","0","0","0"
+"✅ Passed","0","0","69","0","0"
+"⚪ Skipped Tests","0","0","0","27","0"
