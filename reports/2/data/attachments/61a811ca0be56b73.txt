@@ -1,0 +1,18 @@
+com.microsoft.playwright.PlaywrightException: Error {
+  message='Execution context was destroyed, most likely because of a navigation
+  name='Error
+  stack='Error:Execution context was destroyed, most likely because of a navigation
+Error
+    at captureRawStack (/tmp/playwright-java-17432416883569591677/package/lib/utils/stackTrace.js:49:17)
+    at LongStandingScope._race (/tmp/playwright-java-17432416883569591677/package/lib/utils/manualPromise.js:91:52)
+    at LongStandingScope.race (/tmp/playwright-java-17432416883569591677/package/lib/utils/manualPromise.js:84:17)
+    at FrameExecutionContext._raceAgainstContextDestroyed (/tmp/playwright-java-17432416883569591677/package/lib/server/javascript.js:50:40)
+    at FrameExecutionContext.evaluateWithArguments (/tmp/playwright-java-17432416883569591677/package/lib/server/javascript.js:62:17)
+    at evaluateExpression (/tmp/playwright-java-17432416883569591677/package/lib/server/javascript.js:242:26)
+    at runNextTicks (node:internal/process/task_queues:60:5)
+    at process.processImmediate (node:internal/timers:454:9)
+    at async FrameDispatcher.title (/tmp/playwright-java-17432416883569591677/package/lib/server/dispatchers/frameDispatcher.js:269:14)
+    at async LongStandingScope._race (/tmp/playwright-java-17432416883569591677/package/lib/utils/manualPromise.js:96:14)
+    at async FrameDispatcher._handleCommand (/tmp/playwright-java-17432416883569591677/package/lib/server/dispatchers/dispatcher.js:96:14)
+    at async DispatcherConnection.dispatch (/tmp/playwright-java-17432416883569591677/package/lib/server/dispatchers/dispatcher.js:361:22)
+}

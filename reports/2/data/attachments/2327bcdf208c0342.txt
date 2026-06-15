@@ -1,0 +1,6 @@
+java.lang.AssertionError: [Page title at https://easemytrade.in/telegram/ should contain 'Telegram'] 
+Expecting actual:
+  "EaseMyTrade | Sign In"
+to contain:
+  "Telegram"
+ (ignoring case)

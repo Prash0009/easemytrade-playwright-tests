@@ -1,0 +1,2 @@
+org.opentest4j.AssertionFailedError: [Trade spotlight grid visible] 
+Expecting value to be true but was false

@@ -1,0 +1,2 @@
+org.opentest4j.AssertionFailedError: [Methodology page should discuss signal/indicator concepts] 
+Expecting value to be true but was false
