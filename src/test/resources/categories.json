@@ -1,0 +1,40 @@
+[
+  {
+    "name": "🔴 Product Defects",
+    "matchedStatuses": ["failed"],
+    "messageRegex": ".*(AssertionError|assertion|expected|but was).*"
+  },
+  {
+    "name": "🟠 Signal Logic Failures",
+    "matchedStatuses": ["failed"],
+    "messageRegex": ".*(support|resistance|R:R|risk.reward|confidence|signal state|Trade Signal|stop.loss|target).*"
+  },
+  {
+    "name": "🟡 Network / API Failures",
+    "matchedStatuses": ["failed"],
+    "messageRegex": ".*(TimeoutError|net::ERR|API status|404|500|503|connection refused).*"
+  },
+  {
+    "name": "🔵 Expert View Failures",
+    "matchedStatuses": ["failed"],
+    "messageRegex": ".*(Expert View|analysis card|report|Best Pick|confidence meter|recommendation).*"
+  },
+  {
+    "name": "⚪ Skipped Tests",
+    "matchedStatuses": ["skipped"]
+  },
+  {
+    "name": "✅ Passed",
+    "matchedStatuses": ["passed"]
+  },
+  {
+    "name": "🔶 Navigation Failures",
+    "matchedStatuses": ["failed"],
+    "messageRegex": ".*(navigate|href|url|title|redirect|404).*"
+  },
+  {
+    "name": "⚫ Infrastructure / Playwright Errors",
+    "matchedStatuses": ["broken"],
+    "messageRegex": ".*(PlaywrightException|BrowserException|TargetClosedError|NullPointer|ClassNotFound).*"
+  }
+]
