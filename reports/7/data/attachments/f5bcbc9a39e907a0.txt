@@ -1,0 +1,2 @@
+org.opentest4j.AssertionFailedError: [Brand logo visible on NIFTY] 
+Expecting value to be true but was false

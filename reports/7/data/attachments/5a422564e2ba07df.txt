@@ -1,0 +1,17 @@
+com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 30000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 30000ms exceeded.
+    at ProgressController.run (/tmp/playwright-java-16039561139997446322/package/lib/server/progress.js:78:26)
+    at Frame.click (/tmp/playwright-java-16039561139997446322/package/lib/server/frames.js:1013:23)
+    at FrameDispatcher.click (/tmp/playwright-java-16039561139997446322/package/lib/server/dispatchers/frameDispatcher.js:157:30)
+    at FrameDispatcher._handleCommand (/tmp/playwright-java-16039561139997446322/package/lib/server/dispatchers/dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (/tmp/playwright-java-16039561139997446322/package/lib/server/dispatchers/dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("#expertViewBestButton")
+-   locator resolved to <button type="button" id="expertViewBestButton" title="Scan NIFTY 50 and open the next ranked best pick" class="secondary-action expert-view-search__submit expert-view-search__secondary">↵              Best Pick↵            </button>
+- attempting click action
+-   waiting for element to be visible, enabled and stable
+-   element is visible, enabled and stable
+-   scrolling into view if needed
