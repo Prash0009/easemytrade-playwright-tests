@@ -193,10 +193,22 @@ public class BaseTest {
     /**
      * Pages such as commodities, indices, expert-view, news, and methodology are
      * gated by a temporary-unlock window (see data/page_access.json on the site).
-     * When that window is closed, the auth guard redirects to /login/ — expected
-     * behavior, not a product defect. Skip the test rather than failing it.
+     * The gate is enforced client-side: the static HTML always loads first, then
+     * app.js's guardProtectedPageAccess() fires an async probe and, if locked,
+     * sets window.location.href to /login/. That redirect can still be in
+     * flight right after waitForLoadState() resolves, so give it a short window
+     * to settle before deciding whether the page is actually locked. When that
+     * window is closed and the guard does redirect, it's expected behavior, not
+     * a product defect — skip the test rather than failing it.
      */
     protected void skipIfRedirectedToLogin(String featureName) {
+        if (!isOnLoginPage()) {
+            try {
+                page.waitForURL("**/login/**", new Page.WaitForURLOptions().setTimeout(2000));
+            } catch (PlaywrightException ignored) {
+                // No redirect within the window — the page is genuinely unlocked.
+            }
+        }
         if (isOnLoginPage()) {
             throw new SkipException(featureName
                     + " is currently behind the login gate (page-access unlock window is closed) — not a failure.");
