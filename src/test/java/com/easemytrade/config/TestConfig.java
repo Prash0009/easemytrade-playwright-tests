@@ -9,6 +9,22 @@ public class TestConfig {
     public static final int NAVIGATION_TIMEOUT_MS = 60_000;
     public static final int SLOW_RESOURCE_TIMEOUT_MS = 120_000;
 
+    // Test viewer account — used to authenticate before hitting pages gated by
+    // the temporary-unlock window (see data/page_access.json on the site), so
+    // those tests exercise real content instead of skipping when locked.
+    // Sourced from a system property first (-Dtest.username=...), then the
+    // environment (TEST_VIEWER_USERNAME / TEST_VIEWER_PASSWORD as a CI secret).
+    // Left blank, login is skipped and gated-page tests fall back to skipping.
+    public static final String TEST_USERNAME = resolveCredential("test.username", "TEST_VIEWER_USERNAME");
+    public static final String TEST_PASSWORD = resolveCredential("test.password", "TEST_VIEWER_PASSWORD");
+
+    private static String resolveCredential(String systemProperty, String envVar) {
+        String value = System.getProperty(systemProperty);
+        if (value != null && !value.isBlank()) return value;
+        value = System.getenv(envVar);
+        return value != null ? value : "";
+    }
+
     // Page URLs
     public static final String HOME_URL = BASE_URL + "/";
     public static final String LOGIN_URL = BASE_URL + "/login/";

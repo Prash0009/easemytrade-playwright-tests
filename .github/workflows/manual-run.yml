@@ -226,6 +226,8 @@ jobs:
             2>&1 | tee target/maven-output.log
         env:
           APP_BASE_URL: ${{ steps.url.outputs.value }}
+          TEST_VIEWER_USERNAME: ${{ secrets.TEST_VIEWER_USERNAME }}
+          TEST_VIEWER_PASSWORD: ${{ secrets.TEST_VIEWER_PASSWORD }}
 
       # ── 12  Generate Allure HTML report ───────────────────────────────────
       - name: Generate Allure HTML report

@@ -108,6 +108,8 @@ jobs:
             2>&1 | tee target/maven-output.log
         env:
           APP_BASE_URL: ${{ env.APP_BASE_URL }}
+          TEST_VIEWER_USERNAME: ${{ secrets.TEST_VIEWER_USERNAME }}
+          TEST_VIEWER_PASSWORD: ${{ secrets.TEST_VIEWER_PASSWORD }}
 
       # ── 9. Generate Allure HTML report ────────────────────────────────────────
       - name: Generate Allure HTML report
@@ -272,6 +274,9 @@ jobs:
             -Dbrowser="${{ matrix.browser }}" \
             -Dheadless=true \
             -Dmaven.test.failure.ignore=true
+        env:
+          TEST_VIEWER_USERNAME: ${{ secrets.TEST_VIEWER_USERNAME }}
+          TEST_VIEWER_PASSWORD: ${{ secrets.TEST_VIEWER_PASSWORD }}
 
       - name: Upload results — ${{ matrix.browser }}
         if: always()

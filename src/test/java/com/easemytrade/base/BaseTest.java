@@ -4,6 +4,9 @@ import com.easemytrade.config.TestConfig;
 import com.easemytrade.utils.AllureAttachmentHelper;
 import com.microsoft.playwright.*;
 import com.microsoft.playwright.options.ColorScheme;
+import com.microsoft.playwright.options.Cookie;
+import com.microsoft.playwright.options.RequestOptions;
+import com.microsoft.playwright.options.SameSiteAttribute;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Step;
 import org.slf4j.Logger;
@@ -14,6 +17,8 @@ import org.testng.annotations.*;
 
 import java.time.Duration;
 import java.time.Instant;
+import java.util.List;
+import java.util.Map;
 
 public class BaseTest {
 
@@ -21,6 +26,7 @@ public class BaseTest {
 
     protected static Playwright playwright;
     protected static Browser browser;
+    private static Cookie sessionCookie;
     protected BrowserContext context;
     protected Page page;
 
@@ -48,6 +54,56 @@ public class BaseTest {
         };
         log.info("✅ Browser launched: {} v{}",
                 browser.browserType().name(), browser.version());
+
+        sessionCookie = loginAsTestViewer();
+    }
+
+    /**
+     * Logs in with the configured test-viewer account (TestConfig.TEST_USERNAME /
+     * TEST_PASSWORD) so protected pages can be exercised even when the site's
+     * temporary-unlock window is closed, instead of falling back to a skip.
+     * Returns null (and protected-page tests keep skipping on lock) if no
+     * credentials are configured or the login attempt fails.
+     */
+    private Cookie loginAsTestViewer() {
+        if (TestConfig.TEST_USERNAME.isBlank() || TestConfig.TEST_PASSWORD.isBlank()) {
+            log.info("No test credentials configured (TEST_VIEWER_USERNAME/TEST_VIEWER_PASSWORD) — "
+                    + "protected pages will be skipped if the unlock window is closed.");
+            return null;
+        }
+        APIRequestContext api = playwright.request().newContext();
+        try {
+            APIResponse response = api.post(TestConfig.BASE_URL + "/api/auth/login/",
+                    RequestOptions.create().setData(Map.of(
+                            "username", TestConfig.TEST_USERNAME,
+                            "password", TestConfig.TEST_PASSWORD)));
+
+            if (response.status() != 200) {
+                log.warn("Test-viewer login failed (status {}) — protected pages will be skipped if locked.",
+                        response.status());
+                return null;
+            }
+
+            String setCookieHeader = response.headers().get("set-cookie");
+            if (setCookieHeader == null || !setCookieHeader.contains("emt_session=")) {
+                log.warn("Test-viewer login succeeded but no session cookie was returned.");
+                return null;
+            }
+
+            String token = setCookieHeader.split(";", 2)[0].split("=", 2)[1];
+            log.info("✅ Logged in as test-viewer account — protected pages will be exercised, not skipped.");
+            return new Cookie("emt_session", token)
+                    .setDomain(".easemytrade.in")
+                    .setPath("/")
+                    .setHttpOnly(true)
+                    .setSecure(true)
+                    .setSameSite(SameSiteAttribute.LAX);
+        } catch (Exception e) {
+            log.warn("Test-viewer login failed: {} — protected pages will be skipped if locked.", e.getMessage());
+            return null;
+        } finally {
+            api.dispose();
+        }
     }
 
     // ── Test lifecycle ─────────────────────────────────────────────────────────
@@ -67,6 +123,11 @@ public class BaseTest {
 
         context.setDefaultTimeout(TestConfig.DEFAULT_TIMEOUT_MS);
         context.setDefaultNavigationTimeout(TestConfig.NAVIGATION_TIMEOUT_MS);
+
+        if (sessionCookie != null) {
+            context.addCookies(List.of(sessionCookie));
+        }
+
         page = context.newPage();
 
         // Verbose page-level event listeners
