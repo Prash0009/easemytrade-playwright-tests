@@ -204,6 +204,7 @@ public class ExpertViewTest extends BaseTest {
             return;
         }
 
+        waitUntil(expertViewPage::isDashboardVisible, 60_000);
         assertThat(expertViewPage.isDashboardVisible())
                 .as("Dashboard band should be visible after scan").isTrue();
 
@@ -286,6 +287,7 @@ public class ExpertViewTest extends BaseTest {
             return;
         }
 
+        waitUntil(expertViewPage::areSystemsVisible, 60_000);
         assertThat(expertViewPage.areSystemsVisible()).as("AI Systems section should be visible after scan").isTrue();
         int robotCount = expertViewPage.robotCards().count();
         log.info("Robot card count: {}", robotCount);
@@ -305,6 +307,7 @@ public class ExpertViewTest extends BaseTest {
             return;
         }
 
+        waitUntil(() -> page.locator("#expertViewReport").innerHTML().length() > 500, 60_000);
         String reportHtml = page.locator("#expertViewReport").innerHTML();
         AllureAttachmentHelper.attachText("Report HTML Length", String.valueOf(reportHtml.length()));
 

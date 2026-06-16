@@ -124,7 +124,7 @@ public class BaseTest {
         context.setDefaultTimeout(TestConfig.DEFAULT_TIMEOUT_MS);
         context.setDefaultNavigationTimeout(TestConfig.NAVIGATION_TIMEOUT_MS);
 
-        if (sessionCookie != null) {
+        if (sessionCookie != null && useAuthenticatedSession()) {
             context.addCookies(List.of(sessionCookie));
         }
 
@@ -273,6 +273,49 @@ public class BaseTest {
         if (isOnLoginPage()) {
             throw new SkipException(featureName
                     + " is currently behind the login gate (page-access unlock window is closed) — not a failure.");
+        }
+    }
+
+    /**
+     * Override and return false in test classes that need to exercise the
+     * logged-out experience (e.g. LoginPageTest) — being pre-authenticated
+     * would change how those pages behave (the login screen itself looks
+     * different, or auto-redirects away, when a valid session is present).
+     */
+    protected boolean useAuthenticatedSession() {
+        return true;
+    }
+
+    /**
+     * Drops the authenticated session for the rest of this test so the next
+     * navigateTo() sees the page as a logged-out visitor would — needed when
+     * a test that's normally authenticated also needs to visit the login page
+     * itself partway through (e.g. a loop over several URLs). Call
+     * restoreAuthenticatedSession() afterward if later navigations in the
+     * same test still need to be authenticated.
+     */
+    protected void dropAuthenticatedSession() {
+        context.clearCookies();
+    }
+
+    /** Re-adds the test-viewer session cookie after dropAuthenticatedSession(). */
+    protected void restoreAuthenticatedSession() {
+        if (sessionCookie != null) {
+            context.addCookies(List.of(sessionCookie));
+        }
+    }
+
+    /**
+     * Polls {@code condition} until it returns true or {@code timeoutMs} elapses.
+     * Some async UI updates (e.g. the Expert View dashboard/AI-systems sections
+     * unhiding after a scan) finish rendering well after the report's first
+     * analysis card appears, so a single instant check can read stale state.
+     */
+    protected void waitUntil(java.util.function.BooleanSupplier condition, int timeoutMs) {
+        long deadline = System.currentTimeMillis() + timeoutMs;
+        while (System.currentTimeMillis() < deadline) {
+            if (condition.getAsBoolean()) return;
+            page.waitForTimeout(500);
         }
     }
 

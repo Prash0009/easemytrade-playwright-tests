@@ -32,6 +32,9 @@ public class NavigationTest extends BaseTest {
     @Story("Page Load")
     @Severity(SeverityLevel.CRITICAL)
     public void testPublicPageLoads(String url, String titleKeyword, String bodyPageAttr) {
+        if (url.equals(TestConfig.LOGIN_URL)) {
+            dropAuthenticatedSession();
+        }
         navigateTo(url);
         if (!"Sign In".equals(titleKeyword)) {
             skipIfRedirectedToLogin(titleKeyword);
@@ -218,6 +221,9 @@ public class NavigationTest extends BaseTest {
         };
 
         for (String[] p : pagesToCheck) {
+            if (p[0].equals(TestConfig.LOGIN_URL)) {
+                dropAuthenticatedSession();
+            }
             navigateTo(p[0]);
             if (!p[0].equals(TestConfig.LOGIN_URL) && isOnLoginPage()) {
                 log.info("Skipping title check for {} — currently behind login gate", p[0]);

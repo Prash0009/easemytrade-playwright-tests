@@ -165,10 +165,16 @@ public class ContentPagesTest extends BaseTest {
 
         StringBuilder report = new StringBuilder();
         for (String url : urls) {
+            if (url.equals(TestConfig.LOGIN_URL)) {
+                dropAuthenticatedSession();
+            }
             navigateTo(url);
             if (!url.equals(TestConfig.LOGIN_URL) && isOnLoginPage()) {
                 log.info("Skipping title check for {} — currently behind login gate", url);
                 continue;
+            }
+            if (url.equals(TestConfig.LOGIN_URL)) {
+                restoreAuthenticatedSession();
             }
             String title = page.title();
             report.append(url).append(" => ").append(title).append("\n");

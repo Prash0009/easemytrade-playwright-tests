@@ -16,6 +16,13 @@ public class LoginPageTest extends BaseTest {
 
     private LoginPage loginPage;
 
+    // This suite specifically exercises the logged-out login experience —
+    // an injected test-viewer session would change how /login/ behaves.
+    @Override
+    protected boolean useAuthenticatedSession() {
+        return false;
+    }
+
     @BeforeMethod
     public void openLoginPage() {
         navigateTo(TestConfig.LOGIN_URL);
