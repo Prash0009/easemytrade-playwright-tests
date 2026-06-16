@@ -1,0 +1,6 @@
+java.lang.AssertionError: [Page title at https://easemytrade.in/news/ should contain 'News'] 
+Expecting actual:
+  "AI Market Intelligence | EaseMyTrade"
+to contain:
+  "News"
+ (ignoring case)

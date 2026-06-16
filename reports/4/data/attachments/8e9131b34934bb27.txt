@@ -1,0 +1,14 @@
+Market Overview => /#market-overview
+ => /nifty/today/
+ => /indices/banknifty/
+ => /indices/finnifty/
+ => /indices/sensex/
+ => /commodities/gold/
+ => /commodities/silver/
+ => /commodities/crude-oil/
+ => /commodities/natural-gas/
+News => /news/
+Methodology => /methodology/
+Expert View => /expert-view/
+Telegram => /telegram/
+Contact Us => /contact/
