@@ -5,6 +5,8 @@ import com.easemytrade.config.TestConfig;
 import com.easemytrade.pages.HomePage;
 import com.easemytrade.utils.AllureAttachmentHelper;
 import com.easemytrade.utils.SignalParser;
+import com.microsoft.playwright.Locator;
+import com.microsoft.playwright.options.WaitForSelectorState;
 import io.qameta.allure.*;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -39,7 +41,8 @@ public class HomePageTest extends BaseTest {
     @Story("Page Load")
     @Severity(SeverityLevel.CRITICAL)
     public void testHomePageUrl() {
-        assertThat(homePage.getUrl()).startsWith(TestConfig.BASE_URL);
+        // easemytrade.in redirects to www.easemytrade.in
+        assertThat(homePage.getUrl()).contains("easemytrade.in");
     }
 
     @Test(description = "Header navigation is visible with all links")
@@ -214,6 +217,17 @@ public class HomePageTest extends BaseTest {
     @Severity(SeverityLevel.NORMAL)
     public void testCompletedTradesSection() {
         assertThat(homePage.tradeSpotlightSection().isVisible()).as("Trade spotlight section visible").isTrue();
+        // The grid is populated asynchronously from /api/live-market (with a
+        // /data/market.json fallback) after page load, so it can briefly have
+        // zero children — and therefore zero height — right after navigation.
+        // Wait for it to actually render instead of checking visibility instantly.
+        try {
+            homePage.tradeSpotlightGrid().waitFor(new Locator.WaitForOptions()
+                    .setState(WaitForSelectorState.VISIBLE)
+                    .setTimeout(TestConfig.SLOW_RESOURCE_TIMEOUT_MS));
+        } catch (Exception ignored) {
+            // fall through to the assertion below for a clear failure message
+        }
         assertThat(homePage.tradeSpotlightGrid().isVisible()).as("Trade spotlight grid visible").isTrue();
         takeScreenshot("Completed Trades Spotlight");
     }

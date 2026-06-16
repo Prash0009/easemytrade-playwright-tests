@@ -19,7 +19,7 @@ public class NavigationTest extends BaseTest {
                 {TestConfig.HOME_URL, "EaseMyTrade", "home"},
                 {TestConfig.LOGIN_URL, "Sign In", "login"},
                 {TestConfig.EXPERT_VIEW_URL, "Expert View", "expert-view"},
-                {TestConfig.NEWS_URL, "News", ""},
+                {TestConfig.NEWS_URL, "AI Market Intelligence", ""},
                 {TestConfig.METHODOLOGY_URL, "Methodology", ""},
                 {TestConfig.TELEGRAM_URL, "Telegram", ""},
                 {TestConfig.CONTACT_URL, "Contact", ""},

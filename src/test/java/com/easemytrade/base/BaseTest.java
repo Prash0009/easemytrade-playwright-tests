@@ -137,13 +137,32 @@ public class BaseTest {
     protected void navigateTo(String url) {
         log.debug("  NAV → {}", url);
         Instant start = Instant.now();
-        page.navigate(url);
+        navigateWithRetry(url);
         long ms = Duration.between(start, Instant.now()).toMillis();
         String title = titleWithRetry();
         log.debug("  NAV ✓ loaded in {}ms — title: '{}'", ms, title);
         AllureAttachmentHelper.addPageInfo(url, title);
         Allure.parameter("Page Title", title);
         Allure.parameter("Load Time (ms)", ms);
+    }
+
+    /**
+     * page.navigate() can throw "net::ERR_ABORTED" when a prior in-flight
+     * navigation (e.g. the previous test's redirect still resolving) is
+     * cancelled by the new request. Retry briefly instead of failing.
+     */
+    private void navigateWithRetry(String url) {
+        PlaywrightException lastError = null;
+        for (int attempt = 0; attempt < 3; attempt++) {
+            try {
+                page.navigate(url);
+                return;
+            } catch (PlaywrightException e) {
+                lastError = e;
+                page.waitForTimeout(400);
+            }
+        }
+        throw lastError;
     }
 
     /**
