@@ -1,0 +1,5 @@
+java.lang.AssertionError: [Report HTML should have substantive content (>500 chars)] 
+Expecting actual:
+  306
+to be greater than:
+  500

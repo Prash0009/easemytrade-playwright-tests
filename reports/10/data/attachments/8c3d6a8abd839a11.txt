@@ -1,0 +1,6 @@
+java.lang.AssertionError: [Page title at https://easemytrade.in/login/ should contain 'Sign In'] 
+Expecting actual:
+  "EaseMyTrade | NIFTY Market Overview"
+to contain:
+  "Sign In"
+ (ignoring case)

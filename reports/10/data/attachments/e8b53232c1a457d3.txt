@@ -1,0 +1,2 @@
+org.opentest4j.AssertionFailedError: [Dashboard band should be visible after scan] 
+Expecting value to be true but was false
