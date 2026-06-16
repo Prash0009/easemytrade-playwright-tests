@@ -1,0 +1,6 @@
+java.lang.AssertionError: [Page title at https://easemytrade.in/expert-view/ should contain 'Expert View'] 
+Expecting actual:
+  "EaseMyTrade | Sign In"
+to contain:
+  "Expert View"
+ (ignoring case)

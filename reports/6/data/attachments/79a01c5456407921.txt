@@ -1,0 +1,5 @@
+java.lang.AssertionError: [Should have at least 5 example chips] 
+Expecting actual:
+  0
+to be greater than or equal to:
+  5

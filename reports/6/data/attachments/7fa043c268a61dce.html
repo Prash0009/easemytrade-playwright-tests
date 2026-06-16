@@ -1,0 +1,411 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="EaseMyTrade secure sign-in.">
+    <title>EaseMyTrade | Sign In</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css?v=20260612-wealth-2">
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #0c1016;
+        --panel: rgba(18, 23, 31, 0.92);
+        --panel-border: rgba(196, 167, 121, 0.18);
+        --text: #ede3d2;
+        --muted: #96a5b8;
+        --accent: #e3c891;
+        --accent-strong: #ffd98b;
+        --error: #ff8f87;
+        --success: #8cd19b;
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; min-height: 100%; }
+      body {
+        min-height: 100vh;
+        font-family: "IBM Plex Sans", system-ui, sans-serif;
+        background:
+          radial-gradient(circle at top, rgba(122, 94, 51, 0.18), transparent 34%),
+          linear-gradient(180deg, #0f131a 0%, #090c11 100%);
+        color: var(--text);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+        padding: 24px;
+      }
+      .login-shell {
+        position: relative;
+        width: min(100%, 620px);
+        margin: auto 0;
+        border: 1px solid var(--panel-border);
+        background: var(--panel);
+        border-radius: 26px;
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+        padding: clamp(22px, 3.4vw, 34px);
+        overflow: hidden;
+      }
+      .login-shell::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background:
+          linear-gradient(135deg, rgba(227, 200, 145, 0.08), transparent 36%),
+          radial-gradient(circle at 18% 0%, rgba(255, 217, 139, 0.08), transparent 22%);
+        pointer-events: none;
+      }
+      .brand {
+        position: relative;
+        z-index: 1;
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--text);
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 1.08rem;
+        letter-spacing: 0.01em;
+      }
+      .brand img { width: 38px; height: 38px; }
+      .hero {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        gap: 10px;
+        margin-top: 20px;
+      }
+      .hero h1 {
+        margin: 0;
+        font-size: clamp(1.8rem, 2.6vw, 2.55rem);
+        line-height: 1.08;
+      }
+      .hero p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.98rem;
+        line-height: 1.6;
+        max-width: 52ch;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-top: 22px;
+        position: relative;
+        z-index: 1;
+      }
+      .panel {
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 20px;
+        background: rgba(10, 14, 20, 0.76);
+        padding: 20px;
+        backdrop-filter: blur(14px);
+      }
+      .panel h2 {
+        margin: 0 0 8px;
+        font-size: 0.98rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+      .panel p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+      .form {
+        display: grid;
+        gap: 12px;
+      }
+      label {
+        display: grid;
+        gap: 7px;
+        font-size: 0.9rem;
+        color: var(--accent);
+        font-weight: 600;
+      }
+      .password-field {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 10px;
+        align-items: center;
+      }
+      input {
+        width: 100%;
+        padding: 14px 16px;
+        border-radius: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.10);
+        background: rgba(255, 255, 255, 0.03);
+        color: var(--text);
+        font: inherit;
+        outline: none;
+      }
+      input:focus {
+        border-color: rgba(227, 201, 145, 0.55);
+        box-shadow: 0 0 0 3px rgba(227, 201, 145, 0.12);
+      }
+      .toggle-password {
+        min-width: 86px;
+        border-radius: 14px;
+        padding: 12px 14px;
+        border: 1px solid rgba(255, 255, 255, 0.10);
+        background: rgba(255, 255, 255, 0.04);
+        color: var(--text);
+        font-weight: 700;
+      }
+      .field-help {
+        font-size: 0.84rem;
+        color: #a8b4c4;
+        line-height: 1.45;
+      }
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+        margin-top: 4px;
+      }
+      button {
+        border: 0;
+        border-radius: 999px;
+        padding: 12px 18px;
+        font: inherit;
+        font-weight: 700;
+        cursor: pointer;
+      }
+      .primary {
+        background: linear-gradient(180deg, #f1d79e 0%, #caa768 100%);
+        color: #11161d;
+      }
+      .secondary {
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--text);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+      .status {
+        min-height: 22px;
+        font-size: 0.96rem;
+        color: var(--muted);
+      }
+      .status.is-error { color: var(--error); }
+      .status.is-success { color: var(--success); }
+    </style>
+  <script defer="" src="/_vercel/insights/script.js" data-easemytrade-analytics="true"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-KFQSGRLGGN" data-easemytrade-ga4="true"></script></head>
+  <body data-page="login">
+    <main class="login-shell">
+      <a class="brand" href="/">
+        <img src="/assets/easemytrade-logo.svg" alt="">
+        <span>EaseMyTrade</span>
+      </a>
+
+      <section class="hero">
+        <h1>Secure access for protected market sections</h1>
+        <p>Sign in with your user ID and password to open the protected market pages. Sessions are private, role-based, and kept intentionally simple.</p>
+      </section>
+
+      <div class="grid">
+        <section class="panel">
+          <h2>Sign In</h2>
+          <form id="loginForm" class="form" novalidate="">
+            <label>
+              User ID
+              <input id="username" name="username" autocomplete="username" required="" style="">
+            </label>
+            <label>
+              Password
+              <div class="password-field">
+                <input id="password" name="password" type="password" autocomplete="current-password" required="" style="">
+                <button id="togglePassword" class="toggle-password" type="button" aria-pressed="false">Show</button>
+              </div>
+              <span class="field-help">Use the toggle to reveal or hide the password while typing.</span>
+            </label>
+            <div class="actions">
+              <button class="primary" type="submit">Sign in</button>
+              <button id="logoutButton" class="secondary" type="button">Sign out</button>
+            </div>
+            <div id="status" class="status" aria-live="polite"></div>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <script src="/app.js?v=20260611-sync-1"></script>
+    <script>
+      const statusEl = document.getElementById("status");
+      const form = document.getElementById("loginForm");
+      const logoutButton = document.getElementById("logoutButton");
+      const passwordInput = document.getElementById("password");
+      const togglePassword = document.getElementById("togglePassword");
+      const nextPath = new URLSearchParams(window.location.search).get("next") || "/";
+      const reason = new URLSearchParams(window.location.search).get("reason") || "";
+      const failedAttemptsKey = "emt_login_failed_attempts";
+      const loginCooldownUntilKey = "emt_login_cooldown_until";
+      const loginTimeoutMs = 120000;
+      const loginCooldownMs = 60000;
+      const maxFailedAttempts = 4;
+      const usernameInput = document.getElementById("username");
+      const submitButton = form.querySelector('button[type="submit"]');
+      const loginControls = [usernameInput, passwordInput, togglePassword, submitButton].filter(Boolean);
+      let cooldownTimer = null;
+
+      const setLoginControlsDisabled = (disabled) => {
+        loginControls.forEach((control) => {
+          control.disabled = disabled;
+        });
+      };
+
+      const getCooldownUntil = () => Number(sessionStorage.getItem(loginCooldownUntilKey) || "0");
+      const clearCooldown = () => {
+        sessionStorage.removeItem(loginCooldownUntilKey);
+      };
+      const setCooldown = (until) => {
+        sessionStorage.setItem(loginCooldownUntilKey, String(until));
+      };
+      const stopCooldownTimer = () => {
+        if (cooldownTimer) {
+          window.clearInterval(cooldownTimer);
+          cooldownTimer = null;
+        }
+      };
+      const refreshCooldownState = () => {
+        const until = getCooldownUntil();
+        if (!until) {
+          stopCooldownTimer();
+          setLoginControlsDisabled(false);
+          return false;
+        }
+
+        const remainingMs = until - Date.now();
+        if (remainingMs <= 0) {
+          clearCooldown();
+          sessionStorage.removeItem(failedAttemptsKey);
+          stopCooldownTimer();
+          setLoginControlsDisabled(false);
+          setStatus("You can try signing in again.", "is-success");
+          return false;
+        }
+
+        const remainingSeconds = Math.max(1, Math.ceil(remainingMs / 1000));
+        setLoginControlsDisabled(true);
+        setStatus(`Too many failed attempts. Try again in ${remainingSeconds} second${remainingSeconds === 1 ? "" : "s"}.`, "is-error");
+        if (!cooldownTimer) {
+          cooldownTimer = window.setInterval(refreshCooldownState, 1000);
+        }
+        return true;
+      };
+      const redirectHome = (message) => {
+        if (message) setStatus(message, "is-error");
+        window.setTimeout(() => {
+          window.location.href = "/";
+        }, 1200);
+      };
+      const loginTimeout = window.setTimeout(() => {
+        redirectHome("Session timed out. Returning to the homepage.");
+      }, loginTimeoutMs);
+
+      const setStatus = (message, tone = "") => {
+        statusEl.textContent = message;
+        statusEl.className = `status ${tone}`.trim();
+      };
+
+      refreshCooldownState();
+
+      const sanitizeNext = (value) => {
+        const next = String(value || "").trim();
+        if (!next || !next.startsWith("/") || next.startsWith("//")) return "/";
+        return next;
+      };
+
+      const goNext = (value) => {
+        window.location.href = sanitizeNext(value);
+      };
+
+      usernameInput.focus();
+
+      togglePassword.addEventListener("click", () => {
+        if (passwordInput.disabled) return;
+        const isPassword = passwordInput.type === "password";
+        passwordInput.type = isPassword ? "text" : "password";
+        togglePassword.textContent = isPassword ? "Hide" : "Show";
+        togglePassword.setAttribute("aria-pressed", String(isPassword));
+      });
+
+      if (reason === "forbidden") {
+        setStatus("Your current account does not have access to that section. Please sign in with a higher-role account.", "is-error");
+      }
+
+      fetch("/api/auth/me", { cache: "no-store" })
+        .then(async (response) => {
+          if (!response.ok) return null;
+          return response.json();
+        })
+        .then((payload) => {
+          if (!payload?.authenticated) return;
+          window.clearTimeout(loginTimeout);
+          sessionStorage.removeItem(failedAttemptsKey);
+          const user = payload.user || {};
+          setStatus(`Signed in as ${user.name || user.username || "user"} (${String(user.role || "").toUpperCase()})`, "is-success");
+          goNext(nextPath);
+        })
+        .catch(() => {});
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const username = document.getElementById("username").value.trim();
+        const password = document.getElementById("password").value;
+
+        if (!username || !password) {
+          setStatus("Enter both your user ID and password.", "is-error");
+          return;
+        }
+
+        setStatus("Signing you in...", "");
+
+        try {
+          const response = await fetch("/api/auth/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ username, password, next: nextPath }),
+          });
+
+          const data = await response.json().catch(() => ({}));
+          if (!response.ok) {
+            const attempts = Number(sessionStorage.getItem(failedAttemptsKey) || "0") + 1;
+            sessionStorage.setItem(failedAttemptsKey, String(attempts));
+            setStatus(data.error || "Unable to sign in.", "is-error");
+            if (attempts >= maxFailedAttempts) {
+              const until = Date.now() + loginCooldownMs;
+              setCooldown(until);
+              sessionStorage.removeItem(failedAttemptsKey);
+              refreshCooldownState();
+            }
+            return;
+          }
+
+          clearCooldown();
+          window.clearTimeout(loginTimeout);
+          sessionStorage.removeItem(failedAttemptsKey);
+          setStatus(`Signed in successfully as ${data.user?.name || data.user?.username || username}.`, "is-success");
+          goNext(data.next || nextPath || "/");
+        } catch (error) {
+          setStatus("Unable to reach the sign-in service.", "is-error");
+        }
+      });
+
+      logoutButton.addEventListener("click", async () => {
+        try {
+          await fetch("/api/auth/logout", { method: "POST" });
+          setStatus("Signed out.", "is-success");
+          clearCooldown();
+          sessionStorage.removeItem(failedAttemptsKey);
+          window.location.href = "/login/";
+        } catch {
+          setStatus("Unable to sign out right now.", "is-error");
+        }
+      });
+    </script>
+  
+
+</body></html>

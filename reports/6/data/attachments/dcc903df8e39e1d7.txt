@@ -1,0 +1,17 @@
+java.lang.AssertionError: 
+Expecting actual:
+  "easemytrade
+secure access for protected market sections
+
+sign in with your user id and password to open the protected market pages. sessions are private, role-based, and kept intentionally simple.
+
+sign in
+user id
+password
+show
+use the toggle to reveal or hide the password while typing.
+sign in
+sign out"
+to contain:
+  "sensex"
+ (ignoring case)

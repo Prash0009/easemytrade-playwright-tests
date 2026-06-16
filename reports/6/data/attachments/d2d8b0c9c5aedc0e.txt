@@ -1,0 +1,6 @@
+java.lang.AssertionError: 
+Expecting actual:
+  "EaseMyTrade | Sign In"
+to contain:
+  "Expert View"
+ (ignoring case)
