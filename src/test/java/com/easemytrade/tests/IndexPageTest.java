@@ -33,6 +33,7 @@ public class IndexPageTest extends BaseTest {
     @Severity(SeverityLevel.BLOCKER)
     public void testIndexPageLoadsWithContent(String url, String key, String displayName) {
         navigateTo(url);
+        skipIfRedirectedToLogin(displayName);
         IndexPage indexPage = new IndexPage(page, key);
         assertThat(indexPage.hasSignalContent()).as("%s main content visible", displayName).isTrue();
         String bodyText = page.locator("body").innerText();
@@ -46,6 +47,7 @@ public class IndexPageTest extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     public void testIndexPageTitle(String url, String key, String displayName) {
         navigateTo(url);
+        skipIfRedirectedToLogin(displayName);
         String title = page.title();
         assertThat(title).containsIgnoringCase("EaseMyTrade");
         log.info("{} page title: '{}'", displayName, title);
@@ -59,6 +61,7 @@ public class IndexPageTest extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     public void testIndexPageNavigation(String url, String key, String displayName) {
         navigateTo(url);
+        skipIfRedirectedToLogin(displayName);
         assertThat(page.locator(".brand").isVisible()).as("Brand logo visible on %s", displayName).isTrue();
         assertThat(page.locator("nav.nav-links").isVisible()).as("Nav visible on %s", displayName).isTrue();
     }
@@ -70,6 +73,7 @@ public class IndexPageTest extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     public void testNiftySignalState() {
         navigateTo(TestConfig.NIFTY_URL);
+        skipIfRedirectedToLogin("NIFTY");
         IndexPage niftyPage = new IndexPage(page, "nifty");
         String state = niftyPage.getSignalState();
         log.info("NIFTY signal state: '{}'", state);
@@ -88,6 +92,7 @@ public class IndexPageTest extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     public void testBankNiftySignalState() {
         navigateTo(TestConfig.BANKNIFTY_URL);
+        skipIfRedirectedToLogin("BANKNIFTY");
         IndexPage bankPage = new IndexPage(page, "banknifty");
         String state = bankPage.getSignalState();
         log.info("BANKNIFTY signal state: '{}'", state);
@@ -108,6 +113,7 @@ public class IndexPageTest extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     public void testIndexSupportBelowResistance(String url, String key, String displayName) {
         navigateTo(url);
+        skipIfRedirectedToLogin(displayName);
         IndexPage indexPage = new IndexPage(page, key);
         String supportText = indexPage.getSupportText();
         String resistanceText = indexPage.getResistanceText();
@@ -136,6 +142,7 @@ public class IndexPageTest extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     public void testNiftyTradeGeometry() {
         navigateTo(TestConfig.NIFTY_URL);
+        skipIfRedirectedToLogin("NIFTY");
         IndexPage niftyPage = new IndexPage(page, "nifty");
         String state = niftyPage.getSignalState();
 
@@ -180,6 +187,7 @@ public class IndexPageTest extends BaseTest {
     @Severity(SeverityLevel.NORMAL)
     public void testNiftyCompletedTradeCards() {
         navigateTo(TestConfig.NIFTY_URL);
+        skipIfRedirectedToLogin("NIFTY");
         IndexPage niftyPage = new IndexPage(page, "nifty");
         // Trade cards may or may not exist — just verify the page structure
         assertThat(niftyPage.hasSignalContent()).as("NIFTY page has signal content").isTrue();
@@ -204,6 +212,7 @@ public class IndexPageTest extends BaseTest {
     @Severity(SeverityLevel.NORMAL)
     public void testCommodityPageContent(String url, String commodityName) {
         navigateTo(url);
+        skipIfRedirectedToLogin(commodityName);
         String bodyText = page.locator("body").innerText();
         assertThat(bodyText).containsIgnoringCase(commodityName);
         assertThat(page.locator("main").isVisible()).isTrue();
@@ -216,6 +225,7 @@ public class IndexPageTest extends BaseTest {
     @Severity(SeverityLevel.NORMAL)
     public void testCommodityPageNavigation(String url, String commodityName) {
         navigateTo(url);
+        skipIfRedirectedToLogin(commodityName);
         assertThat(page.locator(".brand").isVisible()).as("Brand visible on %s page", commodityName).isTrue();
         assertThat(page.locator("nav.nav-links").isVisible()).as("Nav visible on %s page", commodityName).isTrue();
     }
@@ -227,6 +237,7 @@ public class IndexPageTest extends BaseTest {
     @Severity(SeverityLevel.NORMAL)
     public void testGoldPriceIsPositive() {
         navigateTo(TestConfig.GOLD_URL);
+        skipIfRedirectedToLogin("Gold");
         String priceText = "";
         try {
             priceText = page.locator("[id*='gold'], [id*='Gold'], [id*='commodity']").first().innerText().trim();

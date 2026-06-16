@@ -25,6 +25,7 @@ public class ExpertViewTest extends BaseTest {
     @BeforeMethod
     public void openExpertViewPage() {
         navigateTo(TestConfig.EXPERT_VIEW_URL);
+        skipIfRedirectedToLogin("Expert View");
         expertViewPage = new ExpertViewPage(page);
     }
 

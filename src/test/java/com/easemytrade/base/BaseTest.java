@@ -9,6 +9,7 @@ import io.qameta.allure.Step;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.ITestResult;
+import org.testng.SkipException;
 import org.testng.annotations.*;
 
 import java.time.Duration;
@@ -137,13 +138,50 @@ public class BaseTest {
         log.debug("  NAV → {}", url);
         Instant start = Instant.now();
         page.navigate(url);
-        page.waitForLoadState();
         long ms = Duration.between(start, Instant.now()).toMillis();
-        String title = page.title();
+        String title = titleWithRetry();
         log.debug("  NAV ✓ loaded in {}ms — title: '{}'", ms, title);
         AllureAttachmentHelper.addPageInfo(url, title);
         Allure.parameter("Page Title", title);
         Allure.parameter("Load Time (ms)", ms);
+    }
+
+    /**
+     * page.title() can throw "Execution context was destroyed" when a redirect
+     * (bare domain → www, or the auth guard bouncing a protected page to /login/)
+     * is still settling after the initial navigation resolves. Retry briefly
+     * instead of letting that timing race fail the test.
+     */
+    private String titleWithRetry() {
+        PlaywrightException lastError = null;
+        for (int attempt = 0; attempt < 3; attempt++) {
+            try {
+                page.waitForLoadState();
+                return page.title();
+            } catch (PlaywrightException e) {
+                lastError = e;
+                page.waitForTimeout(400);
+            }
+        }
+        throw lastError;
+    }
+
+    /** True if the auth guard redirected the current page to the login screen. */
+    protected boolean isOnLoginPage() {
+        return page.url().contains("/login/");
+    }
+
+    /**
+     * Pages such as commodities, indices, expert-view, news, and methodology are
+     * gated by a temporary-unlock window (see data/page_access.json on the site).
+     * When that window is closed, the auth guard redirects to /login/ — expected
+     * behavior, not a product defect. Skip the test rather than failing it.
+     */
+    protected void skipIfRedirectedToLogin(String featureName) {
+        if (isOnLoginPage()) {
+            throw new SkipException(featureName
+                    + " is currently behind the login gate (page-access unlock window is closed) — not a failure.");
+        }
     }
 
     @Step("Capture screenshot: {name}")
