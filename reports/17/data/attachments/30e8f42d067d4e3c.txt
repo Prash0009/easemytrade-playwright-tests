@@ -1,0 +1,2 @@
+Before: Enter a stock, ETF, or mutual fund to generate a report.
+After: Best Pick • NIFTY 50 • Showing 1/8 best stocks • Asian Paints Ltd. loaded • 18 Jun 2026 16:46 IST • 78%–92%

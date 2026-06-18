@@ -1,0 +1,471 @@
+<!DOCTYPE html><html lang="en" style="--site-header-height: 156px; --market-ticker-height: 42px; --site-chrome-offset: 198px;"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Expert View technical analysis terminal for NSE and BSE stocks, ETFs, and mutual funds.">
+    <title>Expert View | EaseMyTrade</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css?v=20260613-investment-hero-1">
+    <link rel="icon" href="/assets/easemytrade-logo.svg" type="image/svg+xml">
+  <script defer="" src="/_vercel/insights/script.js" data-easemytrade-analytics="true"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-KFQSGRLGGN" data-easemytrade-ga4="true"></script></head>
+  <body data-page="expert-view">
+    <div class="market-ticker" aria-label="Live market ticker">
+      <div class="market-ticker__track"><span class="market-ticker__item"><strong>NIFTY</strong><span class="market-ticker__value">24,168.00</span><em class="market-ticker__move is-up">+0.34%</em></span><span class="market-ticker__item"><strong>BANKNIFTY</strong><span class="market-ticker__value">57,963.80</span><em class="market-ticker__move is-up">+0.66%</em></span><span class="market-ticker__item"><strong>FINNIFTY</strong><span class="market-ticker__value">26,581.95</span><em class="market-ticker__move is-up">+0.67%</em></span><span class="market-ticker__item"><strong>SENSEX</strong><span class="market-ticker__value">77,409.98</span><em class="market-ticker__move is-up">+0.33%</em></span><span class="market-ticker__item"><strong>S&amp;P 500</strong><span class="market-ticker__value">7,420.10</span><em class="market-ticker__move is-down">-1.21%</em></span><span class="market-ticker__item"><strong>NASDAQ</strong><span class="market-ticker__value">26,021.66</span><em class="market-ticker__move is-down">-1.34%</em></span><span class="market-ticker__item"><strong>DOW JONES</strong><span class="market-ticker__value">51,492.55</span><em class="market-ticker__move is-down">-0.98%</em></span><span class="market-ticker__item"><strong>GOLD</strong><span class="market-ticker__value">4,269.20</span><em class="market-ticker__move is-down">-2.56%</em></span><span class="market-ticker__item"><strong>CRUDE</strong><span class="market-ticker__value">74.56</span><em class="market-ticker__move is-down">-1.91%</em></span><span class="market-ticker__item"><strong>NIFTY</strong><span class="market-ticker__value">24,168.00</span><em class="market-ticker__move is-up">+0.34%</em></span><span class="market-ticker__item"><strong>BANKNIFTY</strong><span class="market-ticker__value">57,963.80</span><em class="market-ticker__move is-up">+0.66%</em></span><span class="market-ticker__item"><strong>FINNIFTY</strong><span class="market-ticker__value">26,581.95</span><em class="market-ticker__move is-up">+0.67%</em></span><span class="market-ticker__item"><strong>SENSEX</strong><span class="market-ticker__value">77,409.98</span><em class="market-ticker__move is-up">+0.33%</em></span><span class="market-ticker__item"><strong>S&amp;P 500</strong><span class="market-ticker__value">7,420.10</span><em class="market-ticker__move is-down">-1.21%</em></span><span class="market-ticker__item"><strong>NASDAQ</strong><span class="market-ticker__value">26,021.66</span><em class="market-ticker__move is-down">-1.34%</em></span><span class="market-ticker__item"><strong>DOW JONES</strong><span class="market-ticker__value">51,492.55</span><em class="market-ticker__move is-down">-0.98%</em></span><span class="market-ticker__item"><strong>GOLD</strong><span class="market-ticker__value">4,269.20</span><em class="market-ticker__move is-down">-2.56%</em></span><span class="market-ticker__item"><strong>CRUDE</strong><span class="market-ticker__value">74.56</span><em class="market-ticker__move is-down">-1.91%</em></span></div>
+    </div><header class="site-header">
+      <a class="brand" href="/">
+        <img class="brand-logo" src="/assets/easemytrade-logo.svg" alt="" width="42" height="42">
+        <span>EaseMyTrade</span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="/#market-overview">Market Overview</a>
+        <details class="nav-dropdown">
+          <summary class="nav-dropdown-toggle">Indian Indices</summary>
+          <div class="nav-dropdown-menu">
+            <a href="/nifty/today/">NIFTY</a>
+            <a href="/indices/banknifty/">BANKNIFTY</a>
+            <a href="/indices/finnifty/">FINNIFTY</a>
+            <a href="/indices/sensex/">SENSEX</a>
+          </div>
+        </details>
+        <details class="nav-dropdown">
+          <summary class="nav-dropdown-toggle">Commodities</summary>
+          <div class="nav-dropdown-menu">
+            <a href="/commodities/gold/" data-rag-tone="down" class="rag-tinted"><span class="menu-copy"><strong>Gold</strong><span class="menu-change is-down" id="commodityGoldChange">-2.56%</span></span><span class="menu-rate" id="commodityGoldRate">4,269.20</span></a>
+            <a href="/commodities/silver/" data-rag-tone="down" class="rag-tinted"><span class="menu-copy"><strong>Silver</strong><span class="menu-change is-down" id="commoditySilverChange">-4.40%</span></span><span class="menu-rate" id="commoditySilverRate">67.65</span></a>
+            <a href="/commodities/crude-oil/" data-rag-tone="down" class="rag-tinted"><span class="menu-copy"><strong>Crude Oil</strong><span class="menu-change is-down" id="commodityCrudeChange">-1.91%</span></span><span class="menu-rate" id="commodityCrudeRate">74.56</span></a>
+            <a href="/commodities/natural-gas/" data-rag-tone="up" class="rag-tinted"><span class="menu-copy"><strong>Natural Gas</strong><span class="menu-change is-up" id="commodityGasChange">+0.16%</span></span><span class="menu-rate" id="commodityGasRate">3.15</span></a>
+          </div>
+        </details>
+        <a href="/news/">News</a>
+        <a href="/methodology/">Methodology</a>
+        <a href="/expert-view/" aria-current="page">Expert View</a>
+        <a href="/telegram/">Telegram</a>
+        <a href="/contact/">Contact Us</a>
+        <div class="live-clock live-clock--nav" id="liveClock" aria-label="Current time in Indian Standard Time">
+          <span class="live-clock__label">IST</span>
+          <strong class="live-clock__time">16:49:26</strong>
+        </div>
+      </nav>
+      <div class="header-auth" id="headerAuth" aria-label="Signed-in user"><div class="auth-user-chip" id="authUserBadge"><span class="auth-user-chip__label">Signed in as</span><strong class="auth-user-chip__name">Research Viewer</strong><button type="button" class="auth-user-chip__action">Sign out</button></div></div>
+      <div class="header-tools">
+        <button class="refresh-button" id="refreshDataButton" type="button">Refresh Data</button>
+        <span class="refresh-status" id="refreshStatus" aria-live="polite">Market Closed | Last session 2026-06-18 15:30 IST</span>
+      </div>
+    </header>
+    
+
+    <main class="expert-view-page">
+      <section class="expert-view-hero-shell">
+        <div class="expert-view-hero-copy">
+          <p class="eyebrow">Expert View</p>
+          <h1 style="max-width:none; white-space:nowrap; overflow-wrap:normal; font-size:clamp(1.5rem, 3vw, 3.05rem);">AI Market Analysis Terminal</h1>
+          <p class="lead">Search an NSE or BSE stock, Indian ETF, or mutual fund to generate a professional market study with projections and a final verdict.</p>
+
+          <form class="expert-view-search" id="expertViewForm" data-gtm-form-interact-id="0">
+            <label class="form-field expert-view-search__field" for="expertViewInput">
+              <span>Stock, ETF, or fund name</span>
+              <div class="expert-view-search__inputwrap">
+                <input id="expertViewInput" type="search" placeholder="Reliance, NIFTYBEES, GOLDBEES, Parag Parikh Flexi Cap Fund" autocomplete="off" spellcheck="false" data-gtm-form-interact-field-id="0" style="">
+                <button class="expert-view-voice" type="button" aria-label="Voice search coming soon" title="Voice search coming soon">
+                  <span class="expert-view-voice__icon" aria-hidden="true"></span>
+                </button>
+              </div>
+            </label>
+            <button class="primary-action expert-view-search__submit" type="submit">Generate Report</button>
+            <button class="secondary-action expert-view-search__submit expert-view-search__secondary" id="expertViewBestButton" type="button" title="Scan NIFTY 50 and open the next ranked best pick">
+              Best Pick
+            </button>
+          </form>
+
+          <div style="margin-top: 14px;">
+            <div class="form-field expert-view-universe-field">
+              <div class="expert-view-universe-row">
+                <details class="expert-view-universe-dropdown" id="expertViewUniverseDropdown">
+                  <summary class="expert-view-universe-summary" id="expertViewUniverseSummary" aria-haspopup="listbox" aria-controls="expertViewUniverseMenu" aria-expanded="false">
+                    <span id="expertViewUniverseSummaryText">NIFTY 50</span>
+                  </summary>
+                  <div class="expert-view-universe-menu" id="expertViewUniverseMenu" aria-label="Best pick universe options">
+                    <div class="expert-view-universe-group">
+                      <span class="expert-view-universe-group__label">Investment universes</span>
+                      <button class="expert-view-universe-option" type="button" data-expert-universe-option="mutualfunds" aria-selected="false">Mutual Funds</button>
+                      <button class="expert-view-universe-option" type="button" data-expert-universe-option="etfs" aria-selected="false">ETFs</button>
+                    </div>
+                    <div class="expert-view-universe-group">
+                      <span class="expert-view-universe-group__label">Index quick picks</span>
+                      <button class="expert-view-universe-option" type="button" data-expert-universe-option="all" aria-selected="false">All Indices</button>
+                      <button class="expert-view-universe-option" type="button" data-expert-universe-option="nifty50" aria-selected="true">NIFTY 50</button>
+                      <button class="expert-view-universe-option" type="button" data-expert-universe-option="next50" aria-selected="false">NIFTY Next 50</button>
+                      <button class="expert-view-universe-option" type="button" data-expert-universe-option="nifty100" aria-selected="false">NIFTY 100</button>
+                    </div>
+                    <div class="expert-view-universe-group">
+                      <span class="expert-view-universe-group__label">Broad market</span>
+                      <button class="expert-view-universe-option" type="button" data-expert-universe-option="niftysmallcap50" aria-selected="false">NIFTY SMALLCAP 50</button>
+                      <button class="expert-view-universe-option" type="button" data-expert-universe-option="niftymidcapselect" aria-selected="false">NIFTY MIDCAP SELECT</button>
+                      <button class="expert-view-universe-option" type="button" data-expert-universe-option="indiavix" aria-selected="false">INDIA VIX</button>
+                    </div>
+                    <div class="expert-view-universe-group">
+                      <span class="expert-view-universe-group__label">Sector indices</span>
+                      <button class="expert-view-universe-option" type="button" data-expert-universe-option="niftyfinancialservices" aria-selected="false">NIFTY FINANCIAL SERVICES</button>
+                      <button class="expert-view-universe-option" type="button" data-expert-universe-option="niftybank" aria-selected="false">NIFTY BANK</button>
+                      <button class="expert-view-universe-option" type="button" data-expert-universe-option="niftyauto" aria-selected="false">NIFTY AUTO</button>
+                      <button class="expert-view-universe-option" type="button" data-expert-universe-option="niftyfmcg" aria-selected="false">NIFTY FMCG</button>
+                      <button class="expert-view-universe-option" type="button" data-expert-universe-option="niftyit" aria-selected="false">NIFTY IT</button>
+                      <button class="expert-view-universe-option" type="button" data-expert-universe-option="niftymetal" aria-selected="false">NIFTY METAL</button>
+                      <button class="expert-view-universe-option" type="button" data-expert-universe-option="niftycommodities" aria-selected="false">NIFTY COMMODITIES</button>
+                      <button class="expert-view-universe-option" type="button" data-expert-universe-option="niftyenergy" aria-selected="false">NIFTY ENERGY</button>
+                      <button class="expert-view-universe-option" type="button" data-expert-universe-option="niftyservicessector" aria-selected="false">NIFTY SERVICES SECTOR</button>
+                    </div>
+                  </div>
+                </details>
+                <div class="expert-view-bestpick-nav" aria-label="Best pick navigation">
+                  <button class="secondary-action expert-view-bestpick-nav__button expert-view-bestpick-nav__button--prev" id="expertViewBestPrevButton" type="button" aria-label="Show the previous best pick" title="Show the previous ranked pick from NIFTY 50">
+                    ⏮
+                  </button>
+                  <button class="secondary-action expert-view-bestpick-nav__button expert-view-bestpick-nav__button--next" id="expertViewBestNextButton" type="button" aria-label="Show the next best pick" title="Show the next ranked pick from NIFTY 50">
+                    ⏭
+                  </button>
+                </div>
+            </div>
+            </div>
+          </div>
+
+          <div class="expert-view-status is-flat" id="expertViewStatus">Reliance Industries Limited loaded • 18 Jun 2026 16:47 IST • 46%–60%</div>
+
+          <div class="expert-view-examples" aria-label="Example tickers">
+            <button class="expert-view-chip" type="button" data-expert-example="Reliance">Reliance</button>
+            <button class="expert-view-chip" type="button" data-expert-example="TCS">TCS</button>
+            <button class="expert-view-chip" type="button" data-expert-example="HDFC Bank">HDFC Bank</button>
+            <button class="expert-view-chip" type="button" data-expert-example="INFY">INFY</button>
+            <button class="expert-view-chip" type="button" data-expert-example="SBIN">SBIN</button>
+          </div>
+          <div class="expert-view-hero-metrics" aria-label="Live expert metrics">
+            <article class="expert-view-hero-metric">
+              <span>AI Confidence</span>
+              <strong id="expertHeroConfidence">53%</strong>
+              <p id="expertHeroConfidenceNote">Weak • Swing Watch • 46%–60%</p>
+            </article>
+            <article class="expert-view-hero-metric">
+              <span>Trend Bias</span>
+              <strong id="expertHeroTrend">Sideways</strong>
+              <p id="expertHeroTrendNote">3.5/10 short-term strength</p>
+            </article>
+          <article class="expert-view-hero-metric">
+            <span>Trading Style</span>
+            <strong id="expertHeroStyle">Swing Watch</strong>
+            <p id="expertHeroStyleNote">Balanced higher-timeframe structure • Most profit window opens after confirmation.</p>
+          </article>
+          <article class="expert-view-hero-metric">
+            <span>Market Tone</span>
+            <strong id="expertHeroSentiment">Balanced / Wait</strong>
+            <p id="expertHeroSentimentNote">Mixed participation; price is not yet showing clean accumulation or distribution.</p>
+          </article>
+        </div>
+
+          <p class="expert-view-note">Blended technical, long-term, and market-context view. Confidence is calibrated from the latest daily price, NAV, volume, and category-quality signals.</p>
+        </div>
+      </section>
+
+      <section class="content-band expert-view-band expert-view-band--dashboard" id="expertViewDashboardBand">
+        <div class="expert-view-dashboard-grid">
+          <article class="expert-view-dashboard-card">
+            <span class="eyebrow">Confidence Meter</span>
+            <strong id="expertHeroConfidenceMeter">53%</strong>
+            <p id="expertHeroConfidenceCopy">Calibrated range 46%–60% • 24 recent lookbacks • fundamentals mixed.</p>
+            <div class="expert-view-meter">
+              <span class="expert-view-meter__fill" id="expertHeroConfidenceBar" style="width: 53%;"></span>
+            </div>
+          </article>
+          <article class="expert-view-dashboard-card">
+            <span class="eyebrow">Buy / Sell Bias</span>
+            <strong id="expertHeroBias">Balanced higher-timeframe structure</strong>
+            <p id="expertHeroBiasCopy">Daily close outside 1,243.29 to 1,385.35</p>
+          </article>
+          <article class="expert-view-dashboard-card">
+            <span class="eyebrow">AI Recommendation</span>
+            <strong id="expertHeroRecommendation">Weak</strong>
+            <p id="expertHeroRecommendationCopy">Momentum is mixed; Walk-forward calibration used 24 recent lookbacks from the latest price history. RBI is in focus and may influence intraday tone. The setup is still choppy, so confirmation is required before confidence can expand.</p>
+          </article>
+          <article class="expert-view-dashboard-card">
+            <span class="eyebrow">Short-Horizon Scope</span>
+            <strong id="expertHeroShortScope">1,308.72–1,347.48</strong>
+            <p id="expertHeroShortScopeCopy">Likely to stay range-bound until a decisive breakout forms.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-band expert-view-band">
+        <div class="expert-view-report" id="expertViewReport" aria-live="polite">
+      <section class="expert-view-section expert-view-section--diagram expert-view-master-diagram">
+        <div class="expert-view-master-diagram__head">
+          <div class="expert-view-master-diagram__headcopy">
+            <p class="eyebrow">Unified Diagram</p>
+            <h2>Stock, trend, fundamentals, price, confidence, prediction and verdict in one view</h2>
+            <p class="lead">Reliance Industries Limited • RELIANCE.NS • NSE • Blended technical, fundamental, and market-context view. Confidence is calibrated from the latest daily price, volume, and company-quality signals.</p>
+          </div>
+          <div class="expert-view-master-diagram__badge is-flat">
+            <span>Verdict</span>
+            <strong>Weak</strong>
+            <em>53% confidence</em>
+          </div>
+        </div>
+
+        <div class="expert-view-master-diagram__core ev-uni-grid">
+          <article class="ev-uni-card">
+            <span class="ev-uni-card__label">Stock &amp; Price</span>
+            <strong class="ev-uni-card__title">Reliance Industries Limited</strong>
+            <span class="ev-uni-card__meta">RELIANCE.NS • NSE</span>
+            <div class="ev-uni-price">
+              <strong>1,328.10</strong>
+              <span class="ev-uni-price__change is-down">-4.60 (-0.35%)</span>
+            </div>
+            <div class="ev-uni-tagrow">
+              <span class="ev-uni-tag is-flat">Sideways trend</span>
+              <span class="ev-uni-tag is-flat">Swing Watch</span>
+            </div>
+            <p class="ev-uni-note">Balanced higher-timeframe structure</p>
+          </article>
+
+          <article class="ev-uni-card">
+            <span class="ev-uni-card__label">Trend Strength</span>
+            <strong class="ev-uni-card__title is-flat">Sideways</strong>
+            <div class="ev-uni-trendbars">
+              
+      <div class="ev-uni-trendbar">
+        <span class="ev-uni-trendbar__label">1 Month</span>
+        <div class="ev-uni-trendbar__track"><span class="ev-uni-trendbar__fill is-flat" style="width:35%;"></span></div>
+        <span class="ev-uni-trendbar__value is-flat">Sideways • 3.5/10</span>
+      </div>
+    
+              
+      <div class="ev-uni-trendbar">
+        <span class="ev-uni-trendbar__label">3 Months</span>
+        <div class="ev-uni-trendbar__track"><span class="ev-uni-trendbar__fill is-flat" style="width:40%;"></span></div>
+        <span class="ev-uni-trendbar__value is-flat">Sideways • 4/10</span>
+      </div>
+    
+              
+      <div class="ev-uni-trendbar">
+        <span class="ev-uni-trendbar__label">6 Months</span>
+        <div class="ev-uni-trendbar__track"><span class="ev-uni-trendbar__fill is-flat" style="width:40%;"></span></div>
+        <span class="ev-uni-trendbar__value is-flat">Sideways • 4/10</span>
+      </div>
+    
+            </div>
+            <p class="ev-uni-note">Price is chopping without strong directional acceptance.</p>
+          </article>
+
+          <article class="ev-uni-card ev-uni-card--verdict is-flat">
+            <span class="ev-uni-card__label">Confidence &amp; Verdict</span>
+            <div class="ev-uni-verdict">
+              
+      <div class="ev-uni-dial is-flat" role="img" aria-label="Confidence 53 percent">
+        <svg viewBox="0 0 110 110" aria-hidden="true">
+          <circle class="ev-uni-dial__track" cx="55" cy="55" r="44"></circle>
+          <circle class="ev-uni-dial__fill" cx="55" cy="55" r="44" stroke-dasharray="146.5 276.5" transform="rotate(-90 55 55)"></circle>
+        </svg>
+        <div class="ev-uni-dial__text"><strong>53%</strong><span>confidence</span></div>
+      </div>
+    
+              <div class="ev-uni-verdict__copy">
+                <strong class="is-flat">Weak</strong>
+                <span>Likely range 46%–60%</span>
+                <div class="ev-uni-tagrow">
+                  <span class="ev-uni-tag is-flat">Flow • Balanced / Wait</span>
+                  <span class="ev-uni-tag is-flat">Swing Watch</span>
+                </div>
+              </div>
+            </div>
+            <p class="ev-uni-note">Momentum is mixed; Walk-forward calibration used 24 recent lookbacks from the latest price history. RBI is in focus and may influence intraday tone. The setup is still choppy, so confirmation is required before confidence can expand.</p>
+          </article>
+        </div>
+
+        <div class="expert-view-master-diagram__prediction-band">
+          <div class="section-heading">
+            <p class="eyebrow">AI Prediction</p>
+            <h2>Probable movement windows</h2>
+            <p class="lead">Momentum is mixed; Walk-forward calibration used 24 recent lookbacks from the latest price history. RBI is in focus and may influence intraday tone. The setup is still choppy, so confirmation is required before confidence can expand.</p>
+          </div>
+          <div class="expert-view-diagram-grid expert-view-diagram-grid--prediction expert-view-master-diagram__predictions">
+            
+    <article class="expert-view-diagram-card expert-view-master-diagram__prediction is-flat">
+      <div class="expert-view-diagram-card__head">
+        <div>
+          <span class="expert-view-diagram-card__label">Next 7 Days</span>
+          <strong>Range-bound</strong>
+        </div>
+        <span class="expert-view-pill is-flat">1,308.72–1,347.48</span>
+      </div>
+      <p>Likely to stay range-bound until a decisive breakout forms.</p>
+    </article>
+  
+    <article class="expert-view-diagram-card expert-view-master-diagram__prediction is-flat">
+      <div class="expert-view-diagram-card__head">
+        <div>
+          <span class="expert-view-diagram-card__label">Next 30 Days</span>
+          <strong>Range-bound</strong>
+        </div>
+        <span class="expert-view-pill is-flat">1,294.18–1,362.02</span>
+      </div>
+      <p>A wider consolidation band is more likely than a directional chase.</p>
+    </article>
+  
+    <article class="expert-view-diagram-card expert-view-master-diagram__prediction is-flat">
+      <div class="expert-view-diagram-card__head">
+        <div>
+          <span class="expert-view-diagram-card__label">Next 90 Days</span>
+          <strong>Range-bound</strong>
+        </div>
+        <span class="expert-view-pill is-flat">1,269.95–1,386.25</span>
+      </div>
+      <p>Longer-term range-building remains the base case.</p>
+    </article>
+  
+          </div>
+        </div>
+
+        <div class="expert-view-master-diagram__footer">
+          <div class="expert-view-master-diagram__note">
+            <span>Blended view</span>
+            <strong>Balanced higher-timeframe structure</strong>
+            <p>Blended technical, fundamental, and market-context view. Confidence is calibrated from the latest daily price, volume, and company-quality signals.</p>
+            <div class="expert-view-pill-row expert-view-master-diagram__meta-pills">
+              <span class="expert-view-pill is-flat">Entry Break above 1,343.80 or break below 1,316.70</span>
+              <span class="expert-view-pill is-down">Stop 1,352.33</span>
+              <span class="expert-view-pill is-up">T1 1,357.17</span>
+              <span class="expert-view-pill is-up">T2 1,381.40</span>
+              <span class="expert-view-pill is-flat">R/R 1.20 R</span>
+            </div>
+          </div>
+          <div class="expert-view-confidence expert-view-confidence--dial is-flat" style="--confidence:53;">
+            <span>53%</span>
+            <em>Swing Watch</em>
+          </div>
+        <div class="expert-view-master-diagram__flow">
+          <span>Sentiment</span>
+          <strong>Balanced / Wait</strong>
+          <p>Mixed participation; price is not yet showing clean accumulation or distribution. • Balanced higher-timeframe structure</p>
+          <div class="expert-view-pill-row expert-view-master-diagram__meta-pills">
+            <span class="expert-view-pill is-flat">Breakout 1,343.80</span>
+            <span class="expert-view-pill is-flat">Breakdown 1,316.70</span>
+              <span class="expert-view-pill is-flat">No major consolidation squeeze; price is still choosing direction.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section class="expert-view-section expert-view-section--diagram">
+        <div class="section-heading">
+          <p class="eyebrow">Why this score</p>
+          <h2>Historical calibration, fundamentals, invalidation, and penalty checks</h2>
+          <p class="lead">Momentum is mixed; Walk-forward calibration used 24 recent lookbacks from the latest price history. RBI is in focus and may influence intraday tone. The setup is still choppy, so confirmation is required before confidence can expand.</p>
+        </div>
+        <article class="expert-view-mini-card">
+          <strong>Score drivers</strong>
+          <ul style="margin:10px 0 0; padding-left:18px; display:grid; gap:8px;"><li>51-60% band has delivered 50% follow-through across 2 prior setups.</li><li>Fundamental data is limited, so the score leans more on price structure.</li><li>Bullish context has delivered 33% follow-through across 6 prior setups.</li><li>Event risk is active with RBI in focus, so confidence is trimmed.</li><li>The setup is still choppy, so confirmation is required before confidence can expand.</li><li>A close outside 1,243.29 / 1,385.35 would invalidate the sideways setup. (A break outside the range would invalidate the sideways setup and hand control to trend traders.)</li></ul>
+        </article>
+        <div class="expert-view-grid-2">
+          
+    <article class="expert-view-mini-card">
+      <strong>Historical Calibration</strong>
+      <p>51-60% band has delivered 50% follow-through across 2 prior setups.</p>
+      <p>Walk-forward calibration used 24 recent lookbacks from the latest price history.</p>
+      <div class="expert-view-pill-row"><span class="expert-view-pill is-flat">Band 51-60%</span><span class="expert-view-pill is-down">Context 33%</span><span class="expert-view-pill is-flat">Range 46%–60%</span><span class="expert-view-pill is-down">Shift -4</span></div>
+    </article>
+  
+          
+    <article class="expert-view-mini-card">
+      <strong>Fundamental Support</strong>
+      <p>Fundamental data is limited for this ticker, so the score leans more on price structure.</p>
+      <p>Fundamental data is limited, so the score leans more on price structure.</p>
+      <div class="expert-view-pill-row"><span class="expert-view-pill is-flat">Tone Mixed</span><span class="expert-view-pill is-flat">Score 48/100</span><span class="expert-view-pill is-flat">Growth +0.0% rev • +0.0% EPS</span><span class="expert-view-pill is-flat">Quality +0.0% margin • +0.0% ROE</span><span class="expert-view-pill is-flat">Leverage 0.00x debt</span></div>
+    </article>
+  
+          
+    <article class="expert-view-mini-card">
+      <strong>Setup Invalidation</strong>
+      <p>Daily close outside 1,243.29 to 1,385.35</p>
+      <p>A break outside the range would invalidate the sideways setup and hand control to trend traders.</p>
+      <div class="expert-view-pill-row"><span class="expert-view-pill is-flat">Level 1,243.29 / 1,385.35</span><span class="expert-view-pill is-flat">Distance 4.31%</span></div>
+    </article>
+  
+          
+    <article class="expert-view-mini-card">
+      <strong>Event Risk</strong>
+      <p>RBI is in focus and may influence intraday tone.</p>
+      <p>Status: Active</p>
+      <div class="expert-view-pill-row"><span class="expert-view-pill is-down">Penalty -3</span><span class="expert-view-pill is-down">Items RBI</span><span class="expert-view-pill is-flat">Context Mixed day</span></div>
+    </article>
+  
+          
+    <article class="expert-view-mini-card">
+      <strong>Signal Aging</strong>
+      <p>The setup is still choppy, so confirmation is required before confidence can expand.</p>
+      <p>Signal state: Mixed</p>
+      <div class="expert-view-pill-row"><span class="expert-view-pill is-down">Streak 0 sessions</span><span class="expert-view-pill is-down">Penalty -1</span><span class="expert-view-pill is-flat">EMA Gap 0.86%</span></div>
+    </article>
+  
+        </div>
+        <article class="expert-view-mini-card">
+          <strong>Counterargument</strong>
+          <p>Counterargument: Fundamental data is limited, so the score leans more on price structure. The setup is still choppy, so confirmation is required before confidence can expand. RBI is in focus and may influence intraday tone. Walk-forward calibration used 24 recent lookbacks from the latest price history.</p>
+        </article>
+      </section>
+    
+    </div>
+      </section>
+
+      <section class="content-band expert-view-band expert-view-systems-shell" id="expertViewSystemsShell">
+        <div class="section-heading">
+          <p class="eyebrow">AI Analysis Systems</p>
+          <h2>Five Trading Intelligence Robots</h2>
+        </div>
+        <div class="expert-view-robot-grid" id="expertViewSystems">
+    <article class="expert-view-robot-card is-flat">
+      <span class="expert-view-robot-card__badge">01</span>
+      <strong>Trend Analysis Robot</strong>
+      <p>Sideways • 4/10 strength</p>
+      <span class="expert-view-robot-card__foot">6M return -13.89%</span>
+    </article>
+  
+    <article class="expert-view-robot-card is-flat">
+      <span class="expert-view-robot-card__badge">02</span>
+      <strong>Risk Management Robot</strong>
+      <p>Entry / stop / target map</p>
+      <span class="expert-view-robot-card__foot">1.20 R • Swing Watch</span>
+    </article>
+  
+    <article class="expert-view-robot-card is-up">
+      <span class="expert-view-robot-card__badge">03</span>
+      <strong>Momentum Scanner Robot</strong>
+      <p>Short / medium / long momentum</p>
+      <span class="expert-view-robot-card__foot">ADX 36.8 • Volume 0.95</span>
+    </article>
+  
+    <article class="expert-view-robot-card is-flat">
+      <span class="expert-view-robot-card__badge">04</span>
+      <strong>Swing Trading Robot</strong>
+      <p>Entry Break above 1,343.80 or break below 1,316.70 / Stop 1,352.33</p>
+      <span class="expert-view-robot-card__foot">Targets 1,357.17 &amp; 1,381.40</span>
+    </article>
+  
+    <article class="expert-view-robot-card is-flat">
+      <span class="expert-view-robot-card__badge">05</span>
+      <strong>Sentiment Robot</strong>
+      <p>Mixed participation; price is not yet showing clean accumulation or distribution.</p>
+      <span class="expert-view-robot-card__foot">Balanced / Wait</span>
+    </article>
+  </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>EaseMyTrade</span>
+      <a href="/disclaimer/">Disclaimer</a>
+    </footer>
+
+    <script src="/app.js?v=20260617-4"></script>
+    <script src="/expert-view.js?v=20260613-investment-hero-1"></script>
+  
+
+</body></html>
