@@ -1,7 +1,7 @@
-# Java + Selenium Interview Prep Plan — Service Virtualization → Automation Test Lead
+# Java + Selenium + Playwright Interview Prep Plan — Service Virtualization → Automation Test Lead
 
-> A stage-wise, self-paced preparation roadmap to refresh **Core Java + Selenium**, rebuild
-> **framework/automation depth**, and layer in the **leadership, strategy, and stakeholder** skills
+> A stage-wise, self-paced preparation roadmap to refresh **Core Java + Selenium + Playwright**,
+> rebuild **framework/automation depth**, and layer in the **leadership, strategy, and stakeholder** skills
 > that distinguish a **Test Lead / Automation Lead** from an SDET. Built specifically for someone
 > with a strong **Service Virtualization (SV)** background pivoting into automation leadership.
 >
@@ -23,6 +23,7 @@
 4. [Stage 1 — Core Java Refresh](#stage-1--core-java-refresh)
 5. [Stage 2 — Java 8+ & Coding Fluency](#stage-2--java-8-coding-fluency)
 6. [Stage 3 — Selenium WebDriver Deep Dive](#stage-3--selenium-webdriver-deep-dive)
+6B. [Stage 3B — Playwright (Modern Browser Automation)](#stage-3b--playwright-modern-browser-automation)
 7. [Stage 4 — TestNG / JUnit & Assertions](#stage-4--testng--junit--assertions)
 8. [Stage 5 — Framework Design & Architecture](#stage-5--framework-design--architecture)
 9. [Stage 6 — API Automation + Leveraging Your SV Edge](#stage-6--api-automation--leveraging-your-sv-edge)
@@ -48,8 +49,9 @@ interview narrative matters as much as the technical recall. Lead with this fram
 > available — building and managing virtual services so functional, performance, and integration
 > testing never block on third-party or unstable dependencies. That gave me deep grounding in
 > APIs, protocols, test data, and environment strategy. I'm now consolidating that with hands-on
-> Java/Selenium automation and framework ownership, and I want to lead automation — setting test
-> strategy, building the framework, mentoring engineers, and owning quality end-to-end."
+> Java automation across Selenium and Playwright and framework ownership, and I want to lead
+> automation — setting test strategy, building the framework, mentoring engineers, and owning
+> quality end-to-end."
 
 **Why your SV background is a leadership asset (use these in answers):**
 
@@ -62,8 +64,8 @@ interview narrative matters as much as the technical recall. Lead with this fram
 | Performance/shift-left enablement | Lets you speak to **CI/CD, early testing, and quality gates**. |
 
 **Gaps to close honestly (and what this plan does about it):** hands-on Java fluency (Stages 1–2),
-Selenium internals & framework design (Stages 3–5), and the leadership/process vocabulary of a lead
-(Stages 9–10). Name these proactively in interviews — owning a gap reads as senior; hiding it reads
+Selenium & Playwright internals plus framework design (Stages 3–5), and the leadership/process
+vocabulary of a lead (Stages 9–10). Name these proactively in interviews — owning a gap reads as senior; hiding it reads
 as junior.
 
 **Roles you're targeting & what each weights:**
@@ -81,10 +83,14 @@ Find out which flavour you're interviewing for and shift emphasis accordingly.
 |---|---|---|---|
 | **1** | 0, 1 | Core Java foundations | A small Java program using OOP + collections + exceptions, explained aloud |
 | **2** | 2, 3 | Java 8 streams + Selenium core | 5 Selenium scripts (waits, frames, windows, actions, dropdowns) |
-| **3** | 3, 4 | Selenium advanced + TestNG | A TestNG suite with data providers, groups, parallel run |
+| **3** | 3B, 4 | Playwright + TestNG | Playwright suite (locators, auto-wait, API) + a TestNG suite with data providers, groups, parallel run |
 | **4** | 5, 6 | Framework design + API/SV | A POM + data-driven framework skeleton + 1 RestAssured test |
 | **5** | 7, 8, 9 | CI/CD + BDD + Lead strategy | Jenkins/GitHub Actions pipeline running the suite; a 1-page test strategy |
 | **6** | 10, 11 | Behavioral + mock interviews | 3 recorded mock interviews; STAR story bank of 8 stories |
+
+> **Selenium vs Playwright:** Learn the *concepts* once — they transfer 1:1 (locators, waits, POM,
+> parallel, CI, reporting). Lead with whichever the JD names; this repo's framework is **Playwright**,
+> so you have a live portfolio piece to point at. Be ready to compare the two (see Stage 3B).
 
 **Daily rhythm (≈2.5–3 hrs):** 60 min concept refresh → 60 min hands-on coding → 30 min answer
 practice (say answers out loud) → 15 min log what you learned. **Spaced repetition:** re-skim the
@@ -218,6 +224,72 @@ prior stage's checklist every Monday.
 - Scroll to footer with JavascriptExecutor; infinite-scroll page.
 
 **Prove it:** Explain why mixing implicit+explicit waits is dangerous, and write a robust explicit wait from memory.
+
+---
+
+## Stage 3B — Playwright (Modern Browser Automation)
+
+**Goal:** Be fluent in Playwright (Java) and able to **compare it to Selenium** convincingly — many
+modern QA roles now ask for it, and you have a live Playwright framework in *this very repo* to show.
+
+> **Use your assets:** [`PLAYWRIGHT_GUIDE.md`](PLAYWRIGHT_GUIDE.md) is your tutorial/cheatsheet,
+> [`INTERVIEW_QUESTIONS.md`](INTERVIEW_QUESTIONS.md) is 65 framework-level Q&A on the EaseMyTrade
+> Playwright suite, and [`FRAMEWORK_GUIDE.md`](FRAMEWORK_GUIDE.md) is the full reference. Work through
+> all three during this stage.
+
+### Topics
+- **Mental model:** lazy `Locator`s (never stale), **auto-waiting / actionability** by default, **web-first retrying assertions** (`assertThat(locator)`).
+- **Core objects:** `Playwright` → `Browser` → **`BrowserContext`** (isolated session) → `Page` → `Frame`. One browser per suite, one context per test (isolation) — the model this repo uses.
+- **Setup:** Maven dependency, `playwright install --with-deps`, launching chromium/firefox/webkit from one API.
+- **Locators (user-first):** `getByRole`, `getByText`, `getByLabel`, `getByPlaceholder`, `getByTestId`; CSS; filtering/chaining (`filter`, `first`, `nth`); multi-pattern selectors.
+- **Actions & reads:** `click/fill/pressSequentially/selectOption/check/hover/setInputFiles`; `innerText/inputValue/getAttribute/isVisible`.
+- **Waits:** auto-wait vs explicit (`waitFor(state)`, `waitForURL`, `waitForLoadState(NETWORKIDLE)`, `waitForResponse`); custom polling predicate (`waitUntil`) — and why `waitForTimeout` is a smell.
+- **Network:** intercept/abort resources, **mock/`route().fulfill()`** an API response (force a state your live data can't), wait for a response.
+- **API testing:** **`APIRequestContext`** (`playwright.request().newContext()`) — `get/post`, `RequestOptions`, status/body, `api.dispose()`. (This repo validates signal logic against raw JSON this way.)
+- **Auth:** API login → inject cookie, **`storageState`** reuse, drop/restore cookies mid-test.
+- **Tracing & debug:** `context.tracing()` + **Trace Viewer** (`show-trace`), `PWDEBUG=1`, `setHeadless(false).setSlowMo()`, video/screenshot.
+- **Cross-browser & CI:** one API → 3 engines; headless; parallel via contexts; matrix in CI (see this repo's `.github/workflows/`).
+- **Reporting:** Allure integration (this repo), screenshots/source on failure.
+
+### Must-be-able-to-answer
+1. **Playwright vs Selenium** — give 5 real differences (see table below); when would you still pick Selenium?
+2. Why are Playwright **locators never stale**, unlike Selenium `WebElement`s?
+3. How does **auto-waiting / actionability** reduce flakiness vs Selenium's explicit waits?
+4. What is a **`BrowserContext`** and why "one context per test"? (vs Selenium spinning a new driver)
+5. **Web-first assertion** (`assertThat(locator).isVisible()`) — how is it different from a plain assert? (it retries)
+6. How do you **mock an API** in Playwright and why is that powerful? (ties to your SV mindset)
+7. How does **`APIRequestContext`** let you test UI and API in one suite/session?
+8. How do you handle **auth** without logging in via UI every test? (cookie injection / `storageState`)
+9. What does the **Trace Viewer** give you for debugging a CI failure?
+10. How do you run Playwright **cross-browser in parallel** in CI?
+
+### Selenium ↔ Playwright cheat-comparison (memorize)
+| Aspect | Selenium | Playwright |
+|---|---|---|
+| Element ref | `WebElement` (can go **stale**) | `Locator` (lazy, re-resolves, never stale) |
+| Waiting | mostly **explicit** (`WebDriverWait`) | **auto-wait** + web-first retrying assertions |
+| Drivers | browser driver binaries (Selenium Manager auto in 4.6+) | bundled engines via `playwright install` |
+| Browsers | Chrome/FF/Edge/Safari via drivers | Chromium/Firefox/WebKit, one API |
+| Isolation | new driver/session per test | cheap `BrowserContext` per test |
+| API testing | needs RestAssured/HttpClient | built-in `APIRequestContext` |
+| Network mock | hard (proxy/CDP) | first-class `route().fulfill()` |
+| Debugging | logs + manual | **Trace Viewer**, Inspector, codegen |
+| Maturity | huge ecosystem, legacy support | newer, fast, modern |
+
+> **One-liner for interviews:** *"Selenium is the mature, ubiquitous standard; Playwright is faster
+> and far less flaky out of the box thanks to lazy locators, auto-waiting, browser contexts, and
+> built-in API + network mocking. The concepts map directly, so I move between them easily — and my
+> service-virtualization instinct makes Playwright's network mocking and APIRequestContext feel native."*
+
+### Hands-on (use this repo as the playground)
+- Read & run the EaseMyTrade Playwright suite; trace one test end-to-end (see `INTERVIEW_QUESTIONS.md` Q18).
+- Write a locator using `getByRole`/`getByTestId` + a web-first assertion.
+- Mock `/api/live-market` with `route().fulfill()` to force a "Trade Signal" state.
+- Hit an endpoint with `APIRequestContext` and assert JSON with Jackson.
+- Capture a trace and open it with `npx playwright show-trace`.
+
+**Prove it:** Explain Playwright vs Selenium in 60 seconds, write a locator + web-first assertion from
+memory, and walk through this repo's BaseTest lifecycle (browser-per-suite, context-per-test).
 
 ---
 
@@ -473,8 +545,9 @@ Map at least one strong story to each theme — lean on your SV/programme experi
 - [ ] Tidy your **GitHub** (this repo is a great portfolio piece — the framework + docs show range).
 
 **Self-rating gate (be honest, 1–5 each; aim ≥4):** Core Java · Java 8 streams · Selenium core ·
-Waits/sync · TestNG · Framework design · API/RestAssured · SV articulation · CI/CD · BDD ·
-Test strategy · Metrics · People/leadership · STAR delivery. Anything <4 → one more focused day.
+Playwright core · Selenium-vs-Playwright · Waits/sync · TestNG · Framework design · API/RestAssured ·
+SV articulation · CI/CD · BDD · Test strategy · Metrics · People/leadership · STAR delivery.
+Anything <4 → one more focused day.
 
 ---
 
@@ -492,6 +565,11 @@ Test strategy · Metrics · People/leadership · STAR delivery. Anything <4 → 
 [ ] relative locators · [ ] implicit/explicit/fluent waits · [ ] dropdowns · [ ] alerts · [ ] frames ·
 [ ] windows/tabs · [ ] Actions · [ ] JSExecutor · [ ] screenshots · [ ] exceptions (stale/intercepted) ·
 [ ] headless · [ ] options/capabilities · [ ] Grid.
+
+**Playwright** — [ ] mental model (lazy locators/auto-wait) · [ ] Browser/Context/Page · [ ] getByRole/TestId ·
+[ ] web-first assertions · [ ] explicit waits/waitForURL/NETWORKIDLE · [ ] network mock (route().fulfill) ·
+[ ] APIRequestContext · [ ] auth (cookie/storageState) · [ ] Trace Viewer/debug · [ ] cross-browser/CI ·
+[ ] **Selenium vs Playwright comparison**.
 
 **TestNG** — [ ] annotation order · [ ] @Test attrs · [ ] hard/soft assert · [ ] DataProvider ·
 [ ] parameters/testng.xml · [ ] groups · [ ] parallel + ThreadLocal · [ ] listeners/retry · [ ] dependsOn.
@@ -572,6 +650,14 @@ explain time/space complexity.
 - Stale element = DOM re-rendered; re-locate. Intercepted click = overlay/not-in-view; scroll/wait, JS click as last resort.
 - `close()` = current window; `quit()` = whole session.
 - Prefer **CSS** for speed/readability; **XPath** when you must traverse up or match by text.
+
+**Playwright one-liners**
+- `Locator` is lazy → re-resolves each use → **never stale**; `Browser` → `Context` (isolated) → `Page`.
+- **Auto-wait** on every action + **web-first assertions** that retry (`assertThat(locator).isVisible()`) → far less flaky than manual waits.
+- One **browser per suite**, one **context per test** (cheap incognito → isolation).
+- Built-in **`APIRequestContext`** (UI + API in one session) and **network mocking** (`route().fulfill()`).
+- Auth without UI: API login → inject cookie, or reuse **`storageState`**. Debug with **Trace Viewer**.
+- **vs Selenium:** lazy locators, auto-wait, contexts, bundled browsers, native API/mocking → faster & less flaky; Selenium = bigger ecosystem/legacy reach. Concepts map 1:1.
 
 **TestNG**
 - Order: BeforeSuite→BeforeTest→BeforeClass→BeforeMethod→Test→AfterMethod→AfterClass→AfterTest→AfterSuite.
