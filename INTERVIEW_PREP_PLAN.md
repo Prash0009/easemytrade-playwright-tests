@@ -10,7 +10,8 @@
 > deliverable. The default cadence is **6 weeks**; compress to 3 by doubling daily hours, or stretch
 > to 10 for evenings-only. A day-before quick-revision sheet is at the end.
 >
-> Companion docs: [`INTERVIEW_QUESTIONS.md`](INTERVIEW_QUESTIONS.md) (framework-level Playwright Q&A),
+> Companion docs: [`INTERVIEW_QUESTIONS.md`](INTERVIEW_QUESTIONS.md) (full interview Q&A **with model
+> answers** for every topic below + a Playwright framework deep-dive),
 > [`PLAYWRIGHT_GUIDE.md`](PLAYWRIGHT_GUIDE.md) (Playwright tutorial), [`FRAMEWORK_GUIDE.md`](FRAMEWORK_GUIDE.md).
 
 ---
@@ -233,9 +234,10 @@ prior stage's checklist every Monday.
 modern QA roles now ask for it, and you have a live Playwright framework in *this very repo* to show.
 
 > **Use your assets:** [`PLAYWRIGHT_GUIDE.md`](PLAYWRIGHT_GUIDE.md) is your tutorial/cheatsheet,
-> [`INTERVIEW_QUESTIONS.md`](INTERVIEW_QUESTIONS.md) is 65 framework-level Q&A on the EaseMyTrade
-> Playwright suite, and [`FRAMEWORK_GUIDE.md`](FRAMEWORK_GUIDE.md) is the full reference. Work through
-> all three during this stage.
+> [`INTERVIEW_QUESTIONS.md`](INTERVIEW_QUESTIONS.md) has detailed Playwright Q&A with answers
+> (Part 1 §D for concepts + Selenium comparison, Part 2 for the EaseMyTrade framework deep-dive),
+> and [`FRAMEWORK_GUIDE.md`](FRAMEWORK_GUIDE.md) is the full reference. Work through all three during
+> this stage.
 
 ### Topics
 - **Mental model:** lazy `Locator`s (never stale), **auto-waiting / actionability** by default, **web-first retrying assertions** (`assertThat(locator)`).
@@ -282,7 +284,7 @@ modern QA roles now ask for it, and you have a live Playwright framework in *thi
 > service-virtualization instinct makes Playwright's network mocking and APIRequestContext feel native."*
 
 ### Hands-on (use this repo as the playground)
-- Read & run the EaseMyTrade Playwright suite; trace one test end-to-end (see `INTERVIEW_QUESTIONS.md` Q18).
+- Read & run the EaseMyTrade Playwright suite; trace one test end-to-end (see `INTERVIEW_QUESTIONS.md` Part 2, Q18).
 - Write a locator using `getByRole`/`getByTestId` + a web-first assertion.
 - Mock `/api/live-market` with `route().fulfill()` to force a "Trade Signal" state.
 - Hit an endpoint with `APIRequestContext` and assert JSON with Jackson.
