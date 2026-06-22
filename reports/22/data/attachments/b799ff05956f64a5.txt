@@ -1,0 +1,10 @@
+java.lang.AssertionError: [Page at https://easemytrade.in/commodities/silver/ should reference Silver] 
+Expecting actual:
+  "404: NOT_FOUND404: NOT_FOUND
+Code: NOT_FOUND
+ID: sfo1::x7vnd-1782107108113-1168fa82621e
+
+Read our documentation to learn more about this error."
+to contain:
+  "Silver"
+ (ignoring case)
