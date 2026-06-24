@@ -1,0 +1,508 @@
+<!DOCTYPE html><html lang="en" style="--site-header-height: 156px; --market-ticker-height: 42px; --site-chrome-offset: 198px;"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="EaseMyTrade is Prashant Kumar's educational market dashboard with Smart AI checks for NIFTY-led index analysis, derivatives context, macro cues, and risk review.">
+    <title>EaseMyTrade | NIFTY Market Overview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css?v=20260614-elegant-1">
+    <link rel="icon" href="/assets/easemytrade-logo.svg" type="image/svg+xml">
+  <script defer="" src="/_vercel/insights/script.js" data-easemytrade-analytics="true"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-KFQSGRLGGN" data-easemytrade-ga4="true"></script></head>
+  <body data-page="home">
+    <div class="market-ticker" aria-label="Live market ticker">
+      <div class="market-ticker__track"><span class="market-ticker__item"><strong>NIFTY</strong><span class="market-ticker__value">23,929.80</span><em class="market-ticker__move is-up">+0.44%</em></span><span class="market-ticker__item"><strong>BANKNIFTY</strong><span class="market-ticker__value">57,659.80</span><em class="market-ticker__move is-up">+0.83%</em></span><span class="market-ticker__item"><strong>FINNIFTY</strong><span class="market-ticker__value">26,503.60</span><em class="market-ticker__move is-up">+0.66%</em></span><span class="market-ticker__item"><strong>SENSEX</strong><span class="market-ticker__value">76,635.34</span><em class="market-ticker__move is-up">+0.57%</em></span><span class="market-ticker__item"><strong>S&amp;P 500</strong><span class="market-ticker__value">7,365.46</span><em class="market-ticker__move is-down">-1.44%</em></span><span class="market-ticker__item"><strong>NASDAQ</strong><span class="market-ticker__value">25,587.04</span><em class="market-ticker__move is-down">-2.21%</em></span><span class="market-ticker__item"><strong>DOW JONES</strong><span class="market-ticker__value">51,666.84</span><em class="market-ticker__move is-down">-0.09%</em></span><span class="market-ticker__item"><strong>NIFTY</strong><span class="market-ticker__value">23,929.80</span><em class="market-ticker__move is-up">+0.44%</em></span><span class="market-ticker__item"><strong>BANKNIFTY</strong><span class="market-ticker__value">57,659.80</span><em class="market-ticker__move is-up">+0.83%</em></span><span class="market-ticker__item"><strong>FINNIFTY</strong><span class="market-ticker__value">26,503.60</span><em class="market-ticker__move is-up">+0.66%</em></span><span class="market-ticker__item"><strong>SENSEX</strong><span class="market-ticker__value">76,635.34</span><em class="market-ticker__move is-up">+0.57%</em></span><span class="market-ticker__item"><strong>S&amp;P 500</strong><span class="market-ticker__value">7,365.46</span><em class="market-ticker__move is-down">-1.44%</em></span><span class="market-ticker__item"><strong>NASDAQ</strong><span class="market-ticker__value">25,587.04</span><em class="market-ticker__move is-down">-2.21%</em></span><span class="market-ticker__item"><strong>DOW JONES</strong><span class="market-ticker__value">51,666.84</span><em class="market-ticker__move is-down">-0.09%</em></span></div>
+    </div><header class="site-header">
+      <a class="brand" href="/">
+        <img class="brand-logo" src="/assets/easemytrade-logo.svg" alt="" width="42" height="42">
+        <span>EaseMyTrade</span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="/#market-overview">Market Overview</a>
+        <details class="nav-dropdown">
+          <summary class="nav-dropdown-toggle">Indian Indices</summary>
+          <div class="nav-dropdown-menu">
+            <a href="/nifty/today/">NIFTY</a>
+            <a href="/indices/banknifty/">BANKNIFTY</a>
+            <a href="/indices/finnifty/">FINNIFTY</a>
+            <a href="/indices/sensex/">SENSEX</a>
+          </div>
+        </details>
+        <a href="/news/">News</a>
+        <a href="/methodology/">Methodology</a>
+        <a href="/expert-view/">Expert View</a>
+        <a href="/telegram/">Telegram</a>
+        <a href="/contact/">Contact Us</a>
+        <div class="live-clock live-clock--nav" id="liveClock" aria-label="Current time in Indian Standard Time">
+          <span class="live-clock__label">IST</span>
+          <strong class="live-clock__time">10:23:27</strong>
+        </div>
+      </nav>
+      <div class="header-auth" id="headerAuth" aria-label="Signed-in user"><div class="auth-user-chip" id="authUserBadge"><span class="auth-user-chip__label">Signed in as</span><strong class="auth-user-chip__name">Research Viewer</strong><button type="button" class="auth-user-chip__action">Sign out</button></div></div>
+      <div class="header-tools">
+        <button class="refresh-button" id="refreshDataButton" type="button">Refresh Data</button>
+        <span class="refresh-status" id="refreshStatus" aria-live="polite">Updated 2026-06-24 10:23 IST</span>
+      </div>
+    </header>
+    
+
+    <main>
+      <section class="hero-band">
+        <div class="hero-copy">
+          <p class="eyebrow" id="sessionLabel">Live Market Snapshot</p>
+          <h1>EaseMyTrade</h1>
+          <p class="lead">An educational market dashboard by Prashant Kumar, built for NIFTY-led index analysis, derivatives context, sector participation, volatility, and Smart AI-assisted pre-trade checks.</p>
+          <div class="hero-actions">
+            <a class="primary-action" href="/#market-overview">Open Market Overview</a>
+            <a class="secondary-action" href="/nifty/today/">Indian Indices</a>
+          </div>
+          <div class="hero-badges" aria-label="Feature highlights">
+            <span>Institutional-style market view</span>
+            <span>Smart AI-assisted checks</span>
+            <span>Educational platform</span>
+          </div>
+        </div>
+        <div class="hero-visual-stack">
+          <a class="feedback-banner" href="/contact/" aria-label="Contact us with feedback">
+            <span class="feedback-banner__track" aria-hidden="true">
+              <span class="feedback-banner__item">
+                We continue to improve EaseMyTrade every day. Your suggestions are always welcome. Please reach out by email or Telegram.
+              </span>
+              <span class="feedback-banner__item">
+                We continue to improve EaseMyTrade every day. Your suggestions are always welcome. Please reach out by email or Telegram.
+              </span>
+            </span>
+          </a>
+          <section class="signed-in-card" id="heroSignedInCard">
+            <span class="signed-in-card__eyebrow">Signed in as</span>
+            <strong class="signed-in-card__name" id="heroSignedInName">Research Viewer</strong>
+            <p class="signed-in-card__meta" id="heroSignedInMeta">Access role: VIEWER</p>
+            <button class="signed-in-card__action" id="heroSignedInSignOut" type="button">Sign out</button>
+          </section>
+          <div class="market-visual" aria-label="Market pulse chart">
+            <div class="terminal-shell">
+              <aside class="terminal-watchlist" aria-label="Watchlist">
+                <div class="watchlist-head">
+                  <span>Tracked instruments</span>
+                  <strong>Market Watch</strong>
+                </div>
+                <div class="watchlist-list">
+                  <a class="watch-row watch-row--active rag-tinted" href="/nifty/today/" data-rag-tone="up">
+                    <div class="watch-symbol">
+                      <strong>NIFTY 50</strong>
+                      <span>INDEX</span>
+                    </div>
+                    <div class="watch-change is-up" id="heroWatchNiftyChange">+0.44% / 105 pts</div>
+                    <div class="watch-level" id="heroWatchNiftyLevel">23,929.80</div>
+                  </a>
+                  <a class="watch-row rag-tinted" href="/indices/banknifty/" data-rag-tone="up">
+                    <div class="watch-symbol">
+                      <strong>BANKNIFTY</strong>
+                      <span>INDEX</span>
+                    </div>
+                    <div class="watch-change is-up" id="heroWatchBankChange">+0.83% / 479 pts</div>
+                    <div class="watch-level" id="heroWatchBankLevel">57,659.80</div>
+                  </a>
+                  <a class="watch-row rag-tinted" href="/indices/finnifty/" data-rag-tone="up">
+                    <div class="watch-symbol">
+                      <strong>FINNIFTY</strong>
+                      <span>INDEX</span>
+                    </div>
+                    <div class="watch-change is-up" id="heroWatchFinChange">+0.66% / 175 pts</div>
+                    <div class="watch-level" id="heroWatchFinLevel">26,503.60</div>
+                  </a>
+                  <a class="watch-row rag-tinted" href="/indices/sensex/" data-rag-tone="up">
+                    <div class="watch-symbol">
+                      <strong>SENSEX</strong>
+                      <span>INDEX</span>
+                    </div>
+                    <div class="watch-change is-up" id="heroWatchSensexChange">+0.57% / 437 pts</div>
+                    <div class="watch-level" id="heroWatchSensexLevel">76,635.34</div>
+                  </a>
+
+                </div>
+              </aside>
+              <section class="terminal-chart" aria-label="Live chart area">
+                <div class="chart-toolbar" aria-hidden="true">
+                  <span class="chip chip--symbol">NIFTY 50</span>
+                  <span class="chip">1 Min</span>
+                  <span class="chip">Chart</span>
+                  <span class="chip">Studies</span>
+                </div>
+                <div class="chart-header">
+                  <div>
+                    <strong id="heroChartTitle">NIFTY 50</strong>
+                    <p id="heroChartSubtitle">Live snapshot</p>
+                  </div>
+                  <div class="chart-price-block rag-tinted" data-rag-tone="up">
+                    <span>Spot</span>
+                    <strong id="heroNiftyLevel">23,929.80</strong>
+                    <em id="heroNiftyChange" class="is-up">+0.44% / 105 pts</em>
+                  </div>
+                </div>
+                <canvas id="pulseChart" width="760" height="420"></canvas>
+              </section>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-band soft-amber-band trade-spotlight-band" aria-labelledby="tradeSpotlightTitle">
+        <div class="section-heading">
+          <p class="eyebrow">Highlights</p>
+          <h2 id="tradeSpotlightTitle">Previous Completed Trades</h2>
+          <p class="lead section-lead">Expand any index with the plus sign to review every completed trade from that window. NIFTY opens first by default.</p>
+        </div>
+        <div id="tradeSpotlightGrid" class="trade-spotlight-grid" aria-live="polite"><details class="trade-spotlight-card trade-spotlight-card--accordion tone-down rag-tinted" data-rag-tone="down">
+      <summary class="trade-spotlight-card__summary">
+        <div class="trade-spotlight-card__summary-main">
+          <div class="trade-spotlight-card__head">
+            <span class="trade-spotlight-card__label">NIFTY 50</span>
+            <span class="trade-spotlight-card__chip">5 completed trades</span>
+          </div>
+        </div>
+        <div class="trade-spotlight-card__summary-side">
+          <span class="trade-spotlight-card__summary-pill is-down tone-down">
+            Net -485.55 / lot
+          </span>
+          <span class="trade-spotlight-card__toggle" aria-hidden="true"></span>
+        </div>
+      </summary>
+      <div class="trade-spotlight-card__body">
+        <div class="profit-table-wrap trade-spotlight-table-wrap">
+          <table class="profit-table trade-spotlight-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Signal</th>
+                <th>Strike</th>
+                <th>Live Entry LTP</th>
+                <th>Live Exit LTP</th>
+                <th>Signal Confidence</th>
+                <th>Live P&amp;L / Lot</th>
+                <th>Result</th>
+                <th>Time Taken</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+      <tr>
+        <td>12 Jun</td>
+        <td>1:50 PM</td>
+        <td>NIFTY 23500 CE</td>
+        <td>23500</td>
+        <td>42.00</td>
+        <td>64.46</td>
+        <td class="trade-spotlight-table__confidence">90%</td>
+        <td class="profit-profit">+₹1,460</td>
+        <td class="trade-spotlight-table__result">Target achieved</td>
+        <td>35 min</td>
+      </tr>
+    
+      <tr>
+        <td>11 Jun</td>
+        <td>12:00 PM</td>
+        <td>NIFTY 23300 CE</td>
+        <td>23300</td>
+        <td>42.00</td>
+        <td>44.38</td>
+        <td class="trade-spotlight-table__confidence">90%</td>
+        <td class="profit-profit">+₹155</td>
+        <td class="trade-spotlight-table__result">Target achieved</td>
+        <td>35 min</td>
+      </tr>
+    
+            </tbody>
+          </table>
+        </div>
+        <div class="trade-spotlight-card__footer">
+          <span class="trade-spotlight-card__note">Expand the other indices to compare each completed call window.</span>
+          <a class="trade-spotlight-card__link" href="/nifty/today/">View index page</a>
+        </div>
+      </div>
+    </details><details class="trade-spotlight-card trade-spotlight-card--accordion tone-down rag-tinted" data-rag-tone="down">
+      <summary class="trade-spotlight-card__summary">
+        <div class="trade-spotlight-card__summary-main">
+          <div class="trade-spotlight-card__head">
+            <span class="trade-spotlight-card__label">BANKNIFTY</span>
+            <span class="trade-spotlight-card__chip">2 completed trades</span>
+          </div>
+        </div>
+        <div class="trade-spotlight-card__summary-side">
+          <span class="trade-spotlight-card__summary-pill is-down tone-down">
+            Net -1625.70 / lot
+          </span>
+          <span class="trade-spotlight-card__toggle" aria-hidden="true"></span>
+        </div>
+      </summary>
+      <div class="trade-spotlight-card__body">
+        <div class="profit-table-wrap trade-spotlight-table-wrap">
+          <table class="profit-table trade-spotlight-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Signal</th>
+                <th>Strike</th>
+                <th>Live Entry LTP</th>
+                <th>Live Exit LTP</th>
+                <th>Signal Confidence</th>
+                <th>Live P&amp;L / Lot</th>
+                <th>Result</th>
+                <th>Time Taken</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+      <tr>
+        <td>19 Jun</td>
+        <td>10:55 AM</td>
+        <td>BANKNIFTY 57600 PE</td>
+        <td>57600</td>
+        <td>317.04</td>
+        <td>293.98</td>
+        <td class="trade-spotlight-table__confidence">92%</td>
+        <td class="profit-loss">-₹692</td>
+        <td class="trade-spotlight-table__result">Stoploss hit</td>
+        <td>15 min</td>
+      </tr>
+    
+      <tr>
+        <td>19 Jun</td>
+        <td>1:05 PM</td>
+        <td>BANKNIFTY 57500 PE</td>
+        <td>57500</td>
+        <td>344.62</td>
+        <td>313.49</td>
+        <td class="trade-spotlight-table__confidence">89%</td>
+        <td class="profit-loss">-₹934</td>
+        <td class="trade-spotlight-table__result">Stoploss hit</td>
+        <td>25 min</td>
+      </tr>
+    
+            </tbody>
+          </table>
+        </div>
+        <div class="trade-spotlight-card__footer">
+          <span class="trade-spotlight-card__note">Expand the other indices to compare each completed call window.</span>
+          <a class="trade-spotlight-card__link" href="/indices/banknifty/">View index page</a>
+        </div>
+      </div>
+    </details><details class="trade-spotlight-card trade-spotlight-card--accordion tone-down rag-tinted" data-rag-tone="down">
+      <summary class="trade-spotlight-card__summary">
+        <div class="trade-spotlight-card__summary-main">
+          <div class="trade-spotlight-card__head">
+            <span class="trade-spotlight-card__label">FINNIFTY</span>
+            <span class="trade-spotlight-card__chip">4 completed trades</span>
+          </div>
+        </div>
+        <div class="trade-spotlight-card__summary-side">
+          <span class="trade-spotlight-card__summary-pill is-down tone-down">
+            Net -1755.60 / lot
+          </span>
+          <span class="trade-spotlight-card__toggle" aria-hidden="true"></span>
+        </div>
+      </summary>
+      <div class="trade-spotlight-card__body">
+        <div class="profit-table-wrap trade-spotlight-table-wrap">
+          <table class="profit-table trade-spotlight-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Signal</th>
+                <th>Strike</th>
+                <th>Live Entry LTP</th>
+                <th>Live Exit LTP</th>
+                <th>Signal Confidence</th>
+                <th>Live P&amp;L / Lot</th>
+                <th>Result</th>
+                <th>Time Taken</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+      <tr>
+        <td>19 Jun</td>
+        <td>10:30 AM</td>
+        <td>FINNIFTY 26450 PE</td>
+        <td>26450</td>
+        <td>123.06</td>
+        <td>128.81</td>
+        <td class="trade-spotlight-table__confidence">83%</td>
+        <td class="profit-profit">+₹345</td>
+        <td class="trade-spotlight-table__result">Target achieved</td>
+        <td>30 min</td>
+      </tr>
+    
+      <tr>
+        <td>23 Jun</td>
+        <td>1:40 PM</td>
+        <td>FINNIFTY 26400 PE</td>
+        <td>26400</td>
+        <td>127.02</td>
+        <td>121.08</td>
+        <td class="trade-spotlight-table__confidence">92%</td>
+        <td class="profit-loss">-₹356</td>
+        <td class="trade-spotlight-table__result">Stoploss hit</td>
+        <td>30 min</td>
+      </tr>
+    
+            </tbody>
+          </table>
+        </div>
+        <div class="trade-spotlight-card__footer">
+          <span class="trade-spotlight-card__note">Expand the other indices to compare each completed call window.</span>
+          <a class="trade-spotlight-card__link" href="/indices/finnifty/">View index page</a>
+        </div>
+      </div>
+    </details><details class="trade-spotlight-card trade-spotlight-card--accordion tone-up rag-tinted" data-rag-tone="up">
+      <summary class="trade-spotlight-card__summary">
+        <div class="trade-spotlight-card__summary-main">
+          <div class="trade-spotlight-card__head">
+            <span class="trade-spotlight-card__label">SENSEX</span>
+            <span class="trade-spotlight-card__chip">6 completed trades</span>
+          </div>
+        </div>
+        <div class="trade-spotlight-card__summary-side">
+          <span class="trade-spotlight-card__summary-pill is-up tone-up">
+            Net +1806.20 / lot
+          </span>
+          <span class="trade-spotlight-card__toggle" aria-hidden="true"></span>
+        </div>
+      </summary>
+      <div class="trade-spotlight-card__body">
+        <div class="profit-table-wrap trade-spotlight-table-wrap">
+          <table class="profit-table trade-spotlight-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Signal</th>
+                <th>Strike</th>
+                <th>Live Entry LTP</th>
+                <th>Live Exit LTP</th>
+                <th>Signal Confidence</th>
+                <th>Live P&amp;L / Lot</th>
+                <th>Result</th>
+                <th>Time Taken</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+      <tr>
+        <td>12 Jun</td>
+        <td>1:50 PM</td>
+        <td>SENSEX 75000 CE</td>
+        <td>75000</td>
+        <td>99.27</td>
+        <td>177.41</td>
+        <td class="trade-spotlight-table__confidence">90%</td>
+        <td class="profit-profit">+₹1,563</td>
+        <td class="trade-spotlight-table__result">Target achieved</td>
+        <td>25 min</td>
+      </tr>
+    
+      <tr>
+        <td>11 Jun</td>
+        <td>11:30 AM</td>
+        <td>SENSEX 74000 CE</td>
+        <td>74000</td>
+        <td>120.58</td>
+        <td>179.09</td>
+        <td class="trade-spotlight-table__confidence">85%</td>
+        <td class="profit-profit">+₹1,170</td>
+        <td class="trade-spotlight-table__result">Target achieved</td>
+        <td>25 min</td>
+      </tr>
+    
+            </tbody>
+          </table>
+        </div>
+        <div class="trade-spotlight-card__footer">
+          <span class="trade-spotlight-card__note">Expand the other indices to compare each completed call window.</span>
+          <a class="trade-spotlight-card__link" href="/indices/sensex/">View index page</a>
+        </div>
+      </div>
+    </details></div>
+      </section>
+
+      <section class="content-band trading-zones-band">
+        <div class="section-heading">
+          <h2>Key Trading Zones</h2>
+          <p class="lead section-lead">Live support and resistance for major Indian indices.</p>
+        </div>
+        <div class="index-zone-grid">
+          <div class="zone-card rag-tinted" data-rag-tone="up">
+            <span>NIFTY</span>
+            <strong id="homeNiftyZoneLevel" class="is-up">23,929.80 (+0.44%)</strong>
+            <p id="homeNiftyZoneNote">Range-bound.</p>
+            <p class="zone-signal is-flat" id="homeNiftyZoneSignal">Hold • awaiting a confirmed setup</p>
+            <div class="zone-levels">
+              <div><em>Support</em><strong id="homeNiftyZoneSupport">23,910</strong></div>
+              <div><em>Resistance</em><strong id="homeNiftyZoneResistance">23,950</strong></div>
+            </div>
+          </div>
+          <div class="zone-card rag-tinted" data-rag-tone="up">
+            <span>BANK NIFTY</span>
+            <strong id="homeBankNiftyZoneLevel" class="is-up">57,659.80 (+0.83%)</strong>
+            <p id="homeBankNiftyZoneNote">Range-bound.</p>
+            <p class="zone-signal is-flat" id="homeBankNiftyZoneSignal">Hold • awaiting a confirmed setup</p>
+            <div class="zone-levels">
+              <div><em>Support</em><strong id="homeBankNiftyZoneSupport">57,500</strong></div>
+              <div><em>Resistance</em><strong id="homeBankNiftyZoneResistance">57,800</strong></div>
+            </div>
+          </div>
+          <div class="zone-card rag-tinted" data-rag-tone="up">
+            <span>FINNIFTY</span>
+            <strong id="homeFinNiftyZoneLevel" class="is-up">26,503.60 (+0.66%)</strong>
+            <p id="homeFinNiftyZoneNote">Range-bound.</p>
+            <p class="zone-signal is-flat" id="homeFinNiftyZoneSignal">Hold • awaiting a confirmed setup</p>
+            <div class="zone-levels">
+              <div><em>Support</em><strong id="homeFinNiftyZoneSupport">26,400</strong></div>
+              <div><em>Resistance</em><strong id="homeFinNiftyZoneResistance">26,600</strong></div>
+            </div>
+          </div>
+          <div class="zone-card rag-tinted" data-rag-tone="up">
+            <span>SENSEX</span>
+            <strong id="homeSensexZoneLevel" class="is-up">76,635.34 (+0.57%)</strong>
+            <p id="homeSensexZoneNote">Range-bound.</p>
+            <p class="zone-signal is-flat" id="homeSensexZoneSignal">Hold • awaiting a confirmed setup</p>
+            <div class="zone-levels">
+              <div><em>Support</em><strong id="homeSensexZoneSupport">76,500</strong></div>
+              <div><em>Resistance</em><strong id="homeSensexZoneResistance">76,800</strong></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-band live-context-band soft-green-band" aria-labelledby="marketDriversTitle">
+        <div class="market-driver-panel" id="marketDriversPanel">
+          <div class="market-driver-copy">
+            <span id="marketDriversEyebrow">Live Context</span>
+            <strong id="marketDriversTitle">Live Market Behaviour</strong>
+            <p id="marketDriversSummary">NIFTY is trading higher at 23,929.80 (+0.44%). Current behaviour is being shaped by breadth, volatility, financial-index participation, and the latest macro/news cues available in this snapshot.</p>
+          </div>
+          <ul class="market-driver-list" id="marketDriversList"><li>Current tone: NIFTY is moving higher at 23,929.80 (+0.44%), with support near 23,910 and resistance near 23,950.</li><li>Breadth is supporting upside participation: 39 advancing stocks versus 11 declining stocks in the tracked basket.</li><li>India VIX is at 13.67 (-1.95%), pointing to calmer option pricing.</li><li>Financial participation is confirming the NIFTY tone: BANKNIFTY +0.83%, FINNIFTY +0.66%, SENSEX +0.57%.</li><li>News cue being tracked: 10-year bond yield eases, sliding Brent prices lift sentiment.</li></ul>
+        </div>
+      </section>
+
+      <section class="content-band soft-blue-band">
+        <div class="section-heading">
+          <p class="eyebrow">Important</p>
+          <h2>Educational Purpose Only</h2>
+          <p class="lead section-lead">EaseMyTrade is an educational initiative owned and maintained by Prashant Kumar. It uses Smart AI checks to support disciplined pre-trade review, but the content is for information and training only and must not be treated as investment advice, solicitation, or a recommendation to trade any security or derivative.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>EaseMyTrade</span>
+      <a href="/disclaimer/">Disclaimer</a>
+    </footer>
+
+    <script src="/app.js?v=20260621-3"></script>
+  
+
+</body></html>
