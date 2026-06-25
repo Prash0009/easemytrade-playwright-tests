@@ -1,0 +1,10 @@
+java.lang.AssertionError: 
+Expecting actual:
+  "404: NOT_FOUND
+Code: NOT_FOUND
+ID: iad1::kjfpq-1782363280023-64ea8df671f0
+
+Read our documentation to learn more about this error."
+to contain:
+  "Crude"
+ (ignoring case)
