@@ -1,0 +1,2 @@
+org.opentest4j.AssertionFailedError: [NIFTY signal state 'No trade • capital preservation active' must be one of: Trade Signal, Watchlist Only, No Trade, Hold, Pending] 
+Expecting value to be true but was false
