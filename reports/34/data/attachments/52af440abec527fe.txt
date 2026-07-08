@@ -1,0 +1,10 @@
+java.lang.AssertionError: 
+Expecting actual:
+  "404: NOT_FOUND
+Code: NOT_FOUND
+ID: sfo1::brlcx-1783483392285-28363c8bc597
+
+Read our documentation to learn more about this error."
+to contain:
+  "Crude"
+ (ignoring case)

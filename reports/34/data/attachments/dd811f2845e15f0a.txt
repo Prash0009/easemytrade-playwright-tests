@@ -1,0 +1,10 @@
+java.lang.AssertionError: 
+Expecting actual:
+  "404: NOT_FOUND
+Code: NOT_FOUND
+ID: sfo1::n4448-1783483387857-740e596b0dc2
+
+Read our documentation to learn more about this error."
+to contain:
+  "Gold"
+ (ignoring case)

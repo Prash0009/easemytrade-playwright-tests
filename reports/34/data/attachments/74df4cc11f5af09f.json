@@ -1,0 +1,2179 @@
+{
+  "lastUpdated": "2026-07-08 09:26 IST",
+  "signalReportedAt": "2026-07-08 09:26 IST",
+  "session": "Market Hours",
+  "marketMood": "Cautiously weak",
+  "nifty": {
+    "level": "24,241.10",
+    "change": "-0.65%",
+    "bias": "Mildly Negative",
+    "summary": "NIFTY is currently no trade. Market regime is volatile trap day.; Trend-over-time is not confirming the move strongly enough.; VWAP and volume confirmation are not strong enough.; Event risk is crowded.; Walk-forward calibration for this direction and time window is weak.; Trade-quality support is too thin.; Calibrated confidence is below the publication floor.; Combined forward record across all indices is not positive (last 10 trades: 3 wins, net -5840 / lot). All fresh publication stays No Trade until the combined record recovers.; Market regime is volatile trap day.; NIFTY is still in forward-record warmup (1/5 completed trades); it stays watchlist-only until its own record is proven.; Trade-quality selection is not strong enough..",
+    "support": [
+      "24,220",
+      "24,200",
+      "23,070"
+    ],
+    "resistance": [
+      "24,260",
+      "24,280",
+      "24,530"
+    ],
+    "watch": "Sell only below 24,220. Spot 24,241.10. The active trigger is around 24,220.00 until a fresh candle confirms direction. Market regime is volatile trap day.; Trend-over-time is not confirming the move strongly enough.; VWAP and volume confirmation are not strong enough.; Event risk is crowded.; Walk-forward calibration for this direction and time window is weak.; Trade-quality support is too thin.; Calibrated confidence is below the publication floor.; Combined forward record across all indices is not positive (last 10 trades: 3 wins, net -5840 / lot). All fresh publication stays No Trade until the combined record recovers.; Market regime is volatile trap day.; NIFTY is still in forward-record warmup (1/5 completed trades); it stays watchlist-only until its own record is proven.; Trade-quality selection is not strong enough..",
+    "signal": {
+      "action": "Hold",
+      "note": "Bearish pressure is present and put-side participation can be considered while weakness persists. Market regime is volatile trap day.; Trend-over-time is not confirming the move strongly enough.; VWAP and volume confirmation are not strong enough.; Event risk is crowded.; Walk-forward calibration for this direction and time window is weak.; Trade-quality support is too thin.; Calibrated confidence is below the publication floor.; Combined forward record across all indices is not positive (last 10 trades: 3 wins, net -5840 / lot). All fresh publication stays No Trade until the combined record recovers.; Market regime is volatile trap day.; NIFTY is still in forward-record warmup (1/5 completed trades); it stays watchlist-only until its own record is proven.; Trade-quality selection is not strong enough..",
+      "state": "No Trade",
+      "score": null,
+      "confidenceBasis": "Support 43% with 3/7 checks supportive; trend 50.0%; calibration sample 4 at 50%.",
+      "contract": "NIFTY 24250 PE",
+      "entryRule": "Buy NIFTY 24250 PE only after a 5-minute candle closes below 24,220. Act only after confirmation.",
+      "stopRule": "24,260",
+      "targetRule": "24,140",
+      "stopLevel": "24,260",
+      "targetLevel": "24,140",
+      "stopLoss": null,
+      "targetPrice": null,
+      "optionEntryLtp": null,
+      "optionExpiry": null,
+      "riskRule": "Active session rules:\n\u2022 After 1 same-day loss on any index, fresh signals switch to No Trade across all indices.\n\u2022 After 2 resolved trades in a day across all indices combined, fresh trade publication stops.\n\u2022 After any stop-loss, the engine waits 60 minutes before another fresh entry.\n\u2022 Losses on both call and put side in the same day halt all fresh signals (range-day protection).\n\u2022 Midday entries (11:00 AM-1:30 PM IST) require 85%+ conviction on a trend day; otherwise they stay No Trade.\n\u2022 No fresh entry when intraday ATR is under 0.11% of price; the move is too small to be worth the risk.\nTrade management:\n\u2022 Prefer a retest of the breakout level; if the trend runs away without pulling back, take a momentum entry rather than miss it (stop stays below the level).\n\u2022 Book half at +1R and trail the rest; reduce time in trade first.\n\u2022 Only publish when the move has room to run (minimum 2.2R structural target).\n\u2022 If it does not move soon, let it go. Limit risk to 1-2% of capital per trade.",
+      "timingRule": "Preferred windows: 9:30-11:00 AM and 1:30-2:30 PM IST. Avoid low-liquidity midday conditions from 12:00-1:00 PM.",
+      "avoidRule": "Avoid sideways candles, major news spikes, and impulsive re-entry after losses. Staying out is acceptable when conditions are unclear.",
+      "entry": "Below 24,220.00 for weakness.",
+      "invalidation": "Reclaim above 24,260 can weaken the bearish view.",
+      "confidence": "35%",
+      "confidenceScore": 35,
+      "tradeQuality": "Low",
+      "tradeRecommendation": "No Trade",
+      "statusLabel": "No Trade",
+      "reportedConfidence": "35%",
+      "currentConfidence": "35%",
+      "confidenceSource": "Outcome-calibrated signal score",
+      "signalReportedAt": "2026-07-08 09:26 IST",
+      "candidateAction": "Sell",
+      "triggerQualified": false,
+      "suggestedLots": 0,
+      "sizingNote": "No size suggestion while the setup is watchlist-only or blocked.",
+      "holdRule": "No Trade; Market regime is volatile trap day.; Trend-over-time is not confirming the move strongly enough.; VWAP and volume confirmation are not strong enough.; Event risk is crowded.; Walk-forward calibration for this direction and time window is weak.; Trade-quality support is too thin.; Calibrated confidence is below the publication floor.; Combined forward record across all indices is not positive (last 10 trades: 3 wins, net -5840 / lot). All fresh publication stays No Trade until the combined record recovers.; Market regime is volatile trap day.; NIFTY is still in forward-record warmup (1/5 completed trades); it stays watchlist-only until its own record is proven.; Trade-quality selection is not strong enough..",
+      "publicationGate": {
+        "publishable": false,
+        "blockers": [
+          "Market regime is volatile trap day.",
+          "Trend-over-time is not confirming the move strongly enough.",
+          "VWAP and volume confirmation are not strong enough.",
+          "Event risk is crowded.",
+          "Walk-forward calibration for this direction and time window is weak.",
+          "Trade-quality support is too thin.",
+          "Calibrated confidence is below the publication floor.",
+          "Combined forward record across all indices is not positive (last 10 trades: 3 wins, net -5840 / lot). All fresh publication stays No Trade until the combined record recovers.",
+          "Market regime is volatile trap day.",
+          "NIFTY is still in forward-record warmup (1/5 completed trades); it stays watchlist-only until its own record is proven.",
+          "Trade-quality selection is not strong enough."
+        ],
+        "supportCount": 3,
+        "supportScore": 43,
+        "adjustedConfidence": 35,
+        "tradeQuality": "Low",
+        "tradeRecommendation": "No Trade",
+        "suggestedLots": 0,
+        "sizingNote": "No size suggestion while the setup is watchlist-only or blocked.",
+        "confidenceBand": "0-50%",
+        "confidenceBasis": "Support 43% with 3/7 checks supportive; trend 50.0%; calibration sample 4 at 50%.",
+        "timeWindow": "outside"
+      }
+    },
+    "analysis": {
+      "trend": "Mildly Negative",
+      "structure": "No trade.",
+      "momentum": "The setup did not clear the quality gate.",
+      "levels": "Target 24,140; watch 24,260.",
+      "tradePlan": "No trade. Wait for a stronger setup."
+    },
+    "signalGeneratedAt": "2026-07-08 09:26 IST",
+    "signalAudit": {
+      "firstReportedAt": "2026-07-08 09:26 IST",
+      "lastRefreshedAt": "2026-07-08 09:26 IST",
+      "whyGenerated": "Bearish pressure is present and put-side participation can be considered while weakness persists.",
+      "changeSummary": "Fresh trade setup identified from the latest market update.",
+      "confidenceChange": "35% \u2192 35%",
+      "tradeQualityChange": "Low",
+      "previousConfidence": 35,
+      "currentConfidence": 35,
+      "previousTradeQuality": "Low",
+      "currentTradeQuality": "Low"
+    }
+  },
+  "bankNifty": {
+    "level": "57,846.55",
+    "change": "-0.61%",
+    "bias": "Bearish",
+    "support": [
+      "57,700",
+      "57,500",
+      "57,400"
+    ],
+    "resistance": [
+      "58,000",
+      "58,200",
+      "58,300"
+    ],
+    "summary": "BANK NIFTY is trading at 57,846.55 with a mildly negative tone. Immediate range is defined by support at 57,700 and resistance at 58,000. Live quote feed sourced from NSE live indices.",
+    "note": "Live quote feed sourced from NSE live indices.",
+    "feedStatus": "live",
+    "feedSource": "NSE live indices"
+  },
+  "finNifty": {
+    "level": "26,787.70",
+    "change": "-0.73%",
+    "bias": "Bearish",
+    "support": [
+      "26,700",
+      "26,600",
+      "26,550"
+    ],
+    "resistance": [
+      "26,850",
+      "26,950",
+      "27,050"
+    ],
+    "summary": "FINNIFTY is trading at 26,787.70 with a mildly negative tone. Immediate range is defined by support at 26,700 and resistance at 26,850. Live quote feed sourced from NSE live indices.",
+    "note": "Live quote feed sourced from NSE live indices.",
+    "feedStatus": "live",
+    "feedSource": "NSE live indices"
+  },
+  "sensex": {
+    "level": "77,655.25",
+    "change": "-0.67%",
+    "bias": "Bearish",
+    "support": [
+      "77,400",
+      "77,200",
+      "77,000"
+    ],
+    "resistance": [
+      "77,900",
+      "78,100",
+      "78,300"
+    ],
+    "summary": "SENSEX is trading at 77,655.25 with a mildly negative tone. Immediate range is defined by support at 77,400 and resistance at 77,900. Live quote feed sourced from BSE live indices.",
+    "note": "Live quote feed sourced from BSE live indices.",
+    "feedStatus": "live",
+    "feedSource": "BSE live indices"
+  },
+  "usIndices": {
+    "sp500": {
+      "level": "7,503.85",
+      "change": "-0.45%",
+      "bias": "Mildly Negative",
+      "support": [
+        "7,450",
+        "7,400",
+        "7,250"
+      ],
+      "resistance": [
+        "7,550",
+        "7,650",
+        "7,600"
+      ],
+      "summary": "S&P 500 is trading at 7,503.85 with a mildly negative tone. Immediate range is defined by support at 7,450 and resistance at 7,550. Live quote feed sourced from Yahoo Finance for S&P 500.",
+      "note": "Live quote feed sourced from Yahoo Finance for S&P 500.",
+      "feedStatus": "live",
+      "feedSource": "Yahoo Finance"
+    },
+    "nasdaq": {
+      "level": "25,818.69",
+      "change": "-1.16%",
+      "bias": "Bearish",
+      "support": [
+        "25,450",
+        "25,100",
+        "25,000"
+      ],
+      "resistance": [
+        "26,150",
+        "26,550",
+        "26,800"
+      ],
+      "summary": "NASDAQ is trading at 25,818.69 with a mildly negative tone. Immediate range is defined by support at 25,450 and resistance at 26,150. Live quote feed sourced from Yahoo Finance for NASDAQ.",
+      "note": "Live quote feed sourced from Yahoo Finance for NASDAQ.",
+      "feedStatus": "live",
+      "feedSource": "Yahoo Finance"
+    },
+    "dowJones": {
+      "level": "52,925.15",
+      "change": "-0.25%",
+      "bias": "Mildly Negative",
+      "support": [
+        "52,500",
+        "52,050",
+        "49,900"
+      ],
+      "resistance": [
+        "53,350",
+        "53,800",
+        "53,300"
+      ],
+      "summary": "DOW JONES is trading at 52,925.15 with a mildly negative tone. Immediate range is defined by support at 52,500 and resistance at 53,350. Live quote feed sourced from Yahoo Finance for DOW JONES.",
+      "note": "Live quote feed sourced from Yahoo Finance for DOW JONES.",
+      "feedStatus": "live",
+      "feedSource": "Yahoo Finance"
+    }
+  },
+  "optionPricing": {
+    "nifty": {
+      "symbol": "NIFTY",
+      "lotSize": 65,
+      "spot": "24,241.10",
+      "expiry": "09-Jul-2026",
+      "daysToExpiry": "1.00",
+      "strike": "24250",
+      "iv": "55.00%",
+      "callPrice": "--",
+      "putPrice": "--",
+      "callDelta": "0.5029",
+      "putDelta": "-0.4971",
+      "gamma": "0.000572",
+      "thetaCall": "-141.1580",
+      "thetaPut": "-137.1724",
+      "vega": "5.0618",
+      "callPriceSource": "unavailable",
+      "putPriceSource": "unavailable",
+      "source": "Synthetic IV calibration from the live index snapshot",
+      "note": "NIFTY pricing is theoretical and calibrated from the live index snapshot because the option-chain endpoint is not available in this environment."
+    },
+    "bankNifty": {
+      "symbol": "BANK NIFTY",
+      "lotSize": 30,
+      "spot": "57,846.55",
+      "expiry": "15-Jul-2026",
+      "daysToExpiry": "7.00",
+      "strike": "57800",
+      "iv": "55.00%",
+      "callPrice": "--",
+      "putPrice": "--",
+      "callDelta": "0.5254",
+      "putDelta": "-0.4746",
+      "gamma": "0.000090",
+      "thetaCall": "-129.9956",
+      "thetaPut": "-120.5052",
+      "vega": "31.8939",
+      "callPriceSource": "unavailable",
+      "putPriceSource": "unavailable",
+      "source": "Synthetic IV calibration from the live index snapshot",
+      "note": "BANK NIFTY pricing is theoretical and calibrated from the live index snapshot because the option-chain endpoint is not available in this environment."
+    },
+    "finNifty": {
+      "symbol": "FINNIFTY",
+      "lotSize": 60,
+      "spot": "26,787.70",
+      "expiry": "09-Jul-2026",
+      "daysToExpiry": "1.00",
+      "strike": "26800",
+      "iv": "55.00%",
+      "callPrice": "--",
+      "putPrice": "--",
+      "callDelta": "0.5017",
+      "putDelta": "-0.4983",
+      "gamma": "0.000517",
+      "thetaCall": "-155.9845",
+      "thetaPut": "-151.5797",
+      "vega": "5.5937",
+      "callPriceSource": "unavailable",
+      "putPriceSource": "unavailable",
+      "source": "Synthetic IV calibration from the live index snapshot",
+      "note": "FINNIFTY pricing is theoretical and calibrated from the live index snapshot because the option-chain endpoint is not available in this environment."
+    },
+    "sensex": {
+      "symbol": "SENSEX",
+      "lotSize": 20,
+      "spot": "77,655.25",
+      "expiry": "09-Jul-2026",
+      "daysToExpiry": "1.00",
+      "strike": "77700",
+      "iv": "55.00%",
+      "callPrice": "--",
+      "putPrice": "--",
+      "callDelta": "0.5000",
+      "putDelta": "-0.5000",
+      "gamma": "0.000178",
+      "thetaCall": "-452.1695",
+      "thetaPut": "-439.3990",
+      "vega": "16.2157",
+      "callPriceSource": "unavailable",
+      "putPriceSource": "unavailable",
+      "source": "Synthetic IV calibration from the live index snapshot",
+      "note": "SENSEX pricing is theoretical and calibrated from the live index snapshot because the option-chain endpoint is not available in this environment."
+    }
+  },
+  "commodities": {
+    "gold": {
+      "label": "Gold",
+      "rate": "4,137.80",
+      "change": "-0.18%",
+      "bias": "Balanced",
+      "support": [
+        "4,080.83",
+        "4,023.87",
+        "3,962.50"
+      ],
+      "resistance": [
+        "4,194.77",
+        "4,251.73",
+        "4,377.00"
+      ],
+      "summary": "Gold is trading at 4,137.80 with a balanced tone on the day.",
+      "note": "Average recent daily range is about 71.21. Immediate support sits near 4,080.83, while resistance is shaping near 4,194.77.",
+      "analysis": {
+        "trend": "Balanced",
+        "structure": "Gold is holding -0.18% on the session with price currently between the first support and resistance band.",
+        "momentum": "Recent commodity flow keeps the market sensitive around 4,080.83 on the lower side and 4,194.77 on the upper side.",
+        "levels": "A move above 4,194.77 can open room toward 4,251.73, while a slip below 4,080.83 can pressure price toward 4,023.87.",
+        "tradePlan": "Treat Gold as a range-led commodity setup and wait for a decisive break beyond the first band before leaning aggressively."
+      }
+    },
+    "silver": {
+      "label": "Silver",
+      "rate": "60.99",
+      "change": "+0.10%",
+      "bias": "Balanced",
+      "support": [
+        "59.96",
+        "58.92",
+        "57.03"
+      ],
+      "resistance": [
+        "62.02",
+        "63.06",
+        "70.95"
+      ],
+      "summary": "Silver is trading at 60.99 with a balanced tone on the day.",
+      "note": "Average recent daily range is about 1.29. Immediate support sits near 59.96, while resistance is shaping near 62.02.",
+      "analysis": {
+        "trend": "Balanced",
+        "structure": "Silver is holding +0.10% on the session with price currently between the first support and resistance band.",
+        "momentum": "Recent commodity flow keeps the market sensitive around 59.96 on the lower side and 62.02 on the upper side.",
+        "levels": "A move above 62.02 can open room toward 63.06, while a slip below 59.96 can pressure price toward 58.92.",
+        "tradePlan": "Treat Silver as a range-led commodity setup and wait for a decisive break beyond the first band before leaning aggressively."
+      }
+    },
+    "crudeOil": {
+      "label": "Crude Oil",
+      "rate": "72.30",
+      "change": "+2.64%",
+      "bias": "Strong",
+      "support": [
+        "70.00",
+        "67.69",
+        "67.04"
+      ],
+      "resistance": [
+        "74.60",
+        "76.91",
+        "93.64"
+      ],
+      "summary": "Crude Oil is trading at 72.30 with a strong tone on the day.",
+      "note": "Average recent daily range is about 2.88. Immediate support sits near 70.00, while resistance is shaping near 74.60.",
+      "analysis": {
+        "trend": "Strong",
+        "structure": "Crude Oil is holding +2.64% on the session with price currently between the first support and resistance band.",
+        "momentum": "Recent commodity flow keeps the market sensitive around 70.00 on the lower side and 74.60 on the upper side.",
+        "levels": "A move above 74.60 can open room toward 76.91, while a slip below 70.00 can pressure price toward 67.69.",
+        "tradePlan": "Treat Crude Oil as a range-led commodity setup and wait for a decisive break beyond the first band before leaning aggressively."
+      }
+    },
+    "naturalGas": {
+      "label": "Natural Gas",
+      "rate": "3.28",
+      "change": "+0.46%",
+      "bias": "Positive",
+      "support": [
+        "3.18",
+        "3.08",
+        "3.02"
+      ],
+      "resistance": [
+        "3.38",
+        "3.48",
+        "3.44"
+      ],
+      "summary": "Natural Gas is trading at 3.28 with a positive tone on the day.",
+      "note": "Average recent daily range is about 0.13. Immediate support sits near 3.18, while resistance is shaping near 3.38.",
+      "analysis": {
+        "trend": "Positive",
+        "structure": "Natural Gas is holding +0.46% on the session with price currently between the first support and resistance band.",
+        "momentum": "Recent commodity flow keeps the market sensitive around 3.18 on the lower side and 3.38 on the upper side.",
+        "levels": "A move above 3.38 can open room toward 3.48, while a slip below 3.18 can pressure price toward 3.08.",
+        "tradePlan": "Treat Natural Gas as a range-led commodity setup and wait for a decisive break beyond the first band before leaning aggressively."
+      }
+    }
+  },
+  "breadth": {
+    "advances": 13,
+    "declines": 37,
+    "status": "Mixed participation with 13 advancing stocks and 37 declining stocks."
+  },
+  "vix": {
+    "level": "15.6",
+    "change": "+0.72%",
+    "note": "India VIX live context is refreshed by the live API when NSE volatility data is available."
+  },
+  "fiiDii": {
+    "fii": "Published after close",
+    "dii": "Published after close",
+    "note": "FII/DII cash-flow figures are official end-of-day disclosures. Intraday estimates are intentionally not shown."
+  },
+  "sectors": [
+    {
+      "name": "Auto",
+      "move": "-1.23%",
+      "tone": "down",
+      "level": "27,008.10",
+      "source": "NSE live indices"
+    },
+    {
+      "name": "PSU Bank",
+      "move": "-1.07%",
+      "tone": "down",
+      "level": "8,209.70",
+      "source": "NSE live indices"
+    },
+    {
+      "name": "Infrastructure",
+      "move": "-0.97%",
+      "tone": "down",
+      "level": "9,362.70",
+      "source": "NSE live indices"
+    },
+    {
+      "name": "Pharma",
+      "move": "+0.85%",
+      "tone": "up",
+      "level": "25,896.30",
+      "source": "NSE live indices"
+    },
+    {
+      "name": "FMCG",
+      "move": "-0.76%",
+      "tone": "down",
+      "level": "49,845.65",
+      "source": "NSE live indices"
+    },
+    {
+      "name": "Media",
+      "move": "-0.76%",
+      "tone": "down",
+      "level": "1,475.45",
+      "source": "NSE live indices"
+    },
+    {
+      "name": "Commodities",
+      "move": "-0.74%",
+      "tone": "down",
+      "level": "9,834.55",
+      "source": "NSE live indices"
+    },
+    {
+      "name": "Financial Services",
+      "move": "-0.73%",
+      "tone": "down",
+      "level": "26,787.70",
+      "source": "NSE live indices"
+    }
+  ],
+  "globalCues": [
+    "How to strengthen Indian rupee without a rate hike",
+    "RBI to conduct Rs 25,000-cr overnight variable rate repo auction on Jul 8",
+    "Rupee opens 7 paise higher at 95.33 against US dollar",
+    "Gift Nifty, Samsung earnings, bond yields to gold rate: 10 key things that changed for Indian stock market overnight",
+    "Fall in crude prices not enough to lift Rupee: Mint poll",
+    "Rupee hits three-week low as OMC dollar demand, NDF maturities weigh"
+  ],
+  "news": {
+    "domestic": [
+      {
+        "headline": "How to strengthen Indian rupee without a rate hike",
+        "bias": "Bearish",
+        "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOSUtzMFhmT1A4Q0ZHaVN6SUQzY3dvWG1aZEN2OFpnQ2NKWFp3b3Y4dFpaR1hDeUd3bEJGalhJWHFIR1l4Vlk2RXVCcnFaS19oVTNWZ1cxTGd6RHhpUUxON1VrYTRnY2R0UmlxaG1CUmlPMm8wOFFMWkRJeTZNT3FJYWI4NFVFX3A1RjVuWkoyaTFadUlFTWhoQUZXYklPNXF6X19LQ2ZjazRCUzJ0ckpycGhsaXd3d0NXTlc5NUx2eTc1YzdKckhXbNIBzgFBVV95cUxNVENFMXk4aHhOSVpVdlp6Y0RteW5zaTl4X0NvTTZjR2V3QW0tNkJfcDgxbWN5YXJxSWc1WEFaRFM5QTRuamxac0Ryb2k1eU50dHJpZVppc0FFUHJfb1VhbjdrNElQODRWOVJGRVk5djN2ODlBY2xrRWRGV283dlRrUjVTWUVybWZzNzFDN2VDWkVTaTBBWGtGeHFITDMzTGlkZU42NC1JTTcxeDE2Y01NUVFKaUxIcmkwVkd2LUVFX1FuaUZEekQ5TGI1bk56Zw?oc=5",
+        "source": "The Economic Times",
+        "publishedAt": "08 Jul 06:25 IST",
+        "publishedEpoch": 1783472125
+      },
+      {
+        "headline": "RBI to conduct Rs 25,000-cr overnight variable rate repo auction on Jul 8",
+        "bias": "Neutral",
+        "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxQU1FfeTJ6VWhZU0kyVlNpbVFLZ3lXcFVpMmE3VEdMX2szUXFSNkY4aFlsbjNkNWxPLTZ1WDdFRGVuc3I2aWE1YXFZbm5aRktXUEFuZ0NPMEk2VzNLWFFRclZUUV9GbkJGeEdmeE1acHhSWF9hZHFzd01nZ1hTSEpEZ2ZraDlWMDM0RFZvODZ5WnM2TkZxTXhoWWo0UXVaRklCOUJWWm51SF9kRTdldUJ4c1Nza3Myal9TMUxFUlI4d0tKTld5Wk13bnljSVRlcXFXQkNuNEwxNGtjUTlHODBoZkFDV3c5d9IB6wFBVV95cUxQUmZsTXNsbndzbGhROVY4SlZrdTVUbjE3MV9leS1OWGduQWtYODNobHhJQWNDdTBRSi1IWGx1WUpla3Z3eHk3TmtzY0xFZ1VLQmw4cUNrblJ6Qi1OZ0lFbWMwdVY5dEJxeFZPdnlGLVlNaDlFSFo5RFFhVVlVbXBHajFrSFJZTVFVWE9Ka2Q2VFQxeFBvVWNzeUs1WWlSUWhmT0hSYWZzNmtSYXRpWFJaT18tZVIwQW1UOGNCTVY4bnVFVng3ZFJmRWRpVUlVV0E0eDVNRnh2dGtWMnlNSndWeGZ3TEREZ0FGV01n?oc=5",
+        "source": "The Economic Times",
+        "publishedAt": "07 Jul 20:13 IST",
+        "publishedEpoch": 1783435384
+      },
+      {
+        "headline": "Rupee opens 7 paise higher at 95.33 against US dollar",
+        "bias": "Neutral",
+        "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQZXdjUVF3NC1GNHg5Q3lTMFR6UnNvUmlXMHI1Ym8wdFlhR2pKYk5TUWVfX0RfQ09Ydnpack0tRk5BOWs3dW13RmlIem4ySllPSFJRMFZuX1NOUTVfLVg4aUZXZlhKdUR3Y05EQzJxVzRHdnhibERURGhVSDZWLUVmbXF2bkhSb3ZYVjVQUDh2SkltZzdMLVoxSVlIX3M4UHQxbElDTi1wOTZoMVpmT2EwUzNpQWxVcEllZG1udC1zSFrSAcYBQVVfeXFMTWhoQ0IyZFJLT3hfY3hKY0JFeUQ1UzVSZnBzaFg0cFNpcnVlOG1YME5VWXZ4d1UxQ3R5TFFYa3dQenEtb3JKSXVwa0FtRnkzcjQ1MUpGZGZtLWo1bHRFVFZ6NFk0QVRXZEVPbTl1cDBKQXNoSElPRlRQUHpjc1VwdDZiamJfVzUyRUVTbzgyRDktOUZuSlc0Y2pXblZ3a1JURmx5ckRoRXd2clFybF8wb3pVSTIzamd1WWZKRE1tNldldnNDcnln?oc=5",
+        "source": "livemint.com",
+        "publishedAt": "07 Jul 09:05 IST",
+        "publishedEpoch": 1783395304
+      },
+      {
+        "headline": "Gift Nifty, Samsung earnings, bond yields to gold rate: 10 key things that changed for Indian stock market overnight",
+        "bias": "Neutral",
+        "url": "https://news.google.com/rss/articles/CBMikAJBVV95cUxQTEtwT1FSS0w0bnJucW13SlQyZkNpYjNZMV80VkQtYXEyWGpKNnFBSzg5MXJWMTJweGYwODJCUTlXVXA0OGljSlZoM0FYQ0ZWZ2h2Q1JDWU9rUmF1U1lOY0lqdDVCY1NObFBTT0ttY2ZTMHFuaGJ4THNRNlg3N3V1U181bzhreXNvbFVDTjBWMkxzeDJ1VkNOZjV4eF9SVzEwaDQwdmttdUxQempFaHppTUpkaUtaT05sWGZEbDQtMGpfa1ZFYkFoVUdTN2tXSFlWZlFzTFdYZElRMkpFX1Y0ZVR2SmtRejZ3ZUdLV3luUG51MVktN05oem8zQld5Y0JVRVE0dWZXNFppc0FmcmxFctIBlgJBVV95cUxQenNhWmp6TVNmU09RNWk4bVQtUDBDZnNOUXNId2ducE9TTV9aSmpJUmtUNTN0ZWk5R1lVTUhWaldTSWE5T2lLSXd1LUxzTllkZ0cxNXZmQ1ZHNVRwcGpBRlczZ3d0MkE4TlUyeW5KVXNCbHlnN2lKOG1PRHVaUmJJMGRISmhhOHpOTWY5aGZUZmpJYmgtazM1cHNnbmtUbHNIR2RTMDljQnZTUk1sVS1mcF95ZWdoR1dzbHZZdlBfc2lwOVpYR1VoSzc1Tkkzekx4TlBYbHFOdTZ1UVVFR081a0FPRldZSjUzYkl5cW1rWWZHY2RQbjNJT0dPUzNyelRhLXctNjNNc2ZlSzdHNjN6bW9IZUsyUQ?oc=5",
+        "source": "livemint.com",
+        "publishedAt": "07 Jul 07:05 IST",
+        "publishedEpoch": 1783388108
+      },
+      {
+        "headline": "Fall in crude prices not enough to lift Rupee: Mint poll",
+        "bias": "Neutral",
+        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOWWdReEZKSmdING5uTnVVZGl3YWNHX0RZbGQzR2Q4ajRKTkZXSUtvaHFrcF9UMngyMWNXLTVEU0Jsb1lZMVYxclk0MkJVWEY1b0pzUE80WF9fSDhhZUhfMEZ3aE1CVzEzMjdoamtqQjJlaXM3MFplODZuck5PS2ltaTNBOFd2ZnV6YUZKdDhyYzZ3NVp5Nm5RLVJBWERGVjZlclNKXzVVS2c4MU1K0gGyAUFVX3lxTE9QQUZxZlJHdnJCY1R4MWpDai1QaFVwZHlkQnpuM1JwYjZsTGpTSHpHakJEcG5zMU03Q0Zwc2xVVnZSa3Z6ZmtZMEt1VFJQbTBWZm41T0ZtdHFwcjBRVDB5Y0NaUjl5OEZsVmJjVG1JcV9UeGplMDhDalpoVHNveXRZLVlVVVJtRXlaMldkeno1NUUyUFhEWHJYakdQalgwM1hJVnRBekljQ1IyRXBPaFYwcXc?oc=5",
+        "source": "livemint.com",
+        "publishedAt": "07 Jul 06:05 IST",
+        "publishedEpoch": 1783384555
+      },
+      {
+        "headline": "Rupee hits three-week low as OMC dollar demand, NDF maturities weigh",
+        "bias": "Neutral",
+        "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPZUMtdmRMcjNpWnd0cGZHOF9Zc01HVDN6emN0WllpX3l6V0pIOXU1akRvNXZybXluOTVBWDVHRktjOEIyRFpvbVVWV0R3cF8zTkR6cjUyMjcxV2lqVDZUSk1rWUJZU3pabFpHdE5ScFNsYTNrMEtpTGZEVTRONXdzaDZBVWdGMWZTVlRPbWtHMllyaEJXTXlfdXhEWTFURVFOa29mN0gycVlKZmFtX292YlM0a2ZnMDNJUTVRX2VrUXlSVjN5c1JHSThZYWktT1nSAdQBQVVfeXFMTXZreFZnUzRkYlpkcUJtUy1teGVkUkppYkNxQ0NNNkdMa0pxdGlXMHo4cVRfSU9ldHc1MklhOHBTRGFzSmlGWGxkOTJhYkdkN0xEMkRpQXVLeFU3U1Z4SWluZ3ZFazNCd3pHOVpxYllFaUtxQmpYc1h6bzJiRF93YnFjT2xHSmdUbHM0ZlZvX19OY2lxaGJKQUIxWXdwQktzZnB0UmktMDh1TW1TQW5zalNfZGhWLWtSLU1zZ2doWFZRXzdMRXN6YW1va1czRElPMG9ZSHI?oc=5",
+        "source": "Business Standard",
+        "publishedAt": "06 Jul 20:37 IST",
+        "publishedEpoch": 1783350435
+      }
+    ],
+    "global": [
+      {
+        "headline": "Gold eases as fresh US-Iran tensions lift oil prices, rate-hike bets",
+        "bias": "Neutral",
+        "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNdVRrcWFpbTZDd3p5UktwUG5xYnFGMHhuYkNUcDg3cU1JQkRaSFpxU21sZDFMZURXd19uQjVqTXdndE5CN3JnTWUza0NrblgtWHZqbnZsWTVyd08wbDdlSWx2Q1NjcmcyNG5OVUFMaGkyR1RDQm1fSDBEZ21mQ1cxYjlzTDZSbkdTMlNwVzFoSmtVMERkZkNKMXNGN2hMUmxTV0o2c0l4dklNZzdvSmNfRnV0T2d4a3pjMndXQ0hUenMwVzZFLTFzVTR3Q05rVnRoY2hBS1ZveHfSAd4BQVVfeXFMTUgybDBWNDZOSC1KVVVMdXBLYTQtM2I0eld6UmI3eDhEV0NiZlhybVhhM3FpZHhvbEtTcDlFR0hMdG5JYXVvRUVncDdwV0FlMEdySWd0UWphRmFLbVo0dm56R3R5NFJqNE9lSFdqUmFkVmVGVTcxd0p0Y0lsYnNiOWYzcHFUVHZLSVRSQUpVOUo1Y1VFcWxVWUF1V01fYW01NkFxTTE1SWJKbnI1RFM3aFdzN0w4TDJNa2hhZGI3SEJUNUxGOGtVd1dLVGM2dk44QkVQUUNiMi1qc3dOZzRB?oc=5",
+        "source": "Business Standard",
+        "publishedAt": "08 Jul 09:16 IST",
+        "publishedEpoch": 1783482374
+      },
+      {
+        "headline": "Brent oil back at $76 | Wallstreet ends lower | US yields rise| Opening Bell",
+        "bias": "Bearish",
+        "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOSThpLTc5TGVPWXJSWmY5d0hHMTc1N29xc2dqajNyTFF2aUdsU2QwYlpKVEN5LTlqRVZWSGU5QWNTUzU3ZjRKRkJ3aWc1NXJvV0lGQWZ4M1JVb2g5VTJtdkdpTzIwSmhFS3d6ajUteUNrN29tUEM5UFk5R3ROM1BuSFhjb2dzRlRmS0hlVnU4ejN6WTA5V2RjdTQ3cFZNb3h6WHFITG1NbjJ4ZkYtRkRsUllINnNGRXM4bHhIdF9ic215bWMyMUZUQXhnYXRNYXAyd29xclJmQVdYQdIB3wFBVV95cUxQOU05Z181VzRHWEdfU3VGNmNuY3RPVDRINFF3Tl9LWW4xNWF2cEQwejJHT0tFVi1vRmJTVDZDeHVRTm9TRGlmOXVPSDlVaXVJQy1xRXkydnpRX191S2NIV1VHZXhndzktaGs0LVA3WWZlbkN4VmwtLXBkUm0zUkxUT29MeGVwRUNlekc5dFB3ektaRWFWRHVDZl85bl83RjFfWTBnNGNobjNCMmJEaThjbFlwVXhqenMybTJhS1hoRTJKcjIyMWgtSEtzTkxTUk14NFZnM0FCLVNCOUtjam9v?oc=5",
+        "source": "Moneycontrol.com",
+        "publishedAt": "08 Jul 08:29 IST",
+        "publishedEpoch": 1783479589
+      },
+      {
+        "headline": "Global Market Today: Oil rises, Asian stocks steady as US strikes Iran",
+        "bias": "Bearish",
+        "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPWEhuMWNDc2FNT2JKOVNLSEdtREJyS2Y4eS15WERUNzRyVktaYXl2N05UU0gzOFNlUndERVFCUkFFNmN0dXlVdVJLMjgtTVo5UmlMczVQdFV1d2xFdk82SWZva3NiMXQ2TkFfbnFLZi03LUlaRFdhZFNsNjI1bFhONjY4MERDOXgzcFl1WUdEQ2JaWVpQclQ3U3F2Z19DS2NhRXQ5aEhTblN0UG1KOWpFUGVnRG1fNHZQTF9vNnlQbFpoUjNJTEYycG0xZWRJRnp5QzlsOV9YY1hSQVJ1dDhjWlVtUdIB4wFBVV95cUxPWEhuMWNDc2FNT2JKOVNLSEdtREJyS2Y4eS15WERUNzRyVktaYXl2N05UU0gzOFNlUndERVFCUkFFNmN0dXlVdVJLMjgtTVo5UmlMczVQdFV1d2xFdk82SWZva3NiMXQ2TkFfbnFLZi03LUlaRFdhZFNsNjI1bFhONjY4MERDOXgzcFl1WUdEQ2JaWVpQclQ3U3F2Z19DS2NhRXQ5aEhTblN0UG1KOWpFUGVnRG1fNHZQTF9vNnlQbFpoUjNJTEYycG0xZWRJRnp5QzlsOV9YY1hSQVJ1dDhjWlVtUQ?oc=5",
+        "source": "The Economic Times",
+        "publishedAt": "08 Jul 06:47 IST",
+        "publishedEpoch": 1783473420
+      },
+      {
+        "headline": "US stock market today: S&P 500, Nasdaq futures edge lower as chip stocks retreat; crude oil prices rise",
+        "bias": "Neutral",
+        "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxNel9kSXZOR0xYSXF3M1d6UXhQdkkyMVV1Q0Zvcnl2TE1tdldlZnRrd1hjbnRBMlR4OFAzUVZNMi1Ed2VfOGVTVkl5MWJvSjBka2tKTTRTVUw1RklYc2FDS3c1aFU0NEdaTWROWWNYdENGbmExS1pTT1Fuc1FSTXZ1cG85N2hJYmxjenlOckFkRHQzZjY0ODNTdFVuMzBPRF9BZ1RBejFsWnc1cndUMTdzZHJ5aEhYcGpCd0w3Y3pFVzlobnVPbmdUNVhPMFAxRWJVcm9RclBiX1hjaFE5V0ctZ0w1MlVUZ2d6SGFGMzUtUWFyd2ZhRW1iSjRobGMyTzjSAYQCQVVfeXFMUF9rYkFHOVBjZTFpU3lwai1fYjFoaEF3MXRIcE54QkUyUGJ1dUpFckVlMGZSVFpzQi1aWWo5RmhEa1lqN1VPZ0xYd2E5LU51R1UtLUh2Z29CVUxhTEJTdlp4VTdCbFF1b3p4ZkhnOGcxWjZqUTNUYlMtUDZLYlRsOFRldjZkYTZBRFBPcnpNdTRXd0JDOXluM282NTJwYUlHRU1ZU29UMVB1YzFicko1MmFGR0JhQkFiOVJZNDVvMHJUVlA4N1hYcm1QajNLMVBaMHFLeGtsVm1ZY3BqMzluTE1oM3g4NzZBZm1YWndqdDhCSXFySjlYM3NaU0VJSzJvbC1jeGU?oc=5",
+        "source": "livemint.com",
+        "publishedAt": "07 Jul 18:14 IST",
+        "publishedEpoch": 1783428254
+      },
+      {
+        "headline": "Oil prices gain as focus shifts to supply recovery and demand",
+        "bias": "Neutral",
+        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQaHc0WUQ4T1F5eW9iQmZqMXZRdDBkWGZKTlpXSzcyYVNmTE15OUZwdlNDZ1hwOFM4cnhJdEUzaHJGbEh5eWhxYkJRYXBFVTY4R05KdTV4X3dfanBjeWZDSjdWS1B5NFRocU9lLVdmMDdHcGdWdV9pRGVTcURKdG9TT3hzOEp0MWlYbW5Ialhva2NxbTlBU3B4UGFjeENMS2NKN1g3RGlvUy1fck9t0gGyAUFVX3lxTE84d3Bmai1LNGhRRzB3SHN0ZVUtNFdUaW5tZTZNeER5MnNUR1JYUTFBc3JwMmNvb2swM0h3UEhKWUo5ZXJvMHpFSEdZYU44V1VkakhvdGNqdnl6SVNvYXNvZ0M0blc4TVFlclNlNy1MLWdRM3RnYWhmcWtpbHAyY29OS1F0NkZiYnBPT0d0RW01a2lRc1pIVXlwLXVBTXhjbzlfeHUxZ0kzQmZFMnhuYTRJQnc?oc=5",
+        "source": "The Business Standard",
+        "publishedAt": "07 Jul 12:00 IST",
+        "publishedEpoch": 1783405800
+      },
+      {
+        "headline": "Gold edges down as Middle East tensions propel oil prices higher, Fed minutes awaited",
+        "bias": "Neutral",
+        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOM3YtNTR2VmdTVnNrNVpWcmVjYWpZb1d6NTlmOEVyekFmdlpvek96eW5XbXJWMGhEWUNJNHBHOXhqWG4yRmxtTVZGdzdnYmk0V2ZhUzExaHd0Vld3MTJia2RzUkY4dmgwOEpFXzZZbEJQcFI0NURhREc0dm1lN1RralRYZ2dQdm5iUkcwblRaMjZpcmRIbnZ3S0lR?oc=5",
+        "source": "Reuters",
+        "publishedAt": "07 Jul 08:27 IST",
+        "publishedEpoch": 1783393020
+      }
+    ]
+  },
+  "profitReview": {
+    "title": "Recent completed signal review",
+    "summary": "Over the recent 5-day window, 1 completed NIFTY signals were tracked. 0 closed in profit and 1 in loss after estimated transaction costs (spread, brokerage, STT and charges), for an estimated net result of -624.56 per lot with average closure time around 30 min. This is a model-estimated replay of the signal engine, not a record of live fills; a small sample like this is not proof of edge in either direction. Confidence is the first-report setup-strength score, not a win-probability. Live entry/exit LTP are shown only when a live archive exists; synthetic price guesses are hidden.",
+    "emptyReason": "",
+    "metrics": {
+      "trades": "1",
+      "wins": "0",
+      "losses": "1",
+      "netPnl": "-624.56 / lot",
+      "averageTime": "30 min",
+      "accuracy": "0%",
+      "latestResult": "Loss (early exit)"
+    },
+    "trades": [
+      {
+        "date": "02 Jul",
+        "time": "1:20 PM",
+        "reportedAt": "2026-07-02 13:20 IST",
+        "completedAt": "2026-07-02 13:50 IST",
+        "signal": "NIFTY 24150 CE",
+        "strike": "24150",
+        "entry": "106.56",
+        "exit": "99.41",
+        "priceSource": "model-estimated",
+        "pnlLtp": "-624.56 / lot",
+        "grossPnlLtp": "-464.75 / lot",
+        "costs": "159.81 / lot",
+        "pnlPercent": "-0.05%",
+        "confidence": "85%",
+        "tradeQuality": "High",
+        "confidenceSource": "First-report setup-strength score",
+        "confidenceAudit": "Raw strategy score from the confirmed 5-minute candle at first report, mapped to a bounded display scale. It measures setup strength, not calibrated win odds.",
+        "result": "Loss",
+        "displayResult": "Loss (early exit)",
+        "completionNote": "Trade stalled after 6 candles without reaching 25% of the target move.",
+        "duration": "30 min",
+        "barsHeld": 6,
+        "minutesHeld": 30,
+        "stalledProgressRatio": 0.0
+      }
+    ],
+    "note": "P&L is net of estimated round-trip costs: bid-ask spread and slippage, flat brokerage, STT on the sell side, exchange charges, GST, and stamp duty. Confidence is the first-report setup-strength score from the confirmed candle, not a win-probability; the same score is used by the live signal card and Telegram. Fresh entries after 2:30 PM IST, weak breakout candles, poor reward-to-risk setups, and cooldown periods after stop-losses are excluded from this review. Ambiguous candles that touched both target and stop in the same bar are kept neutral and excluded from calibration. Live option-chain prices are shown only when archived; synthetic price guesses are hidden.",
+    "lotSize": 65,
+    "pricing": {
+      "symbol": "NIFTY",
+      "spot": "--",
+      "expiry": "--",
+      "daysToExpiry": "--",
+      "strike": "--",
+      "iv": "--",
+      "callPrice": "--",
+      "putPrice": "--",
+      "callDelta": "--",
+      "putDelta": "--",
+      "gamma": "--",
+      "thetaCall": "--",
+      "thetaPut": "--",
+      "vega": "--",
+      "source": "Unavailable"
+    }
+  },
+  "profitReviewByIndex": {
+    "bankNifty": {
+      "title": "Recent completed BANKNIFTY signal review",
+      "summary": "Over the recent 5-day window, 5 completed BANKNIFTY signals were tracked. 2 closed in profit and 3 in loss after estimated transaction costs (spread, brokerage, STT and charges), for an estimated net result of -2295.98 per lot with average closure time around 17 min. This is a model-estimated replay of the signal engine, not a record of live fills; a small sample like this is not proof of edge in either direction. Confidence is the first-report setup-strength score, not a win-probability. The pricing view is based on a Black-Scholes-style option engine calibrated from the live market snapshot.",
+      "emptyReason": "",
+      "metrics": {
+        "trades": "5",
+        "wins": "2",
+        "losses": "3",
+        "netPnl": "-2295.98 / lot",
+        "averageTime": "17 min",
+        "accuracy": "40%",
+        "latestResult": "Closed in loss (after costs)"
+      },
+      "trades": [
+        {
+          "date": "07 Jul",
+          "time": "1:25 PM",
+          "reportedAt": "2026-07-07 13:25 IST",
+          "completedAt": "2026-07-07 13:55 IST",
+          "signal": "BANKNIFTY 58300 PE",
+          "strike": "58300",
+          "entry": "334.85",
+          "exit": "330.03",
+          "priceSource": "model-estimated",
+          "pnlLtp": "-359.84 / lot",
+          "grossPnlLtp": "-144.60 / lot",
+          "costs": "215.24 / lot",
+          "pnlPercent": "+0.01%",
+          "confidence": "87%",
+          "tradeQuality": "High",
+          "confidenceSource": "First-report setup-strength score",
+          "confidenceAudit": "Raw strategy score from the confirmed 5-minute candle at first report, mapped to a bounded display scale. It measures setup strength, not calibrated win odds.",
+          "result": "Profit",
+          "displayResult": "Closed in loss (after costs)",
+          "completionNote": "Trade stalled after 6 candles without reaching 25% of the target move.",
+          "exitReason": "stalled_after_6_candles",
+          "barsHeld": 6,
+          "minutesHeld": 30,
+          "stalledProgressRatio": 0.02,
+          "duration": "30 min"
+        },
+        {
+          "date": "03 Jul",
+          "time": "2:05 PM",
+          "reportedAt": "2026-07-03 14:05 IST",
+          "completedAt": "2026-07-03 14:15 IST",
+          "signal": "BANKNIFTY 57900 PE",
+          "strike": "57900",
+          "entry": "324.38",
+          "exit": "295.45",
+          "priceSource": "model-estimated",
+          "pnlLtp": "-1071.40 / lot",
+          "grossPnlLtp": "-867.90 / lot",
+          "costs": "203.50 / lot",
+          "pnlPercent": "-0.10%",
+          "confidence": "87%",
+          "tradeQuality": "High",
+          "confidenceSource": "First-report setup-strength score",
+          "confidenceAudit": "Raw strategy score from the confirmed 5-minute candle at first report, mapped to a bounded display scale. It measures setup strength, not calibrated win odds.",
+          "result": "Stop loss hit",
+          "displayResult": "Stoploss hit",
+          "completionNote": "",
+          "exitReason": "target_or_stop",
+          "barsHeld": 2,
+          "minutesHeld": 10,
+          "stalledProgressRatio": 0.0,
+          "duration": "10 min"
+        },
+        {
+          "date": "03 Jul",
+          "time": "1:10 PM",
+          "reportedAt": "2026-07-03 13:10 IST",
+          "completedAt": "2026-07-03 13:40 IST",
+          "signal": "BANKNIFTY 57900 PE",
+          "strike": "57900",
+          "entry": "341.43",
+          "exit": "353.99",
+          "priceSource": "model-estimated",
+          "pnlLtp": "+153.59 / lot",
+          "grossPnlLtp": "+376.80 / lot",
+          "costs": "223.21 / lot",
+          "pnlPercent": "+0.05%",
+          "confidence": "87%",
+          "tradeQuality": "High",
+          "confidenceSource": "First-report setup-strength score",
+          "confidenceAudit": "Raw strategy score from the confirmed 5-minute candle at first report, mapped to a bounded display scale. It measures setup strength, not calibrated win odds.",
+          "result": "Breakeven",
+          "displayResult": "Partial profit booked",
+          "completionNote": "Breakeven stop closed the trade after protection moved to entry. 50% booked at +1R; balance managed by the trail.",
+          "exitReason": "target_or_stop",
+          "barsHeld": 6,
+          "minutesHeld": 30,
+          "stalledProgressRatio": 0.14,
+          "duration": "30 min"
+        },
+        {
+          "date": "03 Jul",
+          "time": "11:20 AM",
+          "reportedAt": "2026-07-03 11:20 IST",
+          "completedAt": "2026-07-03 11:30 IST",
+          "signal": "BANKNIFTY 58000 PE",
+          "strike": "58000",
+          "entry": "324.62",
+          "exit": "287.46",
+          "priceSource": "model-estimated",
+          "pnlLtp": "-1316.22 / lot",
+          "grossPnlLtp": "-1114.80 / lot",
+          "costs": "201.42 / lot",
+          "pnlPercent": "-0.14%",
+          "confidence": "87%",
+          "tradeQuality": "High",
+          "confidenceSource": "First-report setup-strength score",
+          "confidenceAudit": "Raw strategy score from the confirmed 5-minute candle at first report, mapped to a bounded display scale. It measures setup strength, not calibrated win odds.",
+          "result": "Stop loss hit",
+          "displayResult": "Stoploss hit",
+          "completionNote": "",
+          "exitReason": "target_or_stop",
+          "barsHeld": 2,
+          "minutesHeld": 10,
+          "stalledProgressRatio": 0.0,
+          "duration": "10 min"
+        },
+        {
+          "date": "02 Jul",
+          "time": "2:15 PM",
+          "reportedAt": "2026-07-02 14:15 IST",
+          "completedAt": "2026-07-02 14:20 IST",
+          "signal": "BANKNIFTY 58000 PE",
+          "strike": "58000",
+          "entry": "340.06",
+          "exit": "357.45",
+          "priceSource": "model-estimated",
+          "pnlLtp": "+297.89 / lot",
+          "grossPnlLtp": "+521.70 / lot",
+          "costs": "223.81 / lot",
+          "pnlPercent": "+0.06%",
+          "confidence": "87%",
+          "tradeQuality": "High",
+          "confidenceSource": "First-report setup-strength score",
+          "confidenceAudit": "Raw strategy score from the confirmed 5-minute candle at first report, mapped to a bounded display scale. It measures setup strength, not calibrated win odds.",
+          "result": "Trailing stop profit",
+          "displayResult": "Trail profit booked",
+          "completionNote": "Trailing stop locked in profit after the move ran in favor. 50% booked at +1R; balance managed by the trail.",
+          "exitReason": "target_or_stop",
+          "barsHeld": 1,
+          "minutesHeld": 5,
+          "stalledProgressRatio": 0.17,
+          "duration": "5 min"
+        }
+      ],
+      "note": "P&L is net of estimated round-trip costs: bid-ask spread and slippage, flat brokerage, STT on the sell side, exchange charges, GST, and stamp duty. Confidence is the first-report setup-strength score from the confirmed candle, not a win-probability; the same score is used by the live signal card and Telegram. Fresh entries after 2:30 PM IST, weak breakout candles, poor reward-to-risk setups, and cooldown periods after stop-losses are excluded from this review. Ambiguous candles that touched both target and stop in the same bar are kept neutral and excluded from calibration. Only completed real signal outcomes are shown here.",
+      "lotSize": 30,
+      "pricing": {
+        "symbol": "BANKNIFTY",
+        "spot": "--",
+        "expiry": "--",
+        "daysToExpiry": "--",
+        "strike": "--",
+        "iv": "--",
+        "callPrice": "--",
+        "putPrice": "--",
+        "callDelta": "--",
+        "putDelta": "--",
+        "gamma": "--",
+        "thetaCall": "--",
+        "thetaPut": "--",
+        "vega": "--",
+        "source": "Unavailable"
+      }
+    },
+    "finNifty": {
+      "title": "Recent completed FINNIFTY signal review",
+      "summary": "Over the recent 5-day window, 1 completed FINNIFTY signals were tracked. 0 closed in profit and 1 in loss after estimated transaction costs (spread, brokerage, STT and charges), for an estimated net result of -1219.86 per lot with average closure time around 30 min. This is a model-estimated replay of the signal engine, not a record of live fills; a small sample like this is not proof of edge in either direction. Confidence is the first-report setup-strength score, not a win-probability. The pricing view is based on a Black-Scholes-style option engine calibrated from the live market snapshot.",
+      "emptyReason": "",
+      "metrics": {
+        "trades": "1",
+        "wins": "0",
+        "losses": "1",
+        "netPnl": "-1219.86 / lot",
+        "averageTime": "30 min",
+        "accuracy": "0%",
+        "latestResult": "Stoploss hit"
+      },
+      "trades": [
+        {
+          "date": "06 Jul",
+          "time": "12:15 PM",
+          "reportedAt": "2026-07-06 12:15 IST",
+          "completedAt": "2026-07-06 12:45 IST",
+          "signal": "FINNIFTY 27050 CE",
+          "strike": "27050",
+          "entry": "134.06",
+          "exit": "116.62",
+          "priceSource": "model-estimated",
+          "pnlLtp": "-1219.86 / lot",
+          "grossPnlLtp": "-1046.40 / lot",
+          "costs": "173.46 / lot",
+          "pnlPercent": "-0.13%",
+          "confidence": "87%",
+          "tradeQuality": "High",
+          "confidenceSource": "First-report setup-strength score",
+          "confidenceAudit": "Raw strategy score from the confirmed 5-minute candle at first report, mapped to a bounded display scale. It measures setup strength, not calibrated win odds.",
+          "result": "Stop loss hit",
+          "displayResult": "Stoploss hit",
+          "completionNote": "",
+          "exitReason": "target_or_stop",
+          "barsHeld": 6,
+          "minutesHeld": 30,
+          "stalledProgressRatio": 0.0,
+          "duration": "30 min"
+        }
+      ],
+      "note": "P&L is net of estimated round-trip costs: bid-ask spread and slippage, flat brokerage, STT on the sell side, exchange charges, GST, and stamp duty. Confidence is the first-report setup-strength score from the confirmed candle, not a win-probability; the same score is used by the live signal card and Telegram. Fresh entries after 2:30 PM IST, weak breakout candles, poor reward-to-risk setups, and cooldown periods after stop-losses are excluded from this review. Ambiguous candles that touched both target and stop in the same bar are kept neutral and excluded from calibration. Only completed real signal outcomes are shown here.",
+      "lotSize": 60,
+      "pricing": {
+        "symbol": "FINNIFTY",
+        "spot": "--",
+        "expiry": "--",
+        "daysToExpiry": "--",
+        "strike": "--",
+        "iv": "--",
+        "callPrice": "--",
+        "putPrice": "--",
+        "callDelta": "--",
+        "putDelta": "--",
+        "gamma": "--",
+        "thetaCall": "--",
+        "thetaPut": "--",
+        "vega": "--",
+        "source": "Unavailable"
+      }
+    },
+    "sensex": {
+      "title": "Recent completed SENSEX signal review",
+      "summary": "Over the recent 5-day window, 3 completed SENSEX signals were tracked. 1 closed in profit and 2 in loss after estimated transaction costs (spread, brokerage, STT and charges), for an estimated net result of -1699.55 per lot with average closure time around 25 min. This is a model-estimated replay of the signal engine, not a record of live fills; a small sample like this is not proof of edge in either direction. Confidence is the first-report setup-strength score, not a win-probability. The pricing view is based on a Black-Scholes-style option engine calibrated from the live market snapshot.",
+      "emptyReason": "",
+      "metrics": {
+        "trades": "3",
+        "wins": "1",
+        "losses": "2",
+        "netPnl": "-1699.55 / lot",
+        "averageTime": "25 min",
+        "accuracy": "33%",
+        "latestResult": "Stoploss hit"
+      },
+      "trades": [
+        {
+          "date": "06 Jul",
+          "time": "12:35 PM",
+          "reportedAt": "2026-07-06 12:35 IST",
+          "completedAt": "2026-07-06 12:50 IST",
+          "signal": "SENSEX 78300 CE",
+          "strike": "78300",
+          "entry": "366.90",
+          "exit": "337.57",
+          "priceSource": "model-estimated",
+          "pnlLtp": "-752.26 / lot",
+          "grossPnlLtp": "-586.60 / lot",
+          "costs": "165.66 / lot",
+          "pnlPercent": "-0.07%",
+          "confidence": "87%",
+          "tradeQuality": "High",
+          "confidenceSource": "First-report setup-strength score",
+          "confidenceAudit": "Raw strategy score from the confirmed 5-minute candle at first report, mapped to a bounded display scale. It measures setup strength, not calibrated win odds.",
+          "result": "Stop loss hit",
+          "displayResult": "Stoploss hit",
+          "completionNote": "",
+          "exitReason": "target_or_stop",
+          "barsHeld": 3,
+          "minutesHeld": 15,
+          "stalledProgressRatio": 0.0,
+          "duration": "15 min"
+        },
+        {
+          "date": "06 Jul",
+          "time": "10:50 AM",
+          "reportedAt": "2026-07-06 10:50 IST",
+          "completedAt": "2026-07-06 11:25 IST",
+          "signal": "SENSEX 78200 CE",
+          "strike": "78200",
+          "entry": "378.03",
+          "exit": "387.05",
+          "priceSource": "model-estimated",
+          "pnlLtp": "+4.15 / lot",
+          "grossPnlLtp": "+180.40 / lot",
+          "costs": "176.25 / lot",
+          "pnlPercent": "+0.04%",
+          "confidence": "90%",
+          "tradeQuality": "High",
+          "confidenceSource": "First-report setup-strength score",
+          "confidenceAudit": "Raw strategy score from the confirmed 5-minute candle at first report, mapped to a bounded display scale. It measures setup strength, not calibrated win odds.",
+          "result": "Profit",
+          "displayResult": "Profit booked (early exit)",
+          "completionNote": "Trade stalled after 7 candles without reaching 25% of the target move.",
+          "exitReason": "stalled_after_6_candles",
+          "barsHeld": 7,
+          "minutesHeld": 35,
+          "stalledProgressRatio": 0.18,
+          "duration": "35 min"
+        },
+        {
+          "date": "02 Jul",
+          "time": "1:20 PM",
+          "reportedAt": "2026-07-02 13:20 IST",
+          "completedAt": "2026-07-02 13:45 IST",
+          "signal": "SENSEX 77400 CE",
+          "strike": "77400",
+          "entry": "384.44",
+          "exit": "345.36",
+          "priceSource": "model-estimated",
+          "pnlLtp": "-951.44 / lot",
+          "grossPnlLtp": "-781.60 / lot",
+          "costs": "169.84 / lot",
+          "pnlPercent": "-0.10%",
+          "confidence": "85%",
+          "tradeQuality": "High",
+          "confidenceSource": "First-report setup-strength score",
+          "confidenceAudit": "Raw strategy score from the confirmed 5-minute candle at first report, mapped to a bounded display scale. It measures setup strength, not calibrated win odds.",
+          "result": "Stop loss hit",
+          "displayResult": "Stoploss hit",
+          "completionNote": "",
+          "exitReason": "target_or_stop",
+          "barsHeld": 5,
+          "minutesHeld": 25,
+          "stalledProgressRatio": 0.0,
+          "duration": "25 min"
+        }
+      ],
+      "note": "P&L is net of estimated round-trip costs: bid-ask spread and slippage, flat brokerage, STT on the sell side, exchange charges, GST, and stamp duty. Confidence is the first-report setup-strength score from the confirmed candle, not a win-probability; the same score is used by the live signal card and Telegram. Fresh entries after 2:30 PM IST, weak breakout candles, poor reward-to-risk setups, and cooldown periods after stop-losses are excluded from this review. Ambiguous candles that touched both target and stop in the same bar are kept neutral and excluded from calibration. Only completed real signal outcomes are shown here.",
+      "lotSize": 20,
+      "pricing": {
+        "symbol": "SENSEX",
+        "spot": "--",
+        "expiry": "--",
+        "daysToExpiry": "--",
+        "strike": "--",
+        "iv": "--",
+        "callPrice": "--",
+        "putPrice": "--",
+        "callDelta": "--",
+        "putDelta": "--",
+        "gamma": "--",
+        "thetaCall": "--",
+        "thetaPut": "--",
+        "vega": "--",
+        "source": "Unavailable"
+      }
+    }
+  },
+  "profitReviewDisplay": {
+    "title": "Recent completed signal review",
+    "summary": "Over the recent 5-day window, 1 completed NIFTY signals were tracked. 0 closed in profit and 1 in loss after estimated transaction costs (spread, brokerage, STT and charges), for an estimated net result of -624.56 per lot with average closure time around 30 min. This is a model-estimated replay of the signal engine, not a record of live fills; a small sample like this is not proof of edge in either direction. Confidence is the first-report setup-strength score, not a win-probability. Live entry/exit LTP are shown only when a live archive exists; synthetic price guesses are hidden.",
+    "emptyReason": "",
+    "metrics": {
+      "trades": "1",
+      "wins": "0",
+      "losses": "1",
+      "netPnl": "-624.56 / lot",
+      "averageTime": "30 min",
+      "accuracy": "0%",
+      "latestResult": "Loss (early exit)"
+    },
+    "trades": [
+      {
+        "date": "02 Jul",
+        "time": "1:20 PM",
+        "reportedAt": "2026-07-02 13:20 IST",
+        "completedAt": "2026-07-02 13:50 IST",
+        "signal": "NIFTY 24150 CE",
+        "strike": "24150",
+        "entry": "106.56",
+        "exit": "99.41",
+        "priceSource": "model-estimated",
+        "pnlLtp": "-624.56 / lot",
+        "grossPnlLtp": "-464.75 / lot",
+        "costs": "159.81 / lot",
+        "pnlPercent": "-0.05%",
+        "confidence": "85%",
+        "tradeQuality": "High",
+        "confidenceSource": "First-report setup-strength score",
+        "confidenceAudit": "Raw strategy score from the confirmed 5-minute candle at first report, mapped to a bounded display scale. It measures setup strength, not calibrated win odds.",
+        "result": "Loss",
+        "displayResult": "Loss (early exit)",
+        "completionNote": "Trade stalled after 6 candles without reaching 25% of the target move.",
+        "duration": "30 min",
+        "barsHeld": 6,
+        "minutesHeld": 30,
+        "stalledProgressRatio": 0.0
+      }
+    ],
+    "note": "P&L is net of estimated round-trip costs: bid-ask spread and slippage, flat brokerage, STT on the sell side, exchange charges, GST, and stamp duty. Confidence is the first-report setup-strength score from the confirmed candle, not a win-probability; the same score is used by the live signal card and Telegram. Fresh entries after 2:30 PM IST, weak breakout candles, poor reward-to-risk setups, and cooldown periods after stop-losses are excluded from this review. Ambiguous candles that touched both target and stop in the same bar are kept neutral and excluded from calibration. Live option-chain prices are shown only when archived; synthetic price guesses are hidden.",
+    "lotSize": 65,
+    "pricing": {
+      "symbol": "NIFTY",
+      "spot": "--",
+      "expiry": "--",
+      "daysToExpiry": "--",
+      "strike": "--",
+      "iv": "--",
+      "callPrice": "--",
+      "putPrice": "--",
+      "callDelta": "--",
+      "putDelta": "--",
+      "gamma": "--",
+      "thetaCall": "--",
+      "thetaPut": "--",
+      "vega": "--",
+      "source": "Unavailable"
+    }
+  },
+  "profitReviewByIndexDisplay": {
+    "bankNifty": {
+      "title": "Recent completed BANKNIFTY signal review",
+      "summary": "Over the recent 5-day window, 5 completed BANKNIFTY signals were tracked. 2 closed in profit and 3 in loss after estimated transaction costs (spread, brokerage, STT and charges), for an estimated net result of -2295.98 per lot with average closure time around 17 min. This is a model-estimated replay of the signal engine, not a record of live fills; a small sample like this is not proof of edge in either direction. Confidence is the first-report setup-strength score, not a win-probability. The pricing view is based on a Black-Scholes-style option engine calibrated from the live market snapshot.",
+      "emptyReason": "",
+      "metrics": {
+        "trades": "5",
+        "wins": "2",
+        "losses": "3",
+        "netPnl": "-2295.98 / lot",
+        "averageTime": "17 min",
+        "accuracy": "40%",
+        "latestResult": "Closed in loss (after costs)"
+      },
+      "trades": [
+        {
+          "date": "07 Jul",
+          "time": "1:25 PM",
+          "reportedAt": "2026-07-07 13:25 IST",
+          "completedAt": "2026-07-07 13:55 IST",
+          "signal": "BANKNIFTY 58300 PE",
+          "strike": "58300",
+          "entry": "334.85",
+          "exit": "330.03",
+          "priceSource": "model-estimated",
+          "pnlLtp": "-359.84 / lot",
+          "grossPnlLtp": "-144.60 / lot",
+          "costs": "215.24 / lot",
+          "pnlPercent": "+0.01%",
+          "confidence": "87%",
+          "tradeQuality": "High",
+          "confidenceSource": "First-report setup-strength score",
+          "confidenceAudit": "Raw strategy score from the confirmed 5-minute candle at first report, mapped to a bounded display scale. It measures setup strength, not calibrated win odds.",
+          "result": "Profit",
+          "displayResult": "Closed in loss (after costs)",
+          "completionNote": "Trade stalled after 6 candles without reaching 25% of the target move.",
+          "exitReason": "stalled_after_6_candles",
+          "barsHeld": 6,
+          "minutesHeld": 30,
+          "stalledProgressRatio": 0.02,
+          "duration": "30 min"
+        },
+        {
+          "date": "03 Jul",
+          "time": "2:05 PM",
+          "reportedAt": "2026-07-03 14:05 IST",
+          "completedAt": "2026-07-03 14:15 IST",
+          "signal": "BANKNIFTY 57900 PE",
+          "strike": "57900",
+          "entry": "324.38",
+          "exit": "295.45",
+          "priceSource": "model-estimated",
+          "pnlLtp": "-1071.40 / lot",
+          "grossPnlLtp": "-867.90 / lot",
+          "costs": "203.50 / lot",
+          "pnlPercent": "-0.10%",
+          "confidence": "87%",
+          "tradeQuality": "High",
+          "confidenceSource": "First-report setup-strength score",
+          "confidenceAudit": "Raw strategy score from the confirmed 5-minute candle at first report, mapped to a bounded display scale. It measures setup strength, not calibrated win odds.",
+          "result": "Stop loss hit",
+          "displayResult": "Stoploss hit",
+          "completionNote": "",
+          "exitReason": "target_or_stop",
+          "barsHeld": 2,
+          "minutesHeld": 10,
+          "stalledProgressRatio": 0.0,
+          "duration": "10 min"
+        },
+        {
+          "date": "03 Jul",
+          "time": "1:10 PM",
+          "reportedAt": "2026-07-03 13:10 IST",
+          "completedAt": "2026-07-03 13:40 IST",
+          "signal": "BANKNIFTY 57900 PE",
+          "strike": "57900",
+          "entry": "341.43",
+          "exit": "353.99",
+          "priceSource": "model-estimated",
+          "pnlLtp": "+153.59 / lot",
+          "grossPnlLtp": "+376.80 / lot",
+          "costs": "223.21 / lot",
+          "pnlPercent": "+0.05%",
+          "confidence": "87%",
+          "tradeQuality": "High",
+          "confidenceSource": "First-report setup-strength score",
+          "confidenceAudit": "Raw strategy score from the confirmed 5-minute candle at first report, mapped to a bounded display scale. It measures setup strength, not calibrated win odds.",
+          "result": "Breakeven",
+          "displayResult": "Partial profit booked",
+          "completionNote": "Breakeven stop closed the trade after protection moved to entry. 50% booked at +1R; balance managed by the trail.",
+          "exitReason": "target_or_stop",
+          "barsHeld": 6,
+          "minutesHeld": 30,
+          "stalledProgressRatio": 0.14,
+          "duration": "30 min"
+        },
+        {
+          "date": "03 Jul",
+          "time": "11:20 AM",
+          "reportedAt": "2026-07-03 11:20 IST",
+          "completedAt": "2026-07-03 11:30 IST",
+          "signal": "BANKNIFTY 58000 PE",
+          "strike": "58000",
+          "entry": "324.62",
+          "exit": "287.46",
+          "priceSource": "model-estimated",
+          "pnlLtp": "-1316.22 / lot",
+          "grossPnlLtp": "-1114.80 / lot",
+          "costs": "201.42 / lot",
+          "pnlPercent": "-0.14%",
+          "confidence": "87%",
+          "tradeQuality": "High",
+          "confidenceSource": "First-report setup-strength score",
+          "confidenceAudit": "Raw strategy score from the confirmed 5-minute candle at first report, mapped to a bounded display scale. It measures setup strength, not calibrated win odds.",
+          "result": "Stop loss hit",
+          "displayResult": "Stoploss hit",
+          "completionNote": "",
+          "exitReason": "target_or_stop",
+          "barsHeld": 2,
+          "minutesHeld": 10,
+          "stalledProgressRatio": 0.0,
+          "duration": "10 min"
+        },
+        {
+          "date": "02 Jul",
+          "time": "2:15 PM",
+          "reportedAt": "2026-07-02 14:15 IST",
+          "completedAt": "2026-07-02 14:20 IST",
+          "signal": "BANKNIFTY 58000 PE",
+          "strike": "58000",
+          "entry": "340.06",
+          "exit": "357.45",
+          "priceSource": "model-estimated",
+          "pnlLtp": "+297.89 / lot",
+          "grossPnlLtp": "+521.70 / lot",
+          "costs": "223.81 / lot",
+          "pnlPercent": "+0.06%",
+          "confidence": "87%",
+          "tradeQuality": "High",
+          "confidenceSource": "First-report setup-strength score",
+          "confidenceAudit": "Raw strategy score from the confirmed 5-minute candle at first report, mapped to a bounded display scale. It measures setup strength, not calibrated win odds.",
+          "result": "Trailing stop profit",
+          "displayResult": "Trail profit booked",
+          "completionNote": "Trailing stop locked in profit after the move ran in favor. 50% booked at +1R; balance managed by the trail.",
+          "exitReason": "target_or_stop",
+          "barsHeld": 1,
+          "minutesHeld": 5,
+          "stalledProgressRatio": 0.17,
+          "duration": "5 min"
+        }
+      ],
+      "note": "P&L is net of estimated round-trip costs: bid-ask spread and slippage, flat brokerage, STT on the sell side, exchange charges, GST, and stamp duty. Confidence is the first-report setup-strength score from the confirmed candle, not a win-probability; the same score is used by the live signal card and Telegram. Fresh entries after 2:30 PM IST, weak breakout candles, poor reward-to-risk setups, and cooldown periods after stop-losses are excluded from this review. Ambiguous candles that touched both target and stop in the same bar are kept neutral and excluded from calibration. Only completed real signal outcomes are shown here.",
+      "lotSize": 30,
+      "pricing": {
+        "symbol": "BANKNIFTY",
+        "spot": "--",
+        "expiry": "--",
+        "daysToExpiry": "--",
+        "strike": "--",
+        "iv": "--",
+        "callPrice": "--",
+        "putPrice": "--",
+        "callDelta": "--",
+        "putDelta": "--",
+        "gamma": "--",
+        "thetaCall": "--",
+        "thetaPut": "--",
+        "vega": "--",
+        "source": "Unavailable"
+      }
+    },
+    "finNifty": {
+      "title": "Recent completed FINNIFTY signal review",
+      "summary": "Over the recent 5-day window, 1 completed FINNIFTY signals were tracked. 0 closed in profit and 1 in loss after estimated transaction costs (spread, brokerage, STT and charges), for an estimated net result of -1219.86 per lot with average closure time around 30 min. This is a model-estimated replay of the signal engine, not a record of live fills; a small sample like this is not proof of edge in either direction. Confidence is the first-report setup-strength score, not a win-probability. The pricing view is based on a Black-Scholes-style option engine calibrated from the live market snapshot.",
+      "emptyReason": "",
+      "metrics": {
+        "trades": "1",
+        "wins": "0",
+        "losses": "1",
+        "netPnl": "-1219.86 / lot",
+        "averageTime": "30 min",
+        "accuracy": "0%",
+        "latestResult": "Stoploss hit"
+      },
+      "trades": [
+        {
+          "date": "06 Jul",
+          "time": "12:15 PM",
+          "reportedAt": "2026-07-06 12:15 IST",
+          "completedAt": "2026-07-06 12:45 IST",
+          "signal": "FINNIFTY 27050 CE",
+          "strike": "27050",
+          "entry": "134.06",
+          "exit": "116.62",
+          "priceSource": "model-estimated",
+          "pnlLtp": "-1219.86 / lot",
+          "grossPnlLtp": "-1046.40 / lot",
+          "costs": "173.46 / lot",
+          "pnlPercent": "-0.13%",
+          "confidence": "87%",
+          "tradeQuality": "High",
+          "confidenceSource": "First-report setup-strength score",
+          "confidenceAudit": "Raw strategy score from the confirmed 5-minute candle at first report, mapped to a bounded display scale. It measures setup strength, not calibrated win odds.",
+          "result": "Stop loss hit",
+          "displayResult": "Stoploss hit",
+          "completionNote": "",
+          "exitReason": "target_or_stop",
+          "barsHeld": 6,
+          "minutesHeld": 30,
+          "stalledProgressRatio": 0.0,
+          "duration": "30 min"
+        }
+      ],
+      "note": "P&L is net of estimated round-trip costs: bid-ask spread and slippage, flat brokerage, STT on the sell side, exchange charges, GST, and stamp duty. Confidence is the first-report setup-strength score from the confirmed candle, not a win-probability; the same score is used by the live signal card and Telegram. Fresh entries after 2:30 PM IST, weak breakout candles, poor reward-to-risk setups, and cooldown periods after stop-losses are excluded from this review. Ambiguous candles that touched both target and stop in the same bar are kept neutral and excluded from calibration. Only completed real signal outcomes are shown here.",
+      "lotSize": 60,
+      "pricing": {
+        "symbol": "FINNIFTY",
+        "spot": "--",
+        "expiry": "--",
+        "daysToExpiry": "--",
+        "strike": "--",
+        "iv": "--",
+        "callPrice": "--",
+        "putPrice": "--",
+        "callDelta": "--",
+        "putDelta": "--",
+        "gamma": "--",
+        "thetaCall": "--",
+        "thetaPut": "--",
+        "vega": "--",
+        "source": "Unavailable"
+      }
+    },
+    "sensex": {
+      "title": "Recent completed SENSEX signal review",
+      "summary": "Over the recent 5-day window, 3 completed SENSEX signals were tracked. 1 closed in profit and 2 in loss after estimated transaction costs (spread, brokerage, STT and charges), for an estimated net result of -1699.55 per lot with average closure time around 25 min. This is a model-estimated replay of the signal engine, not a record of live fills; a small sample like this is not proof of edge in either direction. Confidence is the first-report setup-strength score, not a win-probability. The pricing view is based on a Black-Scholes-style option engine calibrated from the live market snapshot.",
+      "emptyReason": "",
+      "metrics": {
+        "trades": "3",
+        "wins": "1",
+        "losses": "2",
+        "netPnl": "-1699.55 / lot",
+        "averageTime": "25 min",
+        "accuracy": "33%",
+        "latestResult": "Stoploss hit"
+      },
+      "trades": [
+        {
+          "date": "06 Jul",
+          "time": "12:35 PM",
+          "reportedAt": "2026-07-06 12:35 IST",
+          "completedAt": "2026-07-06 12:50 IST",
+          "signal": "SENSEX 78300 CE",
+          "strike": "78300",
+          "entry": "366.90",
+          "exit": "337.57",
+          "priceSource": "model-estimated",
+          "pnlLtp": "-752.26 / lot",
+          "grossPnlLtp": "-586.60 / lot",
+          "costs": "165.66 / lot",
+          "pnlPercent": "-0.07%",
+          "confidence": "87%",
+          "tradeQuality": "High",
+          "confidenceSource": "First-report setup-strength score",
+          "confidenceAudit": "Raw strategy score from the confirmed 5-minute candle at first report, mapped to a bounded display scale. It measures setup strength, not calibrated win odds.",
+          "result": "Stop loss hit",
+          "displayResult": "Stoploss hit",
+          "completionNote": "",
+          "exitReason": "target_or_stop",
+          "barsHeld": 3,
+          "minutesHeld": 15,
+          "stalledProgressRatio": 0.0,
+          "duration": "15 min"
+        },
+        {
+          "date": "06 Jul",
+          "time": "10:50 AM",
+          "reportedAt": "2026-07-06 10:50 IST",
+          "completedAt": "2026-07-06 11:25 IST",
+          "signal": "SENSEX 78200 CE",
+          "strike": "78200",
+          "entry": "378.03",
+          "exit": "387.05",
+          "priceSource": "model-estimated",
+          "pnlLtp": "+4.15 / lot",
+          "grossPnlLtp": "+180.40 / lot",
+          "costs": "176.25 / lot",
+          "pnlPercent": "+0.04%",
+          "confidence": "90%",
+          "tradeQuality": "High",
+          "confidenceSource": "First-report setup-strength score",
+          "confidenceAudit": "Raw strategy score from the confirmed 5-minute candle at first report, mapped to a bounded display scale. It measures setup strength, not calibrated win odds.",
+          "result": "Profit",
+          "displayResult": "Profit booked (early exit)",
+          "completionNote": "Trade stalled after 7 candles without reaching 25% of the target move.",
+          "exitReason": "stalled_after_6_candles",
+          "barsHeld": 7,
+          "minutesHeld": 35,
+          "stalledProgressRatio": 0.18,
+          "duration": "35 min"
+        },
+        {
+          "date": "02 Jul",
+          "time": "1:20 PM",
+          "reportedAt": "2026-07-02 13:20 IST",
+          "completedAt": "2026-07-02 13:45 IST",
+          "signal": "SENSEX 77400 CE",
+          "strike": "77400",
+          "entry": "384.44",
+          "exit": "345.36",
+          "priceSource": "model-estimated",
+          "pnlLtp": "-951.44 / lot",
+          "grossPnlLtp": "-781.60 / lot",
+          "costs": "169.84 / lot",
+          "pnlPercent": "-0.10%",
+          "confidence": "85%",
+          "tradeQuality": "High",
+          "confidenceSource": "First-report setup-strength score",
+          "confidenceAudit": "Raw strategy score from the confirmed 5-minute candle at first report, mapped to a bounded display scale. It measures setup strength, not calibrated win odds.",
+          "result": "Stop loss hit",
+          "displayResult": "Stoploss hit",
+          "completionNote": "",
+          "exitReason": "target_or_stop",
+          "barsHeld": 5,
+          "minutesHeld": 25,
+          "stalledProgressRatio": 0.0,
+          "duration": "25 min"
+        }
+      ],
+      "note": "P&L is net of estimated round-trip costs: bid-ask spread and slippage, flat brokerage, STT on the sell side, exchange charges, GST, and stamp duty. Confidence is the first-report setup-strength score from the confirmed candle, not a win-probability; the same score is used by the live signal card and Telegram. Fresh entries after 2:30 PM IST, weak breakout candles, poor reward-to-risk setups, and cooldown periods after stop-losses are excluded from this review. Ambiguous candles that touched both target and stop in the same bar are kept neutral and excluded from calibration. Only completed real signal outcomes are shown here.",
+      "lotSize": 20,
+      "pricing": {
+        "symbol": "SENSEX",
+        "spot": "--",
+        "expiry": "--",
+        "daysToExpiry": "--",
+        "strike": "--",
+        "iv": "--",
+        "callPrice": "--",
+        "putPrice": "--",
+        "callDelta": "--",
+        "putDelta": "--",
+        "gamma": "--",
+        "thetaCall": "--",
+        "thetaPut": "--",
+        "vega": "--",
+        "source": "Unavailable"
+      }
+    }
+  },
+  "profitReviewModel": {
+    "title": "Recent completed signal review",
+    "summary": "Over the recent 5-day window, 1 completed NIFTY signals were tracked. 0 closed in profit and 1 in loss after estimated transaction costs (spread, brokerage, STT and charges), for an estimated net result of -624.56 per lot with average closure time around 30 min. This is a model-estimated replay of the signal engine, not a record of live fills; a small sample like this is not proof of edge in either direction. Confidence is the first-report setup-strength score, not a win-probability. Live entry/exit LTP are shown only when a live archive exists; synthetic price guesses are hidden.",
+    "emptyReason": "",
+    "metrics": {
+      "trades": "1",
+      "wins": "0",
+      "losses": "1",
+      "netPnl": "-624.56 / lot",
+      "averageTime": "30 min",
+      "accuracy": "0%",
+      "latestResult": "Loss (early exit)"
+    },
+    "trades": [
+      {
+        "date": "02 Jul",
+        "time": "1:20 PM",
+        "reportedAt": "2026-07-02 13:20 IST",
+        "completedAt": "2026-07-02 13:50 IST",
+        "signal": "NIFTY 24150 CE",
+        "strike": "24150",
+        "entry": "106.56",
+        "exit": "99.41",
+        "priceSource": "model-estimated",
+        "pnlLtp": "-624.56 / lot",
+        "grossPnlLtp": "-464.75 / lot",
+        "costs": "159.81 / lot",
+        "pnlPercent": "-0.05%",
+        "confidence": "85%",
+        "tradeQuality": "High",
+        "confidenceSource": "First-report setup-strength score",
+        "confidenceAudit": "Raw strategy score from the confirmed 5-minute candle at first report, mapped to a bounded display scale. It measures setup strength, not calibrated win odds.",
+        "result": "Loss",
+        "displayResult": "Loss (early exit)",
+        "completionNote": "Trade stalled after 6 candles without reaching 25% of the target move.",
+        "duration": "30 min",
+        "barsHeld": 6,
+        "minutesHeld": 30,
+        "stalledProgressRatio": 0.0
+      }
+    ],
+    "note": "P&L is net of estimated round-trip costs: bid-ask spread and slippage, flat brokerage, STT on the sell side, exchange charges, GST, and stamp duty. Confidence is the first-report setup-strength score from the confirmed candle, not a win-probability; the same score is used by the live signal card and Telegram. Fresh entries after 2:30 PM IST, weak breakout candles, poor reward-to-risk setups, and cooldown periods after stop-losses are excluded from this review. Ambiguous candles that touched both target and stop in the same bar are kept neutral and excluded from calibration. Live option-chain prices are shown only when archived; synthetic price guesses are hidden.",
+    "lotSize": 65,
+    "pricing": {
+      "symbol": "NIFTY",
+      "spot": "--",
+      "expiry": "--",
+      "daysToExpiry": "--",
+      "strike": "--",
+      "iv": "--",
+      "callPrice": "--",
+      "putPrice": "--",
+      "callDelta": "--",
+      "putDelta": "--",
+      "gamma": "--",
+      "thetaCall": "--",
+      "thetaPut": "--",
+      "vega": "--",
+      "source": "Unavailable"
+    }
+  },
+  "profitReviewByIndexModel": {
+    "bankNifty": {
+      "title": "Recent completed BANKNIFTY signal review",
+      "summary": "Over the recent 5-day window, 5 completed BANKNIFTY signals were tracked. 2 closed in profit and 3 in loss after estimated transaction costs (spread, brokerage, STT and charges), for an estimated net result of -2295.98 per lot with average closure time around 17 min. This is a model-estimated replay of the signal engine, not a record of live fills; a small sample like this is not proof of edge in either direction. Confidence is the first-report setup-strength score, not a win-probability. The pricing view is based on a Black-Scholes-style option engine calibrated from the live market snapshot.",
+      "emptyReason": "",
+      "metrics": {
+        "trades": "5",
+        "wins": "2",
+        "losses": "3",
+        "netPnl": "-2295.98 / lot",
+        "averageTime": "17 min",
+        "accuracy": "40%",
+        "latestResult": "Closed in loss (after costs)"
+      },
+      "trades": [
+        {
+          "date": "07 Jul",
+          "time": "1:25 PM",
+          "reportedAt": "2026-07-07 13:25 IST",
+          "completedAt": "2026-07-07 13:55 IST",
+          "signal": "BANKNIFTY 58300 PE",
+          "strike": "58300",
+          "entry": "334.85",
+          "exit": "330.03",
+          "priceSource": "model-estimated",
+          "pnlLtp": "-359.84 / lot",
+          "grossPnlLtp": "-144.60 / lot",
+          "costs": "215.24 / lot",
+          "pnlPercent": "+0.01%",
+          "confidence": "87%",
+          "tradeQuality": "High",
+          "confidenceSource": "First-report setup-strength score",
+          "confidenceAudit": "Raw strategy score from the confirmed 5-minute candle at first report, mapped to a bounded display scale. It measures setup strength, not calibrated win odds.",
+          "result": "Profit",
+          "displayResult": "Closed in loss (after costs)",
+          "completionNote": "Trade stalled after 6 candles without reaching 25% of the target move.",
+          "exitReason": "stalled_after_6_candles",
+          "barsHeld": 6,
+          "minutesHeld": 30,
+          "stalledProgressRatio": 0.02,
+          "duration": "30 min"
+        },
+        {
+          "date": "03 Jul",
+          "time": "2:05 PM",
+          "reportedAt": "2026-07-03 14:05 IST",
+          "completedAt": "2026-07-03 14:15 IST",
+          "signal": "BANKNIFTY 57900 PE",
+          "strike": "57900",
+          "entry": "324.38",
+          "exit": "295.45",
+          "priceSource": "model-estimated",
+          "pnlLtp": "-1071.40 / lot",
+          "grossPnlLtp": "-867.90 / lot",
+          "costs": "203.50 / lot",
+          "pnlPercent": "-0.10%",
+          "confidence": "87%",
+          "tradeQuality": "High",
+          "confidenceSource": "First-report setup-strength score",
+          "confidenceAudit": "Raw strategy score from the confirmed 5-minute candle at first report, mapped to a bounded display scale. It measures setup strength, not calibrated win odds.",
+          "result": "Stop loss hit",
+          "displayResult": "Stoploss hit",
+          "completionNote": "",
+          "exitReason": "target_or_stop",
+          "barsHeld": 2,
+          "minutesHeld": 10,
+          "stalledProgressRatio": 0.0,
+          "duration": "10 min"
+        },
+        {
+          "date": "03 Jul",
+          "time": "1:10 PM",
+          "reportedAt": "2026-07-03 13:10 IST",
+          "completedAt": "2026-07-03 13:40 IST",
+          "signal": "BANKNIFTY 57900 PE",
+          "strike": "57900",
+          "entry": "341.43",
+          "exit": "353.99",
+          "priceSource": "model-estimated",
+          "pnlLtp": "+153.59 / lot",
+          "grossPnlLtp": "+376.80 / lot",
+          "costs": "223.21 / lot",
+          "pnlPercent": "+0.05%",
+          "confidence": "87%",
+          "tradeQuality": "High",
+          "confidenceSource": "First-report setup-strength score",
+          "confidenceAudit": "Raw strategy score from the confirmed 5-minute candle at first report, mapped to a bounded display scale. It measures setup strength, not calibrated win odds.",
+          "result": "Breakeven",
+          "displayResult": "Partial profit booked",
+          "completionNote": "Breakeven stop closed the trade after protection moved to entry. 50% booked at +1R; balance managed by the trail.",
+          "exitReason": "target_or_stop",
+          "barsHeld": 6,
+          "minutesHeld": 30,
+          "stalledProgressRatio": 0.14,
+          "duration": "30 min"
+        },
+        {
+          "date": "03 Jul",
+          "time": "11:20 AM",
+          "reportedAt": "2026-07-03 11:20 IST",
+          "completedAt": "2026-07-03 11:30 IST",
+          "signal": "BANKNIFTY 58000 PE",
+          "strike": "58000",
+          "entry": "324.62",
+          "exit": "287.46",
+          "priceSource": "model-estimated",
+          "pnlLtp": "-1316.22 / lot",
+          "grossPnlLtp": "-1114.80 / lot",
+          "costs": "201.42 / lot",
+          "pnlPercent": "-0.14%",
+          "confidence": "87%",
+          "tradeQuality": "High",
+          "confidenceSource": "First-report setup-strength score",
+          "confidenceAudit": "Raw strategy score from the confirmed 5-minute candle at first report, mapped to a bounded display scale. It measures setup strength, not calibrated win odds.",
+          "result": "Stop loss hit",
+          "displayResult": "Stoploss hit",
+          "completionNote": "",
+          "exitReason": "target_or_stop",
+          "barsHeld": 2,
+          "minutesHeld": 10,
+          "stalledProgressRatio": 0.0,
+          "duration": "10 min"
+        },
+        {
+          "date": "02 Jul",
+          "time": "2:15 PM",
+          "reportedAt": "2026-07-02 14:15 IST",
+          "completedAt": "2026-07-02 14:20 IST",
+          "signal": "BANKNIFTY 58000 PE",
+          "strike": "58000",
+          "entry": "340.06",
+          "exit": "357.45",
+          "priceSource": "model-estimated",
+          "pnlLtp": "+297.89 / lot",
+          "grossPnlLtp": "+521.70 / lot",
+          "costs": "223.81 / lot",
+          "pnlPercent": "+0.06%",
+          "confidence": "87%",
+          "tradeQuality": "High",
+          "confidenceSource": "First-report setup-strength score",
+          "confidenceAudit": "Raw strategy score from the confirmed 5-minute candle at first report, mapped to a bounded display scale. It measures setup strength, not calibrated win odds.",
+          "result": "Trailing stop profit",
+          "displayResult": "Trail profit booked",
+          "completionNote": "Trailing stop locked in profit after the move ran in favor. 50% booked at +1R; balance managed by the trail.",
+          "exitReason": "target_or_stop",
+          "barsHeld": 1,
+          "minutesHeld": 5,
+          "stalledProgressRatio": 0.17,
+          "duration": "5 min"
+        }
+      ],
+      "note": "P&L is net of estimated round-trip costs: bid-ask spread and slippage, flat brokerage, STT on the sell side, exchange charges, GST, and stamp duty. Confidence is the first-report setup-strength score from the confirmed candle, not a win-probability; the same score is used by the live signal card and Telegram. Fresh entries after 2:30 PM IST, weak breakout candles, poor reward-to-risk setups, and cooldown periods after stop-losses are excluded from this review. Ambiguous candles that touched both target and stop in the same bar are kept neutral and excluded from calibration. Only completed real signal outcomes are shown here.",
+      "lotSize": 30,
+      "pricing": {
+        "symbol": "BANKNIFTY",
+        "spot": "--",
+        "expiry": "--",
+        "daysToExpiry": "--",
+        "strike": "--",
+        "iv": "--",
+        "callPrice": "--",
+        "putPrice": "--",
+        "callDelta": "--",
+        "putDelta": "--",
+        "gamma": "--",
+        "thetaCall": "--",
+        "thetaPut": "--",
+        "vega": "--",
+        "source": "Unavailable"
+      }
+    },
+    "finNifty": {
+      "title": "Recent completed FINNIFTY signal review",
+      "summary": "Over the recent 5-day window, 1 completed FINNIFTY signals were tracked. 0 closed in profit and 1 in loss after estimated transaction costs (spread, brokerage, STT and charges), for an estimated net result of -1219.86 per lot with average closure time around 30 min. This is a model-estimated replay of the signal engine, not a record of live fills; a small sample like this is not proof of edge in either direction. Confidence is the first-report setup-strength score, not a win-probability. The pricing view is based on a Black-Scholes-style option engine calibrated from the live market snapshot.",
+      "emptyReason": "",
+      "metrics": {
+        "trades": "1",
+        "wins": "0",
+        "losses": "1",
+        "netPnl": "-1219.86 / lot",
+        "averageTime": "30 min",
+        "accuracy": "0%",
+        "latestResult": "Stoploss hit"
+      },
+      "trades": [
+        {
+          "date": "06 Jul",
+          "time": "12:15 PM",
+          "reportedAt": "2026-07-06 12:15 IST",
+          "completedAt": "2026-07-06 12:45 IST",
+          "signal": "FINNIFTY 27050 CE",
+          "strike": "27050",
+          "entry": "134.06",
+          "exit": "116.62",
+          "priceSource": "model-estimated",
+          "pnlLtp": "-1219.86 / lot",
+          "grossPnlLtp": "-1046.40 / lot",
+          "costs": "173.46 / lot",
+          "pnlPercent": "-0.13%",
+          "confidence": "87%",
+          "tradeQuality": "High",
+          "confidenceSource": "First-report setup-strength score",
+          "confidenceAudit": "Raw strategy score from the confirmed 5-minute candle at first report, mapped to a bounded display scale. It measures setup strength, not calibrated win odds.",
+          "result": "Stop loss hit",
+          "displayResult": "Stoploss hit",
+          "completionNote": "",
+          "exitReason": "target_or_stop",
+          "barsHeld": 6,
+          "minutesHeld": 30,
+          "stalledProgressRatio": 0.0,
+          "duration": "30 min"
+        }
+      ],
+      "note": "P&L is net of estimated round-trip costs: bid-ask spread and slippage, flat brokerage, STT on the sell side, exchange charges, GST, and stamp duty. Confidence is the first-report setup-strength score from the confirmed candle, not a win-probability; the same score is used by the live signal card and Telegram. Fresh entries after 2:30 PM IST, weak breakout candles, poor reward-to-risk setups, and cooldown periods after stop-losses are excluded from this review. Ambiguous candles that touched both target and stop in the same bar are kept neutral and excluded from calibration. Only completed real signal outcomes are shown here.",
+      "lotSize": 60,
+      "pricing": {
+        "symbol": "FINNIFTY",
+        "spot": "--",
+        "expiry": "--",
+        "daysToExpiry": "--",
+        "strike": "--",
+        "iv": "--",
+        "callPrice": "--",
+        "putPrice": "--",
+        "callDelta": "--",
+        "putDelta": "--",
+        "gamma": "--",
+        "thetaCall": "--",
+        "thetaPut": "--",
+        "vega": "--",
+        "source": "Unavailable"
+      }
+    },
+    "sensex": {
+      "title": "Recent completed SENSEX signal review",
+      "summary": "Over the recent 5-day window, 3 completed SENSEX signals were tracked. 1 closed in profit and 2 in loss after estimated transaction costs (spread, brokerage, STT and charges), for an estimated net result of -1699.55 per lot with average closure time around 25 min. This is a model-estimated replay of the signal engine, not a record of live fills; a small sample like this is not proof of edge in either direction. Confidence is the first-report setup-strength score, not a win-probability. The pricing view is based on a Black-Scholes-style option engine calibrated from the live market snapshot.",
+      "emptyReason": "",
+      "metrics": {
+        "trades": "3",
+        "wins": "1",
+        "losses": "2",
+        "netPnl": "-1699.55 / lot",
+        "averageTime": "25 min",
+        "accuracy": "33%",
+        "latestResult": "Stoploss hit"
+      },
+      "trades": [
+        {
+          "date": "06 Jul",
+          "time": "12:35 PM",
+          "reportedAt": "2026-07-06 12:35 IST",
+          "completedAt": "2026-07-06 12:50 IST",
+          "signal": "SENSEX 78300 CE",
+          "strike": "78300",
+          "entry": "366.90",
+          "exit": "337.57",
+          "priceSource": "model-estimated",
+          "pnlLtp": "-752.26 / lot",
+          "grossPnlLtp": "-586.60 / lot",
+          "costs": "165.66 / lot",
+          "pnlPercent": "-0.07%",
+          "confidence": "87%",
+          "tradeQuality": "High",
+          "confidenceSource": "First-report setup-strength score",
+          "confidenceAudit": "Raw strategy score from the confirmed 5-minute candle at first report, mapped to a bounded display scale. It measures setup strength, not calibrated win odds.",
+          "result": "Stop loss hit",
+          "displayResult": "Stoploss hit",
+          "completionNote": "",
+          "exitReason": "target_or_stop",
+          "barsHeld": 3,
+          "minutesHeld": 15,
+          "stalledProgressRatio": 0.0,
+          "duration": "15 min"
+        },
+        {
+          "date": "06 Jul",
+          "time": "10:50 AM",
+          "reportedAt": "2026-07-06 10:50 IST",
+          "completedAt": "2026-07-06 11:25 IST",
+          "signal": "SENSEX 78200 CE",
+          "strike": "78200",
+          "entry": "378.03",
+          "exit": "387.05",
+          "priceSource": "model-estimated",
+          "pnlLtp": "+4.15 / lot",
+          "grossPnlLtp": "+180.40 / lot",
+          "costs": "176.25 / lot",
+          "pnlPercent": "+0.04%",
+          "confidence": "90%",
+          "tradeQuality": "High",
+          "confidenceSource": "First-report setup-strength score",
+          "confidenceAudit": "Raw strategy score from the confirmed 5-minute candle at first report, mapped to a bounded display scale. It measures setup strength, not calibrated win odds.",
+          "result": "Profit",
+          "displayResult": "Profit booked (early exit)",
+          "completionNote": "Trade stalled after 7 candles without reaching 25% of the target move.",
+          "exitReason": "stalled_after_6_candles",
+          "barsHeld": 7,
+          "minutesHeld": 35,
+          "stalledProgressRatio": 0.18,
+          "duration": "35 min"
+        },
+        {
+          "date": "02 Jul",
+          "time": "1:20 PM",
+          "reportedAt": "2026-07-02 13:20 IST",
+          "completedAt": "2026-07-02 13:45 IST",
+          "signal": "SENSEX 77400 CE",
+          "strike": "77400",
+          "entry": "384.44",
+          "exit": "345.36",
+          "priceSource": "model-estimated",
+          "pnlLtp": "-951.44 / lot",
+          "grossPnlLtp": "-781.60 / lot",
+          "costs": "169.84 / lot",
+          "pnlPercent": "-0.10%",
+          "confidence": "85%",
+          "tradeQuality": "High",
+          "confidenceSource": "First-report setup-strength score",
+          "confidenceAudit": "Raw strategy score from the confirmed 5-minute candle at first report, mapped to a bounded display scale. It measures setup strength, not calibrated win odds.",
+          "result": "Stop loss hit",
+          "displayResult": "Stoploss hit",
+          "completionNote": "",
+          "exitReason": "target_or_stop",
+          "barsHeld": 5,
+          "minutesHeld": 25,
+          "stalledProgressRatio": 0.0,
+          "duration": "25 min"
+        }
+      ],
+      "note": "P&L is net of estimated round-trip costs: bid-ask spread and slippage, flat brokerage, STT on the sell side, exchange charges, GST, and stamp duty. Confidence is the first-report setup-strength score from the confirmed candle, not a win-probability; the same score is used by the live signal card and Telegram. Fresh entries after 2:30 PM IST, weak breakout candles, poor reward-to-risk setups, and cooldown periods after stop-losses are excluded from this review. Ambiguous candles that touched both target and stop in the same bar are kept neutral and excluded from calibration. Only completed real signal outcomes are shown here.",
+      "lotSize": 20,
+      "pricing": {
+        "symbol": "SENSEX",
+        "spot": "--",
+        "expiry": "--",
+        "daysToExpiry": "--",
+        "strike": "--",
+        "iv": "--",
+        "callPrice": "--",
+        "putPrice": "--",
+        "callDelta": "--",
+        "putDelta": "--",
+        "gamma": "--",
+        "thetaCall": "--",
+        "thetaPut": "--",
+        "vega": "--",
+        "source": "Unavailable"
+      }
+    }
+  },
+  "marketStudy": {
+    "eyebrow": "Behavior Study",
+    "title": "Market behavior study",
+    "summary": "Mildly Negative is being studied through trend-over-time breadth, sector rotation, option-chain flow, VWAP, opening range, pivots, gap context, and recent calibration instead of price alone.",
+    "cards": [
+      {
+        "label": "Regime",
+        "value": "Volatile trap day",
+        "note": "Opening range is being respected too loosely while volatility stays elevated."
+      },
+      {
+        "label": "Participation",
+        "value": "Weak participation",
+        "note": "13 advancing versus 37 declining; breadth is Mixed participation with 13 advancing stocks and 37 declining stocks.."
+      },
+      {
+        "label": "Volatility",
+        "value": "Elevated",
+        "note": "India VIX is 15.6 (+0.72%)."
+      },
+      {
+        "label": "Readiness",
+        "value": "Bearish setup watch",
+        "note": "Bearish pressure is present and put-side participation can be considered while weakness persists."
+      }
+    ],
+    "points": [
+      "Regime reads Volatile trap day because NIFTY is -0.65%, VWAP context is unavailable, and India VIX is 15.6 (+0.72%).",
+      "Sector rotation shows 1 sectors up and 7 down, with leaders in Auto, PSU Bank, Infrastructure and laggards in Financial Services, Commodities, Media.",
+      "Option-chain read is Unavailable: IV 55.00%, PCR --, max pain --, and Writer shift is unavailable.",
+      "VWAP and volume confirm a normal session: price is on VWAP and volume is --x the session average.",
+      "Opening range and pivots matter here: OR 24233.1 to 24294.25, pivot 24426.18, CPR 24439.92 to 24412.44.",
+      "Gap context is gap down: the session opened -139.15 points from the prior close and that is shaping early direction.",
+      "Event risk is active: RBI and Results are in focus and may influence intraday tone.",
+      "Recent calibration from completed trades is available; this keeps confidence from drifting away from historical outcome quality.",
+      "Trend-over-time check is 50% supportive: Trend-over-time is supporting Breadth, VIX, Sector rotation.."
+    ],
+    "details": {
+      "sectorRotation": {
+        "leaders": [
+          {
+            "name": "Auto",
+            "move": "-1.23%",
+            "tone": "down",
+            "level": "27,008.10",
+            "source": "NSE live indices"
+          },
+          {
+            "name": "PSU Bank",
+            "move": "-1.07%",
+            "tone": "down",
+            "level": "8,209.70",
+            "source": "NSE live indices"
+          },
+          {
+            "name": "Infrastructure",
+            "move": "-0.97%",
+            "tone": "down",
+            "level": "9,362.70",
+            "source": "NSE live indices"
+          },
+          {
+            "name": "Pharma",
+            "move": "+0.85%",
+            "tone": "up",
+            "level": "25,896.30",
+            "source": "NSE live indices"
+          }
+        ],
+        "laggards": [
+          {
+            "name": "Financial Services",
+            "move": "-0.73%",
+            "tone": "down",
+            "level": "26,787.70",
+            "source": "NSE live indices"
+          },
+          {
+            "name": "Commodities",
+            "move": "-0.74%",
+            "tone": "down",
+            "level": "9,834.55",
+            "source": "NSE live indices"
+          },
+          {
+            "name": "Media",
+            "move": "-0.76%",
+            "tone": "down",
+            "level": "1,475.45",
+            "source": "NSE live indices"
+          },
+          {
+            "name": "FMCG",
+            "move": "-0.76%",
+            "tone": "down",
+            "level": "49,845.65",
+            "source": "NSE live indices"
+          }
+        ],
+        "breadth": "1 sectors positive / 7 sectors negative",
+        "note": "Rotation is being led by Auto, PSU Bank, Infrastructure while Financial Services, Commodities, Media are lagging."
+      },
+      "optionChain": {
+        "status": "Unavailable",
+        "iv": "55.00%",
+        "pcr": "--",
+        "maxPain": "--",
+        "writerShift": "Writer shift is unavailable.",
+        "note": "Option-chain feed unavailable for NIFTY: 404 Client Error: Not Found for url: https://www.nseindia.com/api/option-chain-indices?symbol=NIFTY"
+      },
+      "volume": {
+        "status": "Unavailable",
+        "note": "Session volume is unavailable, so VWAP confirmation cannot be measured in this snapshot."
+      },
+      "openingRange": {
+        "status": "Available",
+        "high": 24294.25,
+        "low": 24233.1,
+        "relation": "inside",
+        "note": "First 30 minutes define a 24,233-24,294 opening range and price is currently inside it."
+      },
+      "pivots": {
+        "status": "Available",
+        "pivot": 24426.18,
+        "bc": 24439.92,
+        "tc": 24412.44,
+        "r1": 24503.42,
+        "s1": 24321.47,
+        "r2": 24608.13,
+        "s2": 24244.23,
+        "note": "Classic pivot is 24,426.18 with CPR 24,439.92-24,412.44."
+      },
+      "gap": {
+        "status": "Available",
+        "tone": "gap down",
+        "points": -139.15,
+        "percent": -0.57,
+        "note": "Session opened with a gap down of -139.15 points versus the prior close."
+      },
+      "eventRisk": {
+        "status": "Active",
+        "items": [
+          "RBI",
+          "Results"
+        ],
+        "note": "RBI and Results are in focus and may influence intraday tone."
+      },
+      "calibration": {
+        "status": "Available",
+        "bands": [
+          {
+            "band": "0-50%",
+            "sample": 0,
+            "winRate": "--",
+            "bias": "Pending"
+          },
+          {
+            "band": "51-60%",
+            "sample": 0,
+            "winRate": "--",
+            "bias": "Pending"
+          },
+          {
+            "band": "61-70%",
+            "sample": 0,
+            "winRate": "--",
+            "bias": "Pending"
+          },
+          {
+            "band": "71-80%",
+            "sample": 0,
+            "winRate": "--",
+            "bias": "Pending"
+          },
+          {
+            "band": "81-90%",
+            "sample": 9,
+            "winRate": "33%",
+            "bias": "Mixed"
+          },
+          {
+            "band": "91-99%",
+            "sample": 0,
+            "winRate": "--",
+            "bias": "Pending"
+          }
+        ],
+        "contexts": {
+          "buy|overall": {
+            "sample": 5,
+            "winRate": "20%",
+            "bias": "Mixed"
+          },
+          "buy|midday": {
+            "sample": 4,
+            "winRate": "0%",
+            "bias": "Mixed"
+          },
+          "overall|midday": {
+            "sample": 5,
+            "winRate": "20%",
+            "bias": "Mixed"
+          },
+          "sell|overall": {
+            "sample": 4,
+            "winRate": "50%",
+            "bias": "Mixed"
+          },
+          "sell|midday": {
+            "sample": 1,
+            "winRate": "100%",
+            "bias": "Stronger"
+          },
+          "sell|core-afternoon": {
+            "sample": 2,
+            "winRate": "50%",
+            "bias": "Mixed"
+          },
+          "overall|core-afternoon": {
+            "sample": 2,
+            "winRate": "50%",
+            "bias": "Mixed"
+          },
+          "sell|late-morning": {
+            "sample": 1,
+            "winRate": "0%",
+            "bias": "Mixed"
+          },
+          "overall|late-morning": {
+            "sample": 1,
+            "winRate": "0%",
+            "bias": "Mixed"
+          },
+          "buy|core-morning": {
+            "sample": 1,
+            "winRate": "100%",
+            "bias": "Stronger"
+          },
+          "overall|core-morning": {
+            "sample": 1,
+            "winRate": "100%",
+            "bias": "Stronger"
+          }
+        },
+        "note": "Recent completed-trade bands are used as a calibration guide. This is not a full backtest, but it keeps confidence closer to outcome quality."
+      },
+      "trend": {
+        "available": true,
+        "score": 50,
+        "supportCount": 3,
+        "rows": [
+          {
+            "label": "Breadth",
+            "state": "stable",
+            "support": true,
+            "current": "13 adv / 37 dec",
+            "previous": "9 adv / 41 dec",
+            "note": "Breadth spread is -24 versus -32 in the previous snapshot."
+          },
+          {
+            "label": "VIX",
+            "state": "improving",
+            "support": true,
+            "current": "15.60",
+            "previous": "15.50",
+            "note": "VIX is 15.6 today versus 15.5 in the prior snapshot."
+          },
+          {
+            "label": "Sector rotation",
+            "state": "stable",
+            "support": true,
+            "current": "1 up / 7 down",
+            "previous": "0 up / 8 down",
+            "note": "Sector spread is -6 versus -8 in the previous snapshot."
+          },
+          {
+            "label": "VWAP / Volume",
+            "state": "unknown",
+            "support": false,
+            "current": "unavailable / --x",
+            "previous": "unavailable / --x",
+            "note": "VWAP relation is unavailable with volume ratio --x versus --x previously."
+          },
+          {
+            "label": "Option chain",
+            "state": "unknown",
+            "support": false,
+            "current": "PCR -- / IV --%",
+            "previous": "PCR -- / IV --%",
+            "note": "PCR is -- and IV is -- versus the previous snapshot."
+          },
+          {
+            "label": "Regime",
+            "state": "fading",
+            "support": false,
+            "current": "Volatile trap day",
+            "previous": "Mixed day",
+            "note": "Regime moved from Mixed day to Volatile trap day."
+          }
+        ],
+        "note": "Trend-over-time is supporting Breadth, VIX, Sector rotation."
+      },
+      "regime": {
+        "label": "Volatile trap day",
+        "note": "Opening range is being respected too loosely while volatility stays elevated."
+      }
+    }
+  },
+  "dataHealth": {
+    "status": "Generated snapshot",
+    "mode": "generated",
+    "nse": {
+      "status": "Live",
+      "source": "NSE live indices"
+    },
+    "bse": {
+      "status": "Live",
+      "source": "BSE live indices"
+    },
+    "lastSuccessfulRefresh": "2026-07-08 09:26 IST",
+    "lastFailedRefresh": "",
+    "liveCheckedAt": "2026-07-08 09:26 IST",
+    "note": "Static fallback snapshot generated from the tracker export. The live API refreshes exchange data when the website is opened."
+  },
+  "meta": {
+    "source": "nifty-oracle-tracker",
+    "websiteUrl": "https://easemytrade.in",
+    "signalState": "Warming up",
+    "marketStatus": "open",
+    "lastMarketSessionAt": "2026-07-08 15:30 IST",
+    "signalReportedAt": "2026-07-08 09:26 IST",
+    "exportedFrom": "/home/runner/work/easemytrade-telegram-digest/easemytrade-telegram-digest/tracker",
+    "debug": {
+      "last": 24241.1,
+      "percent_change": -0.65,
+      "advances": 13,
+      "declines": 37,
+      "timestamp": "2026-07-08T09:26:31.726716+05:30"
+    },
+    "marketHolidayName": "",
+    "marketClosedReason": ""
+  },
+  "marketDrivers": {
+    "eyebrow": "Live Context",
+    "title": "Live Market Behaviour",
+    "summary": "NIFTY is trading lower at 24,241.10 (-0.65%). Current behaviour is being shaped by breadth, volatility, financial-index participation, and the latest macro/news cues available in this snapshot.",
+    "points": [
+      "Current tone: NIFTY is moving lower at 24,241.10 (-0.65%), with support near 24,220 and resistance near 24,260.",
+      "Breadth is showing negative participation: 13 advancing stocks versus 37 declining stocks in the tracked basket.",
+      "India VIX is at 15.6 (+0.72%), pointing to higher expected intraday volatility.",
+      "Financial participation is confirming the NIFTY tone: BANKNIFTY -0.61%, FINNIFTY -0.73%, SENSEX -0.67%.",
+      "News cue being tracked: How to strengthen Indian rupee without a rate hike."
+    ]
+  }
+}

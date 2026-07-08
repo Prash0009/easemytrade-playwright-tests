@@ -1,0 +1,2 @@
+Support: 24,220
+Resistance: 24,260
