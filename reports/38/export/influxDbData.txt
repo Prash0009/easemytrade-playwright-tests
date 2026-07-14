@@ -1,0 +1,16 @@
+launch_status failed=14 1784001569000000000
+launch_status broken=0 1784001569000000000
+launch_status passed=123 1784001569000000000
+launch_status skipped=0 1784001569000000000
+launch_status unknown=0 1784001569000000000
+launch_time duration=699911 1784001569000000000
+launch_time min_duration=1 1784001569000000000
+launch_time max_duration=64031 1784001569000000000
+launch_time sum_duration=499718 1784001569000000000
+launch_problems product_defects=1 1784001569000000000
+launch_problems 🔴_product_defects=5 1784001569000000000
+launch_problems 🔶_navigation_failures=8 1784001569000000000
+launch_problems 🟡_network_/_api_failures=8 1784001569000000000
+launch_problems ✅_passed=123 1784001569000000000
+launch_retries retries=0 1784001569000000000
+launch_retries run=137 1784001569000000000
