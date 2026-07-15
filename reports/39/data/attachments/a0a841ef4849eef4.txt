@@ -1,0 +1,2 @@
+Before: Enter a stock, ETF, or mutual fund to generate a report.
+After: Best Pick • NIFTY 50 • Showing 1/8 best stocks • Bajaj Auto Ltd. loaded • 15 Jul 2026 09:21 IST • 91%–95%
