@@ -1,0 +1,10 @@
+java.lang.AssertionError: 
+Expecting actual:
+  "404: NOT_FOUND
+Code: NOT_FOUND
+ID: iad1::z2zvq-1784606801417-5017a4a05ec6
+
+Read our documentation to learn more about this error."
+to contain:
+  "Gold"
+ (ignoring case)
