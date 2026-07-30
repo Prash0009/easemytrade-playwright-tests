@@ -1,0 +1,10 @@
+java.lang.AssertionError: 
+Expecting actual:
+  "404: NOT_FOUND
+Code: NOT_FOUND
+ID: iad1::jz2l7-1785383671602-7294573204d7
+
+Read our documentation to learn more about this error."
+to contain:
+  "Natural Gas"
+ (ignoring case)
