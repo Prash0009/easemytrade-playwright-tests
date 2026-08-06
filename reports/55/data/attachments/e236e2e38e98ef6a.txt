@@ -1,0 +1,2 @@
+org.opentest4j.AssertionFailedError: [GOLD watch row visible] 
+Expecting value to be true but was false
