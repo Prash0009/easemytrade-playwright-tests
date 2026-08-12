@@ -1,0 +1,10 @@
+java.lang.AssertionError: [Page at https://easemytrade.in/commodities/crude-oil/ should reference Crude] 
+Expecting actual:
+  "404: NOT_FOUND404: NOT_FOUND
+Code: NOT_FOUND
+ID: sfo1::g5nxj-1786504174127-f28a76fe6733
+
+Read our documentation to learn more about this error."
+to contain:
+  "Crude"
+ (ignoring case)
