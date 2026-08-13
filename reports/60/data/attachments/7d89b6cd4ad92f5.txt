@@ -1,0 +1,10 @@
+java.lang.AssertionError: 
+Expecting actual:
+  "404: NOT_FOUND
+Code: NOT_FOUND
+ID: pdx1::5rg84-1786591197930-a116644d7e64
+
+Read our documentation to learn more about this error."
+to contain:
+  "Silver"
+ (ignoring case)
