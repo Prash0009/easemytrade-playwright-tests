@@ -1,0 +1,10 @@
+java.lang.AssertionError: [Page at https://easemytrade.in/commodities/gold/ should reference Gold] 
+Expecting actual:
+  "404: NOT_FOUND404: NOT_FOUND
+Code: NOT_FOUND
+ID: iad1::7npmq-1787105406097-51ad52a705b7
+
+Read our documentation to learn more about this error."
+to contain:
+  "Gold"
+ (ignoring case)
