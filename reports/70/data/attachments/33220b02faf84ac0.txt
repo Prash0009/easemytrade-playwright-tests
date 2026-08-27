@@ -1,0 +1,10 @@
+java.lang.AssertionError: 
+Expecting actual:
+  "404: NOT_FOUND
+Code: NOT_FOUND
+ID: sfo1::xwrt2-1787826229097-c2cd19a60633
+
+Read our documentation to learn more about this error."
+to contain:
+  "Gold"
+ (ignoring case)
