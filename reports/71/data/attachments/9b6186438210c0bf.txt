@@ -1,0 +1,3 @@
+Confidence: 58%
+Bias: Balanced higher-timeframe structure
+Recommendation: Hold
