@@ -1,0 +1,3 @@
+Confidence: 49%
+Bias: Balanced higher-timeframe structure
+Recommendation: Weak
