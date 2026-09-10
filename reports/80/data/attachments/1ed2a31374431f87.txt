@@ -1,0 +1,3 @@
+Confidence: 36%
+Bias: Weak higher-timeframe trend
+Recommendation: Weak
