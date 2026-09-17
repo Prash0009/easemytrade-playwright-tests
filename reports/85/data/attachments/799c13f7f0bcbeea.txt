@@ -1,0 +1,17 @@
+java.lang.AssertionError: 
+Expecting actual:
+  "This page doesn’t exist
+
+It may have been moved, removed, or never existed.
+
+Go back
+
+404 NOT_FOUND
+
+sfo1::cwgfj-1789622647370-efa9ea2c1ece
+
+VIEW DOCUMENTATION
+COPY DEBUG PROMPT"
+to contain:
+  "Silver"
+ (ignoring case)
