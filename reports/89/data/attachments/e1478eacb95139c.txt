@@ -1,0 +1,17 @@
+java.lang.AssertionError: [Page at https://easemytrade.in/commodities/crude-oil/ should reference Crude] 
+Expecting actual:
+  "404: NOT_FOUNDThis page doesn’t exist
+
+It may have been moved, removed, or never existed.
+
+Go back
+
+404 NOT_FOUND
+
+cle1::xjrh7-1790140254334-2767ebbd29d2
+
+VIEW DOCUMENTATION
+COPY DEBUG PROMPT"
+to contain:
+  "Crude"
+ (ignoring case)
