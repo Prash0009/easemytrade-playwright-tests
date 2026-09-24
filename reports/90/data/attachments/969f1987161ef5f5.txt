@@ -1,0 +1,17 @@
+java.lang.AssertionError: 
+Expecting actual:
+  "This page doesn’t exist
+
+It may have been moved, removed, or never existed.
+
+Go back
+
+404 NOT_FOUND
+
+sfo1::kgxl6-1790227457345-79eba6ae5e17
+
+VIEW DOCUMENTATION
+COPY DEBUG PROMPT"
+to contain:
+  "Gold"
+ (ignoring case)
