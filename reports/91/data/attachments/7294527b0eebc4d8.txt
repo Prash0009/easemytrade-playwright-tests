@@ -1,0 +1,17 @@
+java.lang.AssertionError: 
+Expecting actual:
+  "This page doesn’t exist
+
+It may have been moved, removed, or never existed.
+
+Go back
+
+404 NOT_FOUND
+
+cle1::7j8xs-1790314010753-0dc40cd7bf51
+
+VIEW DOCUMENTATION
+COPY DEBUG PROMPT"
+to contain:
+  "Natural Gas"
+ (ignoring case)
