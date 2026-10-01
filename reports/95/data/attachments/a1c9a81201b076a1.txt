@@ -1,0 +1,15 @@
+java.lang.AssertionError: [Page at https://easemytrade.in/commodities/gold/ should reference Gold] 
+Expecting actual:
+  "404: NOT_FOUNDThis page doesn’t exist
+
+It may have been moved, removed, or never existed.
+
+404 NOT_FOUND
+
+iad1::qcml7-1790836164469-39a227c3fe54
+
+VIEW DOCUMENTATION
+COPY DEBUG PROMPT"
+to contain:
+  "Gold"
+ (ignoring case)
