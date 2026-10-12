@@ -1,0 +1,2 @@
+org.opentest4j.AssertionFailedError: [Signal state 'No trade • capital preservation active' should be a valid state] 
+Expecting value to be true but was false
