@@ -1,0 +1,4 @@
+NIFTY: support=-- (-1), resistance=22,870 (22870)
+BANKNIFTY: support=54,400 (54400), resistance=54,700 (54700)
+FINNIFTY: support=24,500 (24500), resistance=24,650 (24650)
+SENSEX: support=73,600 (73600), resistance=74,000 (74000)
