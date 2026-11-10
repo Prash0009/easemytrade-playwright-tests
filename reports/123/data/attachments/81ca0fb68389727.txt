@@ -1,0 +1,1 @@
+Enter a stock, ETF, or mutual fund to generate a report.
