@@ -1,0 +1,2 @@
+org.opentest4j.AssertionFailedError: [Brand visible on Gold page] 
+Expecting value to be true but was false
