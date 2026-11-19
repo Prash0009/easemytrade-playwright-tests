@@ -1,0 +1,15 @@
+java.lang.AssertionError: [Page at https://easemytrade.in/commodities/natural-gas/ should reference Natural Gas] 
+Expecting actual:
+  "404: NOT_FOUNDThis page doesn’t exist
+
+It may have been moved, removed, or never existed.
+
+404 NOT_FOUND
+
+cle1::2bwv2-1795075763432-2a8f050da359
+
+VIEW DOCUMENTATION
+COPY DEBUG PROMPT"
+to contain:
+  "Natural Gas"
+ (ignoring case)
