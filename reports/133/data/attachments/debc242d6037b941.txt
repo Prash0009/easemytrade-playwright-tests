@@ -1,0 +1,2 @@
+org.opentest4j.AssertionFailedError: [Sign Out button visible] 
+Expecting value to be true but was false
