@@ -1,0 +1,3 @@
+Confidence: 87/100
+Bias: Balanced higher-timeframe structure
+Recommendation: Buy

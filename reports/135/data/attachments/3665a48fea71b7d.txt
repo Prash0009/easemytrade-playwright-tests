@@ -1,0 +1,15 @@
+java.lang.AssertionError: [Page at https://easemytrade.in/commodities/silver/ should reference Silver] 
+Expecting actual:
+  "404: NOT_FOUNDThis page doesn’t exist
+
+It may have been moved, removed, or never existed.
+
+404 NOT_FOUND
+
+pdx1::fz8dv-1795683273611-b2891b2b4661
+
+VIEW DOCUMENTATION
+COPY DEBUG PROMPT"
+to contain:
+  "Silver"
+ (ignoring case)
